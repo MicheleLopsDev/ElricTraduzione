@@ -98,6 +98,30 @@
             font-size: 0.8rem;
             color: #9ca3af; /* gray-400 */
         }
+
+        /* Stile per il pulsante "Torna all'Indice" */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #ef4444; /* red-500 */
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            text-decoration: none;
+            font-size: 28px;
+            line-height: 50px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+            z-index: 1000;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .back-to-top:hover {
+            background-color: #f87171; /* red-400 */
+            transform: translateY(-3px);
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-gray-300">
@@ -114,7 +138,7 @@
         </div>
 
         <!-- Indice dei Contenuti -->
-        <div class="bg-gray-800 p-8 rounded-lg border border-gray-700 shadow-lg">
+        <div id="indice" class="bg-gray-800 p-8 rounded-lg border border-gray-700 shadow-lg">
             <h2 class="text-3xl font-bold text-center text-red-400 mb-8 border-b-2 border-red-500 pb-4">INDICE</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
                 <!-- Colonna Sinistra -->
@@ -2814,5 +2838,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Pulsante "Torna all'Indice" -->
+    <a href="#indice" class="back-to-top" title="Torna all'Indice">&#8679;</a>
+
 </body>
 </html>
