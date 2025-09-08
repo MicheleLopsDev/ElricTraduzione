@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elric! - Guida Completa per l'Avventuriero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Stili Generali Combinati */
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Cinzel', serif; }
+        .section-title { border-bottom: 2px solid #ef4444; padding-bottom: 0.5rem; }
+        .sub-section-title { border-left: 3px solid #f87171; padding-left: 1rem; }
+        
+        /* Stili per le Tabelle */
+        .table-header { background-color: #374151; }
+        table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+        th, td { padding: 0.75rem; border: 1px solid #4b5563; text-align: left; }
+        tr:nth-child(even) { background-color: #1f2937; }
+
+        /* Stili Specifici per le Tabelle con testo centrato */
+        #creazione-avventuriero table th, #creazione-avventuriero table td,
+        #statistiche-derivate table th, #statistiche-derivate table td,
+        #tratti-distintivi-tabella table th, #tratti-distintivi-tabella table td {
+             text-align: center;
+        }
+
+        /* Stili per i Box di Contenuto */
+        .step-box { 
+            border: 1px solid #374151;
+            background-color: #1f2937;
+            border-left: 4px solid #ef4444;
+        }
+        .feature-box, .info-box {
+            background-color: #1f2937;
+            border: 1px solid #374151;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+        .occupation-block {
+            background-color: #1f2937;
+            border-left: 4px solid #ef4444;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <div class="container mx-auto p-8 max-w-6xl">
+        
+        <!-- ================================================================= -->
+        <!-- INIZIO CONTENUTO DA: avventurieri_1.html                          -->
+        <!-- ================================================================= -->
+        
+        <header class="text-center mb-8">
+            <a href="immagini.html#img-13" title="Vedi Elric in posa con Tempestosa" class="block mb-4">
+                <img src="https://placehold.co/600x800/111827/fca5a5?text=AVVENTURIERI" alt="Elric, Imperatore di Melniboné" class="mx-auto rounded-lg shadow-lg border-2 border-red-500">
+            </a>
+            <p class="text-center italic text-gray-400 mt-4">"SENTÌ UN LEGGERO GEMITO PROVENIRE DALLA GRANDE LAMA DA BATTAGLIA NERA MENTRE ALLUNGAVA UNA MANO BIANCA DALLE DITA SOTTILI PER PRENDERLA. ERA PESANTE, MA PERFETTAMENTE BILANCIATA, UNA SPADA A DUE MANI DI DIMENSIONI PRODIGIOSE. CON LA SUA AMPIA GUARDIA E LA LAMA LISCIA E LARGA, CHE SI ESTENDEVA PER OLTRE CINQUE PIEDI DALL'ELSA. VICINO ALL'ELSA, ERANO INCISE RUNE MISTICHE E NEMMENO ELRIC SAPEVA COSA SIGNIFICASSERO APPIENO." - <cite>TEMPESTOSA</cite></p>
+        </header>
+
+        <section id="creazione-avventuriero" class="my-12">
+            <h2 class="text-4xl font-bold text-red-400 text-center section-title mb-8">CREARE UN AVVENTURIERO</h2>
+            
+            <div class="space-y-6">
+
+                <div class="step-box p-4 rounded-lg">
+                    <h3 class="font-bold text-xl text-red-300 mb-2">1. NOME E CARATTERISTICHE</h3>
+                    <p>Scrivi il tuo nome in cima a una scheda dell'avventuriero vuota. Tira 2D6+6 una volta per ognuna delle caratteristiche FOR, COS, TAG, INT, POT, DES e APP. Inserisci i risultati in alto a sinistra sulla scheda. Usa una matita e scrivi in modo leggero per poter cancellare. Questi numeri sono le fondamenta del tuo avventuriero. Più sono alti, più il tuo avventuriero è potente.</p>
+                    <p class="mt-2">Se vuoi, puoi ridistribuire fino a tre punti da FOR, COS, TAG, INT, DES e/o APP. Nessuna caratteristica può superare 21. Se ancora non ti piacciono le caratteristiche, cancella tutto e ricomincia da capo.</p>
+                </div>
+
+                <div class="step-box p-4 rounded-lg">
+                    <h3 class="font-bold text-xl text-red-300 mb-2">2. TIRI IMPORTANTI</h3>
+                    <ul class="list-disc list-inside">
+                        <li>Moltiplica INT x5 per il <strong>Tiro Idea</strong>, e inseriscilo.</li>
+                        <li>Moltiplica POT x5 per il <strong>Tiro Fortuna</strong>, e inseriscilo.</li>
+                        <li>Moltiplica DES x5 per il <strong>Tiro Destrezza</strong>, e inseriscilo.</li>
+                        <li>Moltiplica APP x5 per il <strong>Tiro Carisma</strong>, e inseriscilo.</li>
+                    </ul>
+                    <p class="mt-2 italic">SE VUOI, completa il passo 5 ora, prima di completare i passi 3 e 4.</p>
+                </div>
+
+                <div class="step-box p-4 rounded-lg">
+                    <h3 class="font-bold text-xl text-red-300 mb-2">3. MAGIA</h3>
+                    <p>Il tuo avventuriero necessita di un POT minimo di 16 per poter lanciare incantesimi, evocare entità, ecc. Se desideri questa capacità ma il tuo avventuriero non ha abbastanza punti, aumenta POT scambiando 2 punti da altre caratteristiche per 1 nuovo punto di POT. Puoi effettuare lo scambio più di una volta.</p>
+                    <p class="mt-2">Ogni scambio richiede un Tiro Fortuna riuscito. Basa questo Tiro Fortuna sul POT originale x5. Un risultato di 99 o 00 è sempre un fallimento. Quando un Tiro Fortuna fallisce, non tentare altri scambi per quell'avventuriero. Le regole sulla magia dettagliano altri due modi per aumentare il POT, sebbene siano meno sicuri.</p>
+                    <p class="mt-2">Uno scambio di caratteristiche rappresenta un evento importante nella vita dell'avventuriero. Cerca di immaginare quale potrebbe essere stato. Qualche tratto, caratteristica o handicap potrebbe simboleggiarlo. Per ogni scambio effettuato, aggiungi 1 punto alla casella Caos in alto a destra sulla scheda dell'avventuriero. Se modifichi le caratteristiche associate ai tiri derivati, modifica anche i loro valori.</p>
+                </div>
+                
+                <div class="step-box p-4 rounded-lg">
+                    <h3 class="font-bold text-xl text-red-300 mb-2">4. STATISTICHE DERIVATE</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                        <div>
+                            <ul class="list-disc list-inside space-y-2">
+                                <li><strong>Bonus ai Danni:</strong> Somma FOR+TAG e trova il tiro di dado corrispondente sulla tabella a destra. Scrivilo a matita come indicato.</li>
+                                <li><strong>Punti Ferita:</strong> Somma COS+TAG e dividi il risultato per 2. Arrotonda per eccesso ogni frazione. Cerchia il numero corrispondente nella casella dei punti ferita. Quando l'avventuriero perde punti ferita, cancellali con una matita, poi ripristinali man mano che si rigenerano. Il numero cerchiato rappresenta i punti ferita massimi.</li>
+                                <li><strong>Punti Magia:</strong> Nella casella dei punti magia, cerchia il numero uguale al POT. Il numero cerchiato rappresenta i punti magia massimi. In gioco, i punti magia verranno spesi, quindi il loro ammontare attuale varierà, proprio come i punti ferita.</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-center mb-2">TABELLA BONUS AI DANNI</h4>
+                            <table class="w-full text-sm">
+                                <thead>
+                                    <tr class="table-header">
+                                        <th>FOR + TAG</th>
+                                        <th>Modificatore Danno</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>2 a 12</td><td>-1D6</td></tr>
+                                    <tr><td>13 a 16</td><td>-1D4</td></tr>
+                                    <tr><td>17 a 24</td><td>Nessuno</td></tr>
+                                    <tr><td>25 a 32</td><td>+1D4</td></tr>
+                                    <tr><td>33 a 40</td><td>+1D6</td></tr>
+                                    <tr><td>41 a 56</td><td>+2D6</td></tr>
+                                    <tr><td>57 a 72</td><td>+3D6</td></tr>
+                                    <tr><td>73 a 88</td><td>+4D6</td></tr>
+                                    <tr><td>89 a 104</td><td>+5D6</td></tr>
+                                    <tr><td>105 a 120</td><td>+6D6</td></tr>
+                                    <tr><td>121 a 136</td><td>+7D6</td></tr>
+                                    <tr><td>137 a 152</td><td>+8D6</td></tr>
+                                    <tr><td>153 a 168</td><td>+9D6</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-box p-4 rounded-lg">
+                    <h3 class="font-bold text-xl text-red-300 mb-2">5. ABILITÀ DI BASE</h3>
+                     <p>Studia le caratteristiche del tuo avventuriero e immagina il tipo di persona che hai creato. Scegli il genere. Né maschio né femmina hanno vantaggi nel gioco.</p>
+                     <p class="mt-2">Scegli uno dei seguenti pacchetti o tira 1D4 per un risultato casuale. Questi pacchetti di abilità sono un modo rapido per iniziare a sviluppare il tuo avventuriero—ci saranno più abilità nel prossimo passo. Le abilità sono definite nel capitolo <a href="05_abilita.html#abilita" class="text-red-400 hover:underline">Abilità</a>. Le classi di armi sono spiegate nel capitolo <a href="07_combattimento.html#classi-armi" class="text-red-400 hover:underline">Combattimento</a>.</p>
+                     <ol class="list-decimal list-inside mt-2 space-y-2">
+                         <li>Pensa prima di tutto a risolvere i problemi con la forza fisica e l'abilità. Assegna 20 punti abilità ciascuno a Rissa, Scalare, Schivare, Intuizione, Saltare, Ascoltare, Muoversi Silenziosamente, Cavalcare, Navigare, Nuotare, Lanciare, a una qualsiasi classe di armi e all'abilità Lotta.</li>
+                         <li>Crede che la tecnica, l'artigianato e l'esperienza siano i segreti del successo. Assegna 20 punti abilità ciascuno a un Mestiere qualsiasi, a Camuffare, Schivare, Valutare, Mondo Naturale, Navigare, Fisiologia, Scassinare, Cavalcare, Navigare, Scrivere, Trappole e a una classe di armi.</li>
+                         <li>Tenta prima di superare in astuzia un avversario o di ottenere un vantaggio. Assegna 20 punti abilità ciascuno a Contrattare, Nascondere Oggetto, Camuffare, Valutare, Parlantina, Nascondersi, Intuizione, Mondo Naturale, Oratoria, Lingua Madre, Scassinare e Cercare, e a una qualsiasi classe di armi.</li>
+                         <li>Si diverte a persuadere gli altri a lavorare, mentre prende le decisioni. Assegna 20 punti abilità ciascuno a un'Arte, a Contrattare, Camuffare, Valutare, Parlantina, Intuizione, Oratoria, una qualsiasi Altra Lingua, Lingua Madre, Cavalcare e Cercare, e a una qualsiasi classe di armi.</li>
+                     </ol>
+                     <p class="mt-2 italic">Se il tuo gamemaster è d'accordo, potresti anche creare un avventuriero personalizzato: scegli 13 abilità qualsiasi eccetto Sfere Infinite e Regni Sconosciuti, e aggiungi 20 punti abilità a ciascuna. Nel distribuire i punti abilità, somma gli ammontari prestampati sulla scheda dell'avventuriero: quindi Parlantina sarebbe 15% + 20% = 35%. Scrivi il totale dopo l'abilità.</p>
+                </div>
+                
+                <div class="step-box p-4 rounded-lg">
+                    <h3 class="font-bold text-xl text-red-300 mb-2">6. PROFESSIONE</h3>
+                    <p><a href="#professioni" class="text-red-400 hover:underline">Vai alla sezione Professioni</a>. Scegli o tira per una professione. Assegna 250 punti in qualsiasi proporzione tra le abilità della professione. Rappresentano ciò che il tuo avventuriero ha imparato lavorando. Usa tutti i punti. L'avventuriero può accettare nessuno, alcuni o tutti gli incantesimi elencati per la professione, ma solo se il POT è 16 o superiore. Per ogni incantesimo accettato, aumenta di 1 il numero nella casella Caos. Alcune professioni concedono denaro extra; aggiungi l'importo allo spazio "bronzi sulla persona".</p>
+                </div>
+
+                <div class="step-box p-4 rounded-lg">
+                    <h3 class="font-bold text-xl text-red-300 mb-2">7. TRATTI DISTINTIVI</h3>
+                    <p><a href="#tratti-distintivi-tabella" class="text-red-400 hover:underline">Vai alla Tabella dei Tratti Distintivi</a>. Tira o scegli dalla tabella. Annota i tratti sotto il nome del tuo avventuriero sulla scheda.</p>
+                </div>
+
+                <div class="step-box p-4 rounded-lg">
+                    <h3 class="font-bold text-xl text-red-300 mb-2">8. ETÀ E DENARO</h3>
+                    <p>Tira 1D6. Somma il risultato a 17: il nuovo totale è l'età effettiva del tuo avventuriero. Ora moltiplica lo stesso risultato del D6 per 30: il prodotto indica quanti bronzi—la moneta standard nel gioco—ha in tasca il tuo avventuriero. Conserva il denaro per spenderlo in gioco, o usalo per comprare oggetti dalla lista prezzi. Ricorda di includere il denaro extra dalla tua professione.</p>
+                </div>
+
+                <div class="step-box p-4 rounded-lg">
+                    <h3 class="font-bold text-xl text-red-300 mb-2">9. AFFILIAZIONE</h3>
+                    <p>Se il tuo avventuriero non ha preso magie, quella scelta ha negato il Caos. Ma potrebbe essere un seguace della Legge. Se è così, assegna 20 punti percentuali ciascuno a 1-3 abilità che possiedono già punti, per enfatizzare la disciplina e l'intenzione. Aggiungi 1 punto alla casella Legge per ogni abilità così aumentata. Se il tuo avventuriero nega sia il Caos che la Legge, è un seguace dell'Equilibrio. Aggiungi 1-3 punti alla sua caratteristica più debole, per illustrare l'armonia del piano della vita. Aggiungi lo stesso numero di punti alla casella Equilibrio.</p>
+                </div>
+                
+                <div class="step-box p-4 rounded-lg">
+                    <h3 class="font-bold text-xl text-red-300 mb-2">10. EQUIPAGGIAMENTO</h3>
+                    <ul class="list-disc list-inside space-y-2">
+                        <li>Gli avventurieri hanno bisogno di un'armatura. Ognuno riceve ora 600 bronzi in più per comprarla. Prezzi e statistiche si trovano nelle tabelle delle armi. Tieni il resto, o compra oggetti dalle liste prezzi.</li>
+                        <li>Ogni avventuriero possiede già finimenti e un cavallo da sella (dagli un nome), e ogni arma a cui sono stati aggiunti 20 o più punti abilità. Copia le statistiche delle armi dalle tabelle delle armi negli spazi appositi sulla scheda.</li>
+                        <li>Qualcosa mostra la relazione dell'avventuriero con la sua famiglia: sceglilo. Potrebbe essere un anello con sigillo, un amuleto, una sacca di erbe curative, ecc. Anche se la famiglia è morta o sconosciuta, questo oggetto è stato tramandato. Non è magico, ma il tuo avventuriero lo considera prezioso. Il suo valore in denaro è 1D20-1 bronzi.</li>
+                    </ul>
+                </div>
+                
+                <div class="step-box p-4 rounded-lg">
+                    <h3 class="font-bold text-xl text-red-300 mb-2">11. BACKGROUND</h3>
+                    <p>Con comodo, <a href="03a_giovani_regni_introduzione.html#giovani-regni" class="text-red-400 hover:underline">leggi il capitolo sui Giovani Regni</a> e scegli la patria dell'avventuriero. Chi è o chi era la sua famiglia? Erano potenti o umili? Quali sentimenti e responsabilità ha l'avventuriero verso di loro? Confronta la professione con le sue origini. Si suggerisce una spiegazione? Sii attento agli indizi sul passato del tuo avventuriero.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <hr class="my-12 border-t-2 border-gray-700">
+
+        <!-- ================================================================= -->
+        <!-- INIZIO CONTENUTO DA: avventurieri_2.html                          -->
+        <!-- ================================================================= -->
+
+        <header class="text-center mb-8">
+            <h2 class="text-4xl font-bold text-red-400 section-title">Creazione e Comprensione degli Avventurieri</h2>
+        </header>
+
+        <main class="space-y-12 text-lg leading-relaxed">
+
+            <section id="caratteristiche-dettagli">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">CARATTERISTICHE</h3>
+                <p>Ciascuna delle sette caratteristiche rappresenta un modo generale di vedere le capacità e il comportamento probabile di un avventuriero. Un valore più alto è sempre migliore.</p>
+                <div class="space-y-4 mt-4">
+                    <div>
+                        <h4 class="font-bold text-red-200">FOR (FORZA)</h4>
+                        <p>Misura la potenza muscolare. La FOR umana non può superare naturalmente 21. Un avventuriero ridotto a FOR zero è un invalido, incapace di alzarsi dal letto.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-200">COS (COSTITUZIONE)</h4>
+                        <p>Riassume salute, vigore e vitalità. La COS umana non può superare naturalmente 21. Raggiungendo zero punti di Costituzione, un avventuriero muore.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-200">TAG (TAGLIA)</h4>
+                        <p>Rappresenta la media di altezza e peso. La TAG umana non può essere superiore a 21. Se un avventuriero perde metà o più della sua TAG per inedia, muore. Se un avventuriero perde in qualche modo tutta la sua TAG, scompare!</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-200">INT (INTELLIGENZA)</h4>
+                        <p>Rappresenta la capacità di apprendere, ricordare e analizzare. L'INT può aumentare indefinitamente. Un avventuriero senza INT è un idiota farfugliante.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-200">POT (POTERE)</h4>
+                        <p>Rappresenta la forza di volontà, la fiducia e la capacità magica. Il POT umano può aumentare indefinitamente. Un avventuriero senza POT è privo di volontà e si comporta come uno zombie.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-200">DES (DESTREZZA)</h4>
+                        <p>Una Destrezza più alta rende più rapidi e agili. La DES di un avventuriero non può superare naturalmente 21. Un avventuriero con DES zero è incapace di compiere qualsiasi compito fisico senza un tiro Fortuna riuscito.</p>
+                    </div>
+                     <div>
+                        <h4 class="font-bold text-red-200">APP (ASPETTO)</h4>
+                        <p>Mostra piacevolezza, grazia e attrattiva. L'APP non può superare naturalmente 21. Un avventuriero con APP zero provoca disgusto ovunque.</p>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <h4 class="font-bold text-red-200">Cambiamenti nelle Caratteristiche</h4>
+                    <p>La magia può aumentare qualsiasi caratteristica, mentre ferite e magia possono diminuirla.</p>
+                    <ul class="list-disc list-inside mt-2 space-y-2 text-base">
+                        <li>Un tiro riuscito sulla Tabella di Resistenza può aumentare FOR, COS, DES, INT o POT. Il tiro deve essere contro un avversario che ha un valore uguale o superiore nella caratteristica corrispondente.</li>
+                        <li>INT e POT possono aumentare naturalmente e permanentemente oltre il 21.</li>
+                        <li>Quando una caratteristica cambia, cambiano anche i tiri moltiplicatori associati (Idea, Fortuna, ecc.).</li>
+                        <li>I punti ferita e il bonus ai danni potrebbero cambiare, a seconda della caratteristica e dell'entità del cambiamento.</li>
+                        <li>Se il POT diminuisce, i punti magia non diminuiscono finché non vengono spesi; una volta spesi, si rigenerano solo fino al nuovo massimo del POT. Se il POT aumenta, i punti magia aumentano immediatamente.</li>
+                    </ul>
+                </div>
+                
+            </section>
+            
+            <section id="tiri-caratteristiche">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">TIRI SULLE CARATTERISTICHE</h3>
+                <p>Questo tipo di tiro viene spesso usato quando un tiro abilità non è appropriato. Il gamemaster annuncerà una caratteristica e un moltiplicatore - DES x4, per esempio - e indicherà quali avventurieri sono idonei al tiro. I giocatori di quegli avventurieri tirano quindi un D100 e cercano di ottenere un risultato uguale o inferiore a DES x4.</p>
+                
+                <div class="feature-box mt-6">
+                    <h4 class="font-bold text-center text-xl text-red-200 mb-4">TIRI IMPORTANTI</h4>
+                    <div class="space-y-4">
+                        <p><strong>TIRO DESTREZZA (DES x5):</strong> Permette di giudicare azioni per le quali non esiste un'abilità di gioco. Potrebbe decidere, per esempio, se l'avventuriero è riuscito ad afferrare al volo la sua armatura o ad aggrapparsi a una liana sul bordo di un precipizio.</p>
+                        <p><strong>TIRO IDEA (INT x5):</strong> Rappresenta la capacità dell'avventuriero di fare un'ipotesi corretta o una decisione astuta, o può indicare la consapevolezza: per esempio, l'avventuriero capisce il significato di quel gigantesco pugno discendente scolpito nel muro?</p>
+                        <p><strong>TIRO FORTUNA (POT x5):</strong> La fortuna è l'abilità di trovarsi nel posto giusto al momento giusto, o altrimenti l'abilità di sfuggire alle conseguenze di essere nel posto sbagliato. L'avventuriero ha portato abbastanza corda? Il Gigante della Nebbia sceglie di attaccare l'avventuriero o il suo cavallo?</p>
+                        <p><strong>TIRO CARISMA (APP x5):</strong> Ha fatto una buona impressione? Ha catturato l'attenzione di tutti? Qual è stato il risultato di quello sguardo flirtante? Un tiro Carisma riuscito potrebbe anche aiutare a migliorare la probabilità di successo di un tiro abilità di Contrattare, Parlantina o Oratoria.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="statistiche-derivate">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">STATISTICHE DERIVATE</h3>
+                
+                <div class="feature-box space-y-6">
+                    <div>
+                        <h4 class="font-bold text-xl text-red-200">BONUS AI DANNI (FOR + TAG)</h4>
+                        <p>Tutti gli esseri fisici hanno un bonus ai danni, anche se può essere zero o un valore negativo. L'idea è che le creature più grandi e forti possano in media sferrare attacchi più potenti. Per calcolare il bonus ai danni, somma la FOR e la TAG dell'avventuriero e trova il corrispondente intervallo nella Tabella del Bonus ai Danni.</p>
+                        <ul class="list-disc list-inside mt-4 space-y-2 text-base">
+                            <li>Nel combattimento corpo a corpo, aggiungi il bonus ai danni a tutti gli attacchi dell'avventuriero, anche contro bersagli inanimati (come le porte).</li>
+                            <li>Per le armi lanciate a mano o per archi e frecce, aggiungi metà del bonus ai danni dell'avventuriero al danno inflitto.</li>
+                            <li>Non aggiungere un bonus ai danni per gli incantesimi.</li>
+                            <li>I Gamemaster non dovrebbero aggiungere bonus ai danni agli attacchi con Morso di animali e demoni a meno che non sia specificato un +bd per l'attacco.</li>
+                            <li>Quando si tira per il danno, un risultato di zero o meno significa che il colpo è stato troppo leggero per causare danni.</li>
+                        </ul>
+                        <table>
+                            <caption class="text-lg font-bold my-2 text-red-200">TABELLA BONUS AI DANNI</caption>
+                            <thead class="table-header">
+                                <tr><th>FOR + TAG</th><th>Modificatore</th><th>FOR + TAG</th><th>Modificatore</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>2 a 12</td><td>-1D6</td><td>73 a 88</td><td>+4D6</td></tr>
+                                <tr><td>13 a 16</td><td>-1D4</td><td>89 a 104</td><td>+5D6</td></tr>
+                                <tr><td>17 a 24</td><td>Nessuno</td><td>105 a 120</td><td>+6D6</td></tr>
+                                <tr><td>25 a 32</td><td>+1D4</td><td>121 a 136</td><td>+7D6</td></tr>
+                                <tr><td>33 a 40</td><td>+1D6</td><td>137 a 152</td><td>+8D6</td></tr>
+                                <tr><td>41 a 56</td><td>+2D6</td><td>153 a 168</td><td>+9D6</td></tr>
+                                <tr><td>57 a 72</td><td>+3D6</td><td>167 a 184</td><td>+10D6</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="text-sm mt-2">Per ogni 16 punti aggiuntivi o frazione, aggiungi 1D6 in più.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl text-red-200">PUNTI FERITA ((COS + TAG) / 2)</h4>
+                        <p>Gli esseri fisici hanno punti ferita. Calcola i punti ferita sommando la Costituzione e la Taglia dell'avventuriero, dividendo per due e arrotondando per eccesso. Quando un avventuriero perde punti ferita, essi tornano naturalmente al ritmo di 1D3 a settimana di gioco.</p>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>Se i punti ferita scendono a due o meno, l'avventuriero perde conoscenza.</li>
+                            <li>Quando i punti ferita raggiungono zero o meno, l'avventuriero muore alla fine del round successivo, a meno che non vengano ripristinati.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-xl text-red-200">PUNTI MAGIA (POT massimo)</h4>
+                        <p>I punti magia massimi sono uguali al POT dell'avventuriero. Vengono sacrificati principalmente per lanciare o resistere a incantesimi, o per evocare demoni. I punti magia spesi si rigenerano naturalmente nell'arco di 24 ore di gioco.</p>
+                         <ul class="list-disc list-inside mt-2">
+                            <li>Avendo usato tutti i punti magia, segue l'incoscienza per un'ora, quando il primo punto magia si rigenera.</li>
+                            <li>I punti magia si rigenerano completamente in 24 ore (il primo dopo un'ora, poi un quarto del totale ogni sei ore).</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="affiliazione">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">AFFILIAZIONE</h3>
+                <p class="italic">"Egli considera il simbolo dell'Equilibrio, di quell'equilibrio che un tempo tutti i filosofi si sforzavano di raggiungere, finché, per convenienza o per minacce alle loro vite e alle loro anime, cominciarono a stringere patti, alcuni con la Legge ma per lo più con il Caos, che è un elemento più vicino alla natura della maggior parte dei maghi. E così si assicurarono di non poter mai raggiungere l'obiettivo per cui erano stati addestrati; per il quale alcuni di loro erano nati; per il quale alcuni di loro erano destinati. Questi ultimi erano coloro che comprendevano la grande perversione che aveva avuto luogo, che comprendevano tutto ciò a cui avevano rinunciato." - <cite>La Vendetta della Rosa II, 1</cite></p>
+                <div class="space-y-6 mt-6">
+                    <p>Il mondo dei Giovani Regni mette l'una contro l'altra le forze del Caos, dell'Equilibrio e della Legge. I Signori della Legge e del Caos offrono benefici per reclutare Campioni per le loro cause. L'Equilibrio non è mai personificato, ma i benefici derivano naturalmente a chi segue la sua via. Questi benefici differiscono l'uno dall'altro, corrispondono approssimativamente in importanza nel gioco, ma lasciano l'avventuriero libero. L'affiliazione può cambiare molte volte. Ogni avventuriero inizia il gioco legato a una delle tre forze.</p>
+                    
+                    <div>
+                        <h4 class="font-bold text-xl text-red-200">Ottenere Affiliazione</h4>
+                        <p>La parte frontale della scheda dell'avventuriero include tre riquadri per l'affiliazione. Un numero fino a 100 in ogni riquadro mostra l'allineamento a ciascuna forza. Più alto è il numero in un riquadro, maggiore è la disposizione dell'avventuriero verso quella forza.</p>
+                        <p class="mt-2">La maggior parte delle persone non agisce in modo coerente. In termini di gioco, raramente accumulano punteggi elevati in una sola delle forze. I guadagni con una in una settimana sono neutralizzati da guadagni in un'altra la settimana successiva. Tuttavia, ogni volta che il punteggio più alto supera di 20 punti o più il secondo punteggio più alto e l'avventuriero desidera una relazione più forte, tale sforzo rappresenta un impegno sufficiente affinché si possa dire che l'avventuriero ha un'affiliazione con quella forza. I benefici si accumulano finché esiste l'affiliazione.</p>
+                        <ul class="list-disc list-inside mt-2">
+                            <li>Consulta il riquadro "Le Tre Forze" per i tipi di azioni che possono promuovere l'assegnazione di punti affiliazione.</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <h4 class="font-bold text-center text-xl text-red-200 mb-4">LE TRE FORZE</h4>
+                        <p class="italic text-center">"Non sai che due forze governano il mondo, combattendo una battaglia eterna?" rispose Elric. "Legge e Caos. I sostenitori del Caos affermano che in un mondo da loro governato, tutte le cose sono possibili. Gli oppositori del Caos — coloro che si alleano con le forze della Legge — dicono che senza Legge nulla di materiale è possibile. Alcuni si tengono in disparte, credendo che un equilibrio tra i due sia lo stato corretto delle cose, ma noi non abbiamo potuto. Siamo stati coinvolti in una disputa tra i due..."</p>
+                        <cite class="block text-right text-sm italic mt-2">- Il Fato del Lupo Bianco II, 3.</cite>
+                        <div class="mt-4 space-y-3 text-base border-t border-gray-600 pt-4">
+                            <p><strong>GUADAGNARE PUNTI CAOS:</strong> Il blocco della Legge impedisce la presenza dei Signori del Caos sul piano dei Giovani Regni finché Elric non invoca Arioch. Ciononostante, il Caos si insinua ovunque. I punti Caos sono facili da ottenere, perché il Caos è ansioso di corrompere il piano dei Giovani Regni. Le questioni legate a Pan Tang sono fonti di punti Caos, così come i culti Caotici nei Giovani Regni. Altri regni sono anch'essi contaminati dal Caos. La fonte principale di punti Caos è l'apprendimento e il lancio di magia, e la pratica del tradimento, dell'inganno e della violenza. Le arti e i mestieri che promuovono o funzionano tramite l'illusione sono probabilmente frequentati da alleati o amici del Caos.</p>
+                            <p><strong>GUADAGNARE PUNTI PER L'EQUILIBRIO:</strong> L'Equilibrio Cosmico non ha chiese o agenti, ad eccezione di coloro come Sepiriz che emergono alla fine del mondo. Le azioni che promuovono la vita — gentilezza, un salvataggio, misericordia, una verità detta — possono far guadagnare punti per l'Equilibrio. L'Equilibrio non ha bisogno di incantesimi o invocazioni: è quello stato dell'essere verso cui tutta la creazione tende naturalmente. Può essere pervertito, ma non potenziato.</p>
+                            <p><strong>GUADAGNARE PUNTI LEGGE:</strong> La saga menziona raramente appelli alla Legge, ma mostra due importanti Campioni della Legge che vagano per il mondo. Esiste una Chiesa della Legge e alcuni regni sono allineati con la Legge. Scenari pubblicati mostrano anche l'allineamento di certe sette e culti. Le azioni compiute per loro conto possono fruttare punti Legge.</p>
+                            <p><strong>USARE LA MAGIA:</strong> Indipendentemente dall'affiliazione, chiunque può usare la magia. Poiché la maggior parte della magia è Caotica, tuttavia, l'uso della magia tende a riallineare qualsiasi utilizzatore verso il Caos. Quando un alleato della Legge o dell'Equilibrio ritiene necessario usare la magia Caotica, medita per alcune ore o giorni, o trova un altro modo per espiare l'atto.</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-xl text-red-200">Aumentare l'Affiliazione</h4>
+                        <p>Le azioni che favoriscono l'affiliazione a loro volta aumentano il punteggio di affiliazione. Dopo un'avventura, il gamemaster può richiedere una verifica dell'affiliazione. Questo viene fatto in modo (e forse nello stesso momento) simile a una verifica dell'esperienza. Tira D100: se il giocatore ottiene un risultato inferiore al punteggio di affiliazione attuale, i punti affiliazione aumentano di 1D8 punti se per il Caos, o di 1D6 punti se per l'Equilibrio o la Legge.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-xl text-red-200">Mantenere l'Affiliazione</h4>
+                        <p>Quando un avventuriero agisce contro gli interessi della sua affiliazione, il gamemaster può richiedere un tiro D100 per testare l'affiliazione. Se il giocatore ottiene un risultato superiore al punteggio di affiliazione attuale, riduci il punteggio di affiliazione di 1D8 (per il Caos) o 1D6 (per l'Equilibrio e la Legge). Se il risultato è uguale o inferiore, non ci sono conseguenze.</p>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-xl text-red-200">Benefici dell'Affiliazione</h4>
+                        <div class="space-y-4 mt-2">
+                            <div>
+                                <h5 class="font-bold text-red-100">AFFILIAZIONE AL CAOS</h5>
+                                <p>I Signori del Caos desiderano la libertà assoluta. Al suo meglio, il Caos concede grandi opportunità e libera gli impulsi dell'individuo; al suo peggio, il Caos giustifica l'anarchia crudele e il comportamento egoistico. La magia trae forza e ubiquità dal Caos, sebbene esista anche la magia Legale. Il Caos può anche concedere l'apoteosi.</p>
+                                <p class="mt-2"><strong>BENEFICI:</strong> Se l'avventuriero si è alleato con il Caos, e solo dopo che i suoi punti magia personali sono esauriti, un alleato del Caos può giurare sui Signori del Caos e usare come punti magia extra l'equivalente di 1/10 (arrotondato per eccesso) dei suoi punti Caos attuali. Questo può essere fatto fino a tre volte per sessione di gioco. Ogni volta deve essere un'occorrenza separata.</p>
+                                <ul class="list-disc list-inside mt-2 text-base">
+                                    <li>Un alleato del Caos ha anche una probabilità dell'uno per cento di ricevere una risposta a un'invocazione da uno specifico Signore del Caos.</li>
+                                </ul>
+                                <p class="mt-2"><strong>INTERPRETAZIONE:</strong> Gli avventurieri possono servire il Caos volontariamente, come imbroglioni e anticonformisti, o sotto costrizione, come Elric. L'orgoglio, la vendetta e altre emozioni egoistiche spesso li motivano. La dipendenza dalla magia segnala una disposizione al Caos. Il Caos impiega alcuni alleati, che si dedicano a quella forza. Questi sono chiamati agenti del Caos.</p>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-red-100">AFFILIAZIONE ALL'EQUILIBRIO</h5>
+                                <p>L'Equilibrio desidera l'armonia tra l'opposizione di Caos e Legge. L'Equilibrio combina stabilità e vitalità. Elric e il Campione Eterno in tutte le sue incarnazioni alla fine appoggiano e lavorano per il ripristino dell'Equilibrio.</p>
+                                <p class="mt-2"><strong>BENEFICI:</strong> Data un'affiliazione con l'Equilibrio, l'avventuriero impara abbastanza armonia interiore e controllo fisico da schivare o ignorare alcune ferite. Può giurare sull'Equilibrio, facendo sì che il giocatore usi fino a 1/5 (arrotondato per eccesso) dei suoi punti Equilibrio attuali come punti ferita extra una volta per sessione di gioco.</p>
+                                <p class="mt-2"><strong>INTERPRETAZIONE:</strong> I servitori dell'Equilibrio cercano l'illuminazione interiore così come l'armonia nel mondo. Possono mostrare purezza monastica e libertà dai vizi convenzionali, o vivere privatamente e gentilmente, o godersi la vita come vogliono, ma nel modo più altruistico possibile. A differenza del Caos e della Legge, l'Equilibrio non mantiene agenti stipendiati nel mondo.</p>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-red-100">AFFILIAZIONE ALLA LEGGE</h5>
+                                <p>I Signori della Legge affermano ordine e logica. Al suo meglio, il dominio della Legge produce pace, stabilità e sicurezza, e al suo peggio provoca totalitarismo, rigida conformità e sterilità emotiva.</p>
+                                <p class="mt-2"><strong>BENEFICI:</strong> Data un'affiliazione con la Legge, l'avventuriero possiede abbastanza disciplina e orgogliosa ambizione da aumentare inconsciamente le abilità selezionate. Può giurare sui Signori della Legge e usare momentaneamente fino alla totalità dei suoi punti Legge attuali come punti abilità extra. Questo può essere fatto non più di tre volte per sessione di gioco. Richiedi i punti extra prima di effettuare il tiro abilità.</p>
+                                 <ul class="list-disc list-inside mt-2 text-base">
+                                    <li>Un alleato della Legge ha una probabilità dell'uno per cento di ricevere una risposta a un'invocazione da uno specifico Signore della Legge.</li>
+                                </ul>
+                                <p class="mt-2"><strong>INTERPRETAZIONE:</strong> Il seguace della Legge crede che il comfort di molti superi i desideri di pochi. Generalmente diffida della magia e si astiene dal suo uso, poiché quella via porta al Caos, che riempie ogni alleato della Legge di disgusto e furia giusta. La Legge impiega alcuni alleati, che si dedicano a quella forza. Questi sono chiamati agenti della Legge.</p>
+                            </div>
+                        </div>
+                    </div>
+                     
+                    <div>
+                        <h4 class="font-bold text-xl text-red-200 mt-6">APOTEOSI</h4>
+                        <p>Un avventuriero che raggiunge cento o più punti in un punteggio di affiliazione e che si è impegnato per quella forza può ricevere in una visione la richiesta di diventarne il servitore. L'apoteosi non è automatica. Se l'offerta viene accettata, avviene un'apoteosi (letteralmente, deificazione, ma qui un'alleanza permanente di intenti), trasformando l'avventuriero in un Campione di una delle tre forze. Se l'avventuriero rifiuta l'apoteosi, i suoi punti continuano semplicemente ad accumularsi fino alla morte o al ritiro.</p>
+                        
+                        <div class="space-y-4 mt-4">
+                            <h5 class="font-bold text-red-100">CAMPIONE DEL CAOS</h5>
+                            <p>Un Campione del Caos diventa invulnerabile alla morte. Quando la morte dovrebbe normalmente verificarsi, ha invece altre due possibilità. Moltiplica il POT x 1D8, quindi tira D100. Se il risultato è uguale o inferiore al prodotto di POT x 1D8, il Campione evapora fetidamente e si ricompone nel punto della sua apoteosi. La ricomposizione richiede otto giorni e otto notti di grande dolore e angoscia, e sottrae cinque punti percentuali da ogni abilità. Dopo ogni ricomposizione, l'avventuriero assume un aspetto più cadaverico e simile alla morte, e perde 1 APP.</p>
+                            <ul class="list-disc list-inside mt-2 text-base">
+                               <li>I punti magia dell'avventuriero raddoppiano permanentemente, sebbene il POT non aumenti.</li>
+                               <li>Inoltre, un Campione del Caos deve scegliere un Signore del Caos come patrono. Ora ha una probabilità del POT x3% di comunicare con quel Signore del Caos quando il bisogno è grande.</li>
+                               <li>L'avventuriero diventa la pedina del Caos, soggetto a visioni e patti.</li>
+                            </ul>
+
+                            <h5 class="font-bold text-red-100">CAMPIONE DELL'EQUILIBRIO</h5>
+                            <p>Un Campione dell'Equilibrio diventa degno di cercare Tanelorn, la città della pace. Questo di solito comporta una lunga missione che rivela il ruolo dell'avventuriero nel mondo. Avendo successo, il Campione ha vinto la partita e lascia o entra in gioco quando desidera, sfuggendo al destino generale dei Giovani Regni.</p>
+                             <ul class="list-disc list-inside mt-2 text-base">
+                               <li>Inoltre, i punti ferita dell'avventuriero sono d'ora in poi uguali a TAG + COS.</li>
+                            </ul>
+
+                            <h5 class="font-bold text-red-100">CAMPIONE DELLA LEGGE</h5>
+                            <p>Un Campione della Legge può creare una nuova terra dal Caos informe e assumerne il governo. La nuova terra è piena di piante e animali naturali, come desidera l'avventuriero, e può contenere una piccola popolazione (1000 x 1D6) di contadini e villici da governare.</p>
+                            <ul class="list-disc list-inside mt-2 text-base">
+                               <li>In aggiunta, raddoppia i punti percentuali di tre abilità scelte dal giocatore.</li>
+                               <li>Infine, un Campione della Legge deve scegliere un Signore patrono se non l'ha già fatto, e ora ha una probabilità del POT x3% di comunicare con quel Signore della Legge quando il bisogno è grande.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="background">
+                 <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">BACKGROUND</h3>
+                 <p>Molti aspetti del tuo avventuriero sono scelti liberamente e non necessitano di tiri di dado. Le intestazioni seguenti corrispondono a quelle della scheda dell'avventuriero.</p>
+                 <div class="space-y-4 mt-4">
+                    <div>
+                        <h4 class="font-bold text-red-200">NOME</h4>
+                        <p>Scegli un nome che ti piace. La maggior parte dei personaggi nella saga di Elric non ha un cognome: Moonglum è solo Moonglum. Per descrivere ulteriormente un avventuriero, indica un luogo di nascita, come in Moonglum di Elwher, o una caratteristica distintiva, come in Smiorgan Testa Calva.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-200">LUOGO DI NASCITA</h4>
+                        <p>Per i tuoi primi avventurieri, scegli tra i seguenti regni: Argimiliar, Dharijor, Dorel, Filkhar, Ilmiora, Isola delle Città Purpuree, Jharkor, Lormyr, Oin, Pikarayd, Shazar, Deserto dei Sospiri, Tarkesh, Vilmir, Yu e la Landa Piangente. Questo mantiene le cose semplici per il gamemaster.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-200">SESSO DELL'AVVENTURIERO</h4>
+                        <p>Un avventuriero può essere maschio o femmina. Scegli liberamente. Nessuna regola di gioco li distingue.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-200">ETÀ DELL'AVVENTURIERO</h4>
+                        <p>Un avventuriero inizia con un'età di 17+1D6 anni. Può essere più vecchio, tirando D6 aggiuntivi e sommando il risultato di ogni tiro. Dopo cinque tiri di D6, ogni tiro aggiuntivo costa all'avventuriero due punti da qualsiasi caratteristica — questo è il prezzo dell'invecchiamento. In compenso, moltiplica il risultato del secondo e dei successivi tiri di D6 per 10 e aggiungili come punti percentuali alle abilità dell'avventuriero.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-200">ASPETTO, ATTEGGIAMENTO</h4>
+                        <p>Registra ciò che uno straniero noterebbe per primo del tuo avventuriero. Trova il punteggio dell'APP dell'avventuriero nella tabella, quindi tira il numero di volte indicato e incorpora i risultati dalla Tabella dei Tratti Distintivi.</p>
+                    </div>
+                 </div>
+            </section>
+            
+            <section id="tratti-distintivi-tabella" class="mt-8">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">TABELLA DEI TRATTI DISTINTIVI</h3>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                     <div class="feature-box">
+                         <h4 class="font-bold text-center text-red-200">NUMERO DI TRATTI</h4>
+                         <table>
+                             <thead class="table-header"><tr><th>APP</th><th>Numero Tratti</th></tr></thead>
+                             <tbody>
+                                 <tr><td>8-9</td><td>3</td></tr>
+                                 <tr><td>10-11</td><td>2</td></tr>
+                                 <tr><td>12-14</td><td>1</td></tr>
+                                 <tr><td>15-16</td><td>2</td></tr>
+                                 <tr><td>17+</td><td>3</td></tr>
+                             </tbody>
+                         </table>
+                     </div>
+                     <div class="feature-box">
+                         <h4 class="font-bold text-center text-red-200">CATEGORIE (Tira 1D10 o scegli)</h4>
+                         <p>Se l'APP è basso, questi tratti contribuiscono a rendere l'avventuriero più brutto; se è alto, contribuiscono in qualche modo alla sua attrattiva.</p>
+                     </div>
+                 </div>
+                 <div class="mt-8 space-y-4 text-base">
+                     <p><strong>1. CAPELLI:</strong> ricci, rossi, neri, castani, biondi, grigi, calvo, calvo in cima, stempiato, rasato, a spazzola, arruffati, sporchi, unti, pieni di pidocchi, lunghi, molto lunghi, ricci, una caratteristica a tua scelta.</p>
+                     <p><strong>2. PELI FACCIALI:</strong> barba lunga, barba intrecciata, barba folta, barba arricciata e profumata, pizzetto, baffi enormi, sopracciglia folte, sopracciglia unite, basette, disegni mistici tagliati nella barba corta, una caratteristica a tua scelta.</p>
+                     <p><strong>3. TRATTI DEL VISO:</strong> naso grande, naso rotto, naso all'insù, naso aquilino, molto abbronzato, pallido, occhi neri, occhi grigi, occhi blu, occhi marroni, cicatrice, labbra sottili, labbra carnose, labbra sensuali, orecchie pelose, orecchie piccole, orecchie a sventola, denti bianchi, denti gialli, denti macchiati, denti irregolari, denti rotti, zigomi alti, mento enorme, mento sfuggente, doppio mento, pelle butterata, verruche, benda sull'occhio, tatuaggio, orecchini, anello al naso, una caratteristica a tua scelta.</p>
+                     <p><strong>4. ESPRESSIONE:</strong> occhi vivaci, orgoglioso, sprezzante, altezzoso, guardingo, piacevole, lascivo, arrogante, burbero, estroverso, curioso, furtivo, ingenuo, strabico, penetrante, amichevole, sottomesso, ubriaco, lascivo, mite, un'espressione a tua scelta.</p>
+                     <p><strong>5. VESTIARIO:</strong> ricco, costoso, pieno di buchi, vestiti che lasciano chi li indossa troppo al caldo o troppo al freddo, troppo bagnato, troppi gioielli, molti gioielli economici, formale, nuovo, antico, parzialmente nudo, a piedi nudi, stivali pregiati, sandali, ricamato con un emblema speciale, sexy, cappello largo, cappello a punta, cappello conico, cappello corazzato, malmesso, attillato, per il sesso sbagliato, abiti da notte, un vestiario a tua scelta.</p>
+                     <p><strong>6. PORTAMENTO:</strong> rigido, disinvolto, curvo, stanco, agile, vivace, spavaldo, invadente, umile, arrabbiato, cedevole, sensuale, un portamento a tua scelta.</p>
+                     <p><strong>7. MODO DI PARLARE:</strong> bleso, balbuziente, esitante, acuto, nasale, stridulo, profondo, forte, sommesso, debole, accentato, duro d'orecchi e quindi forte, musicale, esigente, aggressivo, una caratteristica del parlato a tua scelta.</p>
+                     <p><strong>8. BRACCIA E MANI:</strong> un dito mancante, un dito in più, cicatrice, tatuaggio, bicipiti sporgenti, braccia e mani potenti, molto peloso, molto abbronzato, braccia lunghe e magre, pelle molto pallida, mancino, un braccio più lungo dell'altro, mani callose, una caratteristica a tua scelta.</p>
+                     <p><strong>9. TORSO:</strong> a botte, magro, grasso, muscoloso, glabro, molto peloso, spalle larghe, panciuto, tatuato, abbronzato, molto pallido, senza ombelico, un capezzolo mancante, cicatrice evidente, molte cicatrici, alto, basso, con una coda corta, si vedono tutte le ossa, una caratteristica a tua scelta.</p>
+                     <p><strong>10. GAMBE E PIEDI:</strong> un dito del piede mancante, un dito in più, cicatrice, molte cicatrici, cicatrici da fiamma o acido, tatuaggio, cosce e polpacci sporgenti, gambe molto lunghe, gambe molto corte, molto peloso, molto abbronzato, pelle molto pallida, zoppica dalla gamba sinistra, zoppica dalla gamba destra, piedi callosi, pelle rovinata, una caratteristica a tua scelta.</p>
+                 </div>
+            </section>
+        </main>
+
+        <hr class="my-12 border-t-2 border-gray-700">
+
+        <!-- ================================================================= -->
+        <!-- INIZIO CONTENUTO DA: avventurieri_3.html                          -->
+        <!-- ================================================================= -->
+        
+        <header class="text-center mb-8">
+            <h2 id="professioni" class="text-4xl font-bold text-red-400 section-title">Occupazioni dell'Avventuriero</h2>
+        </header>
+        
+        <main class="text-lg leading-relaxed">
+
+            <section id="tabella-occupazioni">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">Tabella delle Occupazioni Tipiche</h3>
+                <p>Scegli un'occupazione da quelle sottostanti, oppure scegli una delle colonne e tira un D100 per un risultato casuale. La colonna 'relativa' indica l'incidenza relativa delle occupazioni come Moorcock ritrae le violente terre dei Giovani Regni. La colonna 'lineare' dà all'avventuriero una probabilità uguale per ogni occupazione. Sebbene la colonna 'relativa' sia più realistica, solo quella lineare offre una buona possibilità di avere un background diverso da quello del contadino.</p>
+
+                <table>
+                    <thead class="table-header">
+                        <tr>
+                            <th>% Relativa (D100)</th>
+                            <th>% Lineare (D100)</th>
+                            <th>Occupazione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>01-02</td><td>01-05</td><td>Mendicante</td></tr>
+                        <tr><td>03-06</td><td>06-10</td><td>Artigiano, Negoziante</td></tr>
+                        <tr><td>07-10</td><td>11-15</td><td>Cacciatore</td></tr>
+                        <tr><td>11</td><td>16-20</td><td>Smarrito, Dimenticato</td></tr>
+                        <tr><td>12</td><td>21-25</td><td>Mercenario, Guardia del Corpo</td></tr>
+                        <tr><td>13</td><td>26-30</td><td>Mercante</td></tr>
+                        <tr><td>14</td><td>31-35</td><td>Nobile Minore</td></tr>
+                        <tr><td>15</td><td>36-40</td><td>Nomade</td></tr>
+                        <tr><td>16</td><td>41-45</td><td>Assassino a Pagamento, Sicario</td></tr>
+                        <tr><td>17-76</td><td>46-50</td><td>Contadino, Agricoltore</td></tr>
+                        <tr><td>77</td><td>51-55</td><td>Medico, Speziale</td></tr>
+                        <tr><td>78-80</td><td>56-60</td><td>Marinaio</td></tr>
+                        <tr><td>81</td><td>61-65</td><td>Scriba, Ingegnere</td></tr>
+                        <tr><td>82</td><td>66-70</td><td>Sciamano, Sacerdote, Cultista</td></tr>
+                        <tr><td>83-88</td><td>71-75</td><td>Schiavo (liberato o fuggito)</td></tr>
+                        <tr><td>89-91</td><td>76-80</td><td>Piccolo Commerciante</td></tr>
+                        <tr><td>92-97</td><td>81-85</td><td>Soldato, Guardia, Sentinella</td></tr>
+                        <tr><td>98</td><td>86-90</td><td>Esattore di Tasse o Affitti</td></tr>
+                        <tr><td>99</td><td>91-95</td><td>Ladro</td></tr>
+                        <tr><td>00</td><td>96-00</td><td>Trovatore, Intrattenitore</td></tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section id="descrizioni-occupazioni" class="mt-12">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">Descrizioni delle Occupazioni</h3>
+                <p>Di seguito le descrizioni per ogni occupazione. Scegli quella che preferisci o tirane una casualmente.</p>
+
+                <div class="mt-6 space-y-8">
+
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">MENDICANTE</h4>
+                        <p>Persino il migliore avventuriero ha bisogno di un'elemosina di tanto in tanto, ma come mendicante dedichi la tua vita a spillare soldi ai passanti. Pensa ai modi (ferite finte o false disabilità) con cui separi le persone dal loro denaro. Forse tutti i tuoi tratti distintivi sono genuinamente disgustosi. Se fallisci un tiro Fortuna, hai contatti a Nadsokor.</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Contrattare, Nascondere Oggetto, Travestirsi, Schivare, Parlantina, Muoversi Silenziosamente, Scassinare, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Armatura Infernale (1-4), Assumere Sembianze (4), Confondere (1).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 100 bronzi.</p>
+                    </div>
+
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">ARTIGIANO, NEGOZIANTE</h4>
+                        <p>Potresti essere stato un vasaio, un tessitore, un falegname, un locandiere, ecc. Scegli il mestiere. Rimanevi in un villaggio o in una parte della città, e i tuoi vicini riconoscevano la tua abilità. Poi è successo qualcosa che ha trasformato la tua vita in quella di un avventuriero. Cosa è stato?</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Mestiere, Contrattare, Valutare, Parlantina, Intuizione, Mondo Naturale, Odorato/Gusto, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Rendere Integro (3), Flessibilità di Xiombarg (1-3), Saggezza di Slortar (1-3).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 250 bronzi.</p>
+                    </div>
+
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">CACCIATORE</h4>
+                        <p>Ti aggiri per le foreste in cerca di cinghiali, cervi e altre prede. Sei attento e silenzioso, e apprezzi la bellezza naturale. Vedi gli abitanti delle città come stupidi chiacchieroni. Sei anche un girovago, e curioso del vasto mondo.</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Scalare, Muoversi Silenziosamente, Lanciare, Seguire Tracce, Trappole, un'abilità con arma da lancio, un'altra abilità con arma, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Occhi di Poiana (1), Corna di Hionhurn (1-3), Passo di Cran Liret (1-4).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> nessuno.</p>
+                    </div>
+
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">SMARRITO, DIMENTICATO</h4>
+                        <p>Sei un vagabondo, o una persona tormentata da sogni e visioni, o un giovane appena rimasto orfano, o semplicemente ti sei svegliato un giorno senza memoria. Non sai bene chi sei, e non riesci a ricordare un tempo in cui lo sapevi. Ti aggrappi a strani indizi e a nozioni sconcertanti che non funzionano mai del tutto, e trami per ricchezze che non appaiono mai del tutto.</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Nascondere Oggetto, Parlantina, Nascondersi, Intuizione, Ascoltare, Muoversi Silenziosamente, Cercare, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Manto di Cran Liret (1-4), Mezzanotte (1), Vista Stregata (3).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 15 bronzi.</p>
+                    </div>
+                    
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">MERCENARIO, GUARDIA DEL CORPO</h4>
+                        <p>Combatti su contratto per un periodo stabilito in cambio di paga. Hai appena finito il tuo ultimo lavoro e sei in cerca di impiego. Tolleri le persone, ma rispetti solo i combattenti abili.</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Rissa, Schivare, Cavalcare, Lanciare, tre abilità con armi a scelta, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Armatura Infernale (1-4), Lama Infernale (1-4), Artigli Infernali (1-4).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 200 bronzi.</p>
+                    </div>
+
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">MERCANTE</h4>
+                        <p>Un tempo vivevi di conti e agenti; i documenti fluivano attraverso i tuoi grassi libri contabili, e non avevi bisogno di viaggiare. Recentemente un disastro ti è costato quasi tutto: cosa è successo?</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Contrattare, Valutare, Intuizione, Ascoltare, Mondo Naturale, Altra Lingua, Giovani Regni, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Sorgere della Luna (1), Annullare Magia (1-4), Saggezza di Slortar (1-3).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 2000 bronzi.</p>
+                    </div>
+
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">NOBILE MINORE</h4>
+                        <p>Sei molto lontano dal titolo, o la tua famiglia potrebbe essere caduta in disgrazia. In entrambi i casi, nessun reddito regolare accompagna il tuo titolo; forse sei stato diseredato, o la fazione sbagliata ora controlla il trono. L'avventura è diventata la professione più nobile che puoi permetterti. Titoli appropriati potrebbero includere baronetto, burgravio, cavaliere, margravio, marchese, marchesa o thane.</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Arte, Altra Lingua, Cavalcare, Odorato/Gusto, due abilità con armi a scelta, Giovani Regni, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Armatura Infernale (1-4), Fiamma Affilata Infernale (1-4), Anima di Chardros (1-3).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 500 bronzi.</p>
+                    </div>
+
+                     <div class="flex justify-center my-8">
+                        <a href="immagini.html#img-15" class="inline-block p-2 bg-gray-800 border border-gray-600 rounded-lg hover:border-red-400 transition">
+                            <img src="https://placehold.co/100x100/111827/e5e7eb?text=Mano+su+Spada" alt="Mano sulla Spada" class="rounded">
+                        </a>
+                    </div>
+                    
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">NOMADE</h4>
+                        <p>Sei un guerriero del Deserto dei Sospiri, onorevole, dignitoso e facile all'ira. La gente di città sembra godere nel barattare l'onore per il denaro: disprezzi i loro modi. Un giorno tornerai dove le persone sono nobili e oneste, ma per ora sei in questo luogo straniero e devi sopravvivere.</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Contrattare, Ascoltare, Mondo Naturale, Cavalcare, Seguire Tracce, due abilità con armi, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Lama Infernale (1-4), Fiamme di Kakatal (4), Velocità di Vezhan (1-3).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 50 bronzi.</p>
+                    </div>
+
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">ASSASSINO A PAGAMENTO, SICARIO</h4>
+                        <p>Sei spietato e pericoloso. Voci e sussurri ti precedono. Hai meno simpatia per i tuoi datori di lavoro che per le tue vittime, eppure adempi fedelmente ai tuoi compiti omicidi. Hai molti nemici. Recentemente ti è successo qualcosa di terribile, e ti ha cambiato per sempre. Cos'è stato?</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Travestirsi, Nascondersi, Scalare, Muoversi Silenziosamente, Pozioni, Lanciare, due abilità con armi, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Manto di Cran Liret (1-4), Sicurezza di Cran Liret (1-4), Protezione (3).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 1000 bronzi.</p>
+                    </div>
+
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">CONTADINO, AGRICOLTORE</h4>
+                        <p>Tutta la tua famiglia e tutto ciò che conoscevi erano legati come contadini alla terra per legge o per necessità. Eravate tutti trattati come schiavi. In qualche modo sei fuggito. Ora sei il tuo padrone. Non tornerai mai più.</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Mestiere, Mondo Naturale, Ascoltare, Odorato/Gusto, due abilità con armi improvvisate (vedi le tabelle delle armi), e due altre abilità come specialità personali.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Dono di Grome (4), Guarire (2), Rendere Integro (3).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 25 bronzi.</p>
+                    </div>
+
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">MEDICO, SPEZIALE</h4>
+                        <p>La tua famiglia è stata in grado di farti fare un apprendistato o di pagarti un'istruzione, ma la tua vera formazione potrebbe essere arrivata più tardi, quando hai cercato di alleviare il dolore e la sofferenza umana. D'altra parte, forse la tua pozione ha ucciso il Duca invece di curarlo, e hai dovuto lasciare la città in fretta e furia.</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Parlantina, Intuizione, Fisica, Altra Lingua, Pozioni, Scriba, Giovani Regni, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Guarire (2), Corna di Hionhurn (1-3), Confondere (1).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 1000 bronzi.</p>
+                    </div>
+
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">MARINAIO</h4>
+                        <p>Sei abile con vele, barche e navi, e conosci le maree, il vento e le stelle. Sei già stato in metà dei porti dell'Ovest e vuoi visitare il resto. La vita è gloriosa, tranne per le tempeste, i pirati e i terrori degli abissi, quindi perché non hai mai soldi?</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> un'abilità con arma, Navigare, Nuotare, Orientarsi, Scalare, Mestiere, Mondo Naturale, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Soffio di Vita (1), Rendere Integro (3), Ali di Lassa (4).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 100 bronzi.</p>
+                    </div>
+
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">SCRIBA, INGEGNERE</h4>
+                        <p>Sei un idealista che ha aiutato ad amministrare leggi o a gestire progetti di costruzione. Potresti essere stato indipendente da governi e governanti, ma sei diventato comunque cinico a causa della corruzione con cui hai dovuto collaborare. Ti sei dimesso disgustato. Ora rispetti solo la lama affilata dell'acciaio e mantieni il brillante onore di un avventuriero.</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Mestiere, Valutare, Intuizione, Mondo Naturale, Altra Lingua, Scriba, Giovani Regni (o Scassinare o Cercare se ingegnere), e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Orecchio del Demone (1), Flessibilità di Xiombarg (1-3), Evocare Elementale (1) o Dono di Grome (4) per gli ingegneri.</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 300 bronzi.</p>
+                    </div>
+                    
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">SCIAMANO, SACERDOTE, CULTISTA</h4>
+                        <p>Eri un veggente a cui erano state concesse visioni del soprannaturale. Forse ciò che hai imparato si è scontrato con i modi della tua tribù, del tuo villaggio o della tua chiesa, o forse hai appreso qualcosa di così terrificante sul futuro che ora vaghi per il mondo, reclutando aiuto nella grande lotta a venire. Forse complotti silenziosamente contro lo stato attuale delle cose. Forse metti in discussione la tua affiliazione. Come leader spirituale, hai già dimostrato dedizione al tuo percorso: aggiungi 1D8 punti al Caos, o 1D6 punti all'Equilibrio o alla Legge.</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Parlantina, Intuizione, Mondo Naturale, Oratoria, Fisica, Pozioni, Seguire Tracce, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Assumere Sembianze (4), Anima di Chardros (1-3), Vista Stregata (3).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 300 bronzi.</p>
+                    </div>
+
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">SCHIAVO (LIBERATO O FUGGITO)</h4>
+                        <p>Se proveniente da Melniboné o da una ricca famiglia dei Giovani Regni, potresti essere in grado di fare quasi qualsiasi cosa. Se da qualsiasi altro background, di solito svolgevi solo compiti umili e disgustosi. Poiché uno schiavo è impotente, passavi gran parte di ogni giornata cercando di evitare i guai e scaricando la colpa. Ma ora sei libero. Te la sei guadagnata, o l'hai presa con la forza? I tuoi vecchi padroni ti stanno cercando?</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Arte, Mestiere, Schivare, Parlantina, Nascondersi, Muoversi Silenziosamente, Odorato/Gusto, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Guarire (2), Legare (1), Balzo di Cran Liret (1-4).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> nessuno.</p>
+                    </div>
+
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">PICCOLO COMMERCIANTE</h4>
+                        <p>Possedevi una fila di animali da soma, una carovana di carri o una piccola nave. Giravi nell'entroterra e tornavi da una città portuale, o risalivi un fiume, o lungo una costa. Conosci molto bene quella rotta. Eri onesto con i clienti abituali e trattavi duramente con gli estranei. Poi la tua attività è stata spazzata via da banditi, pirati, invasori o concorrenti rapaci. Un giorno ti vendicherai.</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Contrattare, Nascondere Oggetto, Valutare, Parlantina, Intuizione, Cavalcare, Giovani Regni, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Velocità di Vezhan (1-3), Annullare Magia (1-4), Saggezza di Slortar (1-3).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 500 bronzi.</p>
+                    </div>
+
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">SOLDATO, GUARDIA, SENTINELLA</h4>
+                        <p>Potresti anche essere un marine. Lavoravi per qualche nobile, un regno o una città, o un ricco mercante. Settimana dopo settimana, avevi poco da fare se non esercitarti con le armi e tenerti in forma. Non hai ottenuto nulla. Il tuo capo ti ha dato molto per cui morire, ma niente per cui vivere. Ora che lavori per te stesso, potrebbero accadere grandi cose.</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Rissa, Schivare, Muoversi Silenziosamente, Scudo, Lanciare, due abilità con armi a scelta, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Orecchio del Demone (1), Fiamma Affilata Infernale (1-4), Baluardo Infernale (1-4).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 50 bronzi.</p>
+                    </div>
+
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">ESATTORE DI TASSE O AFFITTI</h4>
+                        <p>Sei o eri impiegato da qualche grande proprietario terriero o da qualche nobile. Capivi che i soldi dovevano entrare, altrimenti saresti rimasto senza lavoro. Per avere davvero successo, potresti aver usato Contrattare e Parlantina per spremere ancora più soldi. Forse ti sei stancato della sofferenza che causavi, o forse sei diventato viscido come il tuo capo e gli hai rubato. Ora sei per conto tuo.</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Contrattare, Valutare, Parlantina, Scassinare, Cercare, Seguire Tracce, un'abilità con arma, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Legami Infrangibili (3), Plasticità di Balo (1-3), Protezione (3).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 500 bronzi.</p>
+                    </div>
+
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">LADRO</h4>
+                        <p>Eri uno specialista criminale: un rapinatore, un borseggiatore, ecc. All'inizio ti sembrava intelligente e redditizio. Poi un furto è andato storto, o hai derubato la persona sbagliata e ti sei fatto un nemico potente. Ora forse ti sei redento. Il successo come avventuriero lascerà il tuo passato alle spalle, o no?</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Scalare, Travestirsi, Nascondersi, Ascoltare, Scassinare, Cercare, un'abilità con arma, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Visione da Ratto (1), Passo di Cran Liret (1-4), Protezione (3).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 500 bronzi.</p>
+                    </div>
+                    
+                    <div class="occupation-block">
+                        <h4 class="text-xl font-bold text-red-200">TROVATORE, INTRATTENITORE</h4>
+                        <p>Sei spiritoso e di bell'aspetto, e ami attirare l'attenzione. Potresti essere abile nel canto, con strumenti musicali, poesie satiriche, storie che tutti conoscono già, giochi di prestigio, funambolismo, acrobazie, giocoleria, giochi di mano o qualche altro mestiere divertente. Hai pochi soldi e sei stanco di vivere alla giornata. Forse l'avventura è una vita migliore.</p>
+                        <p class="mt-2 text-base"><strong class="text-red-300">Abilità:</strong> Arte, Contrattare, Mestiere, Parlantina, Intuizione, Oratoria, un'abilità con arma, e un'altra abilità come specialità personale.</p>
+                        <p class="text-base"><strong class="text-red-300">Incantesimi Opzionali:</strong> Flessibilità di Xiombarg (1-3), Volto di Arioch (1-3), Saggezza di Slortar (1-3).</p>
+                        <p class="text-base"><strong class="text-red-300">Denaro Extra:</strong> 150 bronzi.</p>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+        
+        <hr class="my-12 border-t-2 border-gray-700">
+
+        <!-- ================================================================= -->
+        <!-- INIZIO CONTENUTO DA: avventurieri_4.html                          -->
+        <!-- ================================================================= -->
+
+        <header class="text-center mb-8">
+            <h2 class="text-4xl font-bold text-red-400 section-title">Scegliere l'Occupazione e Consigli</h2>
+        </header>
+        
+        <main class="text-lg leading-relaxed space-y-12">
+
+            <section id="scegliere-occupazione">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">Scegliere un'Occupazione</h3>
+                <p>Non ci sono classi di personaggio in questo gioco. Esistono innumerevoli occupazioni. Le venti elencate sono tra quelle menzionate nella saga. Molte altre potrebbero essere create. I giocatori e il gamemaster dovrebbero consultarsi prima di farlo. Per utilizzare questa sottosezione, prima tira o scegli dalla Tabella delle Occupazioni Tipiche. Quindi, trova la tua occupazione tra i riassunti delle Occupazioni dell'Avventuriero. Lì troverai una brevissima descrizione della situazione del tuo avventuriero come personaggio iniziale. Ognuna è un suggerimento. Idee migliori ti verranno in mente, e dovresti usarle quando lo fanno.</p>
+
+                <div class="mt-6 space-y-4">
+                    <div>
+                        <h4 class="font-bold text-red-200">ABILITÀ</h4>
+                        <p>Assegna 250 punti percentuali in qualsiasi combinazione tra le otto abilità dell'occupazione scelta. La maggior parte delle occupazioni consente almeno una scelta libera tra quelle nel capitolo delle abilità e nelle tabelle delle armi, ma le abilità Sfere Infinite e Regni Sconosciuti non possono essere scelte, solo apprese durante il gioco. Le abilità con le armi possono includere Rissa e Lotta. Se il gamemaster lo permette, un'abilità elencata può essere scambiata con un'altra dalla lista delle abilità.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-200">MAGIA</h4>
+                        <p>Sebbene ogni occupazione possa includere fino a tre incantesimi, nessuno è obbligato ad accettarli. Per poterli imparare, il tuo avventuriero deve essere abbastanza forte (POT 16 o superiore) per lanciare magie. Il tuo avventuriero può scegliere di rifiutare la magia, poiché gli incantesimi elencati sono di origine Caotica. Aggiungi il numero grezzo di incantesimi accettati come punti Caos nel riquadro del Caos in alto a destra nella scheda dell'avventuriero. Elenca i nomi e i costi in punti magia degli incantesimi sulla parte anteriore della scheda dell'avventuriero sotto Magia in Memoria e sul retro della scheda, sotto Grimorio, Note. Se il tuo avventuriero accetta degli incantesimi, crea una storia per te stesso su come li ha ottenuti.</p>
+                        <p>La maggior parte dei Giovani Regni associa la magia alla tirannia del dominio Melnibonéano. La maggior parte delle persone disprezza e teme la magia e spera un giorno di vederne la fine, perché crede che non produca altro che miseria. Ciononostante, altri ne traggono astutamente beneficio, e nobili e mercanti potenti assumono segretamente maghi personali.</p>
+                    </div>
+                     <div>
+                        <h4 class="font-bold text-red-200">DENARO EXTRA</h4>
+                        <p>La maggior parte delle occupazioni dota l'avventuriero di denaro extra. Gli importi rappresentano ciò che sei riuscito a risparmiare o con cui sei fuggito. Le proporzioni concesse rappresentano approssimativamente il potere di guadagno delle occupazioni.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-200">AVVENTURIERI PERSONALIZZATI</h4>
+                        <p>Questo è un promemoria sulla creazione di avventurieri personalizzati. Per farlo, genera il personaggio normalmente fino al Passo 5, nella pagina "Creare un Avventuriero". Quindi scegli 13 abilità qualsiasi tranne Sfere Infinite e Regni Sconosciuti, e aggiungi 20 punti abilità a ciascuna. Se non vuoi una delle venti occupazioni in questo capitolo, allora inventane una tua e assegna altri 250 punti abilità come ritieni opportuno. Scegli fino a tre degli incantesimi elencati tra le occupazioni. Per denaro extra, tira 2D100 bronzi. Il resto della creazione dell'avventuriero continua normalmente.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="retro-scheda">
+                 <div class="info-box mt-8">
+                    <h4 class="font-bold text-center text-xl text-red-200 mb-4">INFORMAZIONI SUGLI SCUDI</h4>
+                    <p class="text-center">La notazione <strong class="text-red-300">MSGP</strong> registra il tipo di scudo che il tuo avventuriero porta: mezzo, piccolo, grande o pesante (half, small, full, or large).</p>
+                </div>
+
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">IL RETRO DELLA SCHEDA</h3>
+                <p>Il retro della scheda dell'avventuriero è per lo più autoesplicativo.</p>
+                <ul class="list-disc list-inside mt-4 space-y-2">
+                    <li>La sezione superiore, <strong>background</strong>, si riempirà gradualmente, man mano che il tuo avventuriero si fa amici e nemici, incontra grandi persone e compie grandi gesta. Questo è un posto dove annotare cose che altrimenti potrebbero essere dimenticate.</li>
+                    <li>Il capitolo sulla magia contiene informazioni sui <strong>grimori</strong> e su come vengono usati. Il grimorio sulla scheda dell'avventuriero è semplicemente un elenco delle magie che conosce.</li>
+                    <li>Come la sezione del background, la <strong>ricchezza</strong> si riempirà gradualmente, se mai lo farà.</li>
+                    <li>Esiste uno spazio per tre <strong>demoni o elementali vincolati</strong>. Molti giocatori non useranno queste aree, ma un avventuriero potrebbe avere un servitore umano che potrebbe rientrare in uno di questi spazi. Ogni avventuriero inizia con un cavallo. Se le sue statistiche ti interessano, tienile nello spazio indicato.</li>
+                </ul>
+            </section>
+
+            <section id="consigli-sopravvivenza">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">CONSIGLI DI SOPRAVVIVENZA</h3>
+                <p>Naturalmente vorrai il meglio di tutto per il tuo avventuriero, ma non è possibile in un mondo dove la maggior parte delle persone è povera. Allo stesso modo, vorrai anche caratteristiche e abilità elevate per lui o lei, ma avere punteggi alti in tutto non sarà possibile. Ecco alcuni consigli per creare avventurieri pronti per la vita nei Giovani Regni e per la sopravvivenza in questo gioco.</p>
+                <ul class="list-disc list-inside mt-4 space-y-4">
+                    <li><strong>ABILITÀ CON LE ARMI:</strong> La maggior parte delle persone nei Giovani Regni porta armi e non esita a usarle. Se non vuoi che altri personaggi affinino le loro abilità sconfiggendo il tuo avventuriero, abbi un'abilità con un'arma al 101% o superiore, poiché quella percentuale o superiore dimezza la possibilità di un fallimento critico (fumble). Poiché la percentuale di parata di un'arma scende di 30 punti percentuali ogni volta che l'arma para in un round, un'alta abilità con un'arma da corpo a corpo può essere molto utile. I punti percentuali di un'abilità con un'arma ad alta percentuale possono essere divisi tra più attacchi. Non da ultimo, la possibilità di un successo critico aumenta man mano che il tuo avventuriero diventa più abile.</li>
+                    <li><strong>SCUDI:</strong> Se il tuo avventuriero intende combattere seriamente, ha bisogno di uno scudo, o almeno di una seconda arma. Se il tuo avventuriero para con uno scudo, il rischio di rompere un'arma diminuisce notevolmente, e ignora alcuni risultati della tabella dei fallimenti critici. Se il tuo avventuriero ha abilità, uno scudo è più affidabile dell'armatura e blocca attacchi più forti. (Certo, Elric si è fatto strada attraverso eserciti e non ha mai usato uno scudo, ma Tempestosa è unicamente potente — è improbabile che il tuo avventuriero ottenga una spada runica che combatte da sola).</li>
+                    <li><strong>ARMATURA:</strong> Entrando in combattimento corpo a corpo, indossa la migliore armatura possibile. L'armatura in questo gioco non è come uno scudo — uno scudo ha un effetto difensivo fisso. L'armatura ha debolezze e aperture, quindi il danno da attacco che ferma ogni volta deve essere tirato. Possono verificarsi tiri sfortunati. Ciononostante, l'armatura può fare la differenza tra una ferita grave e una ferita minore, o tra una ferita grave e la morte. Potrebbe essere l'unica protezione del tuo avventuriero da un'imboscata o un tentativo di assassinio.</li>
+                    <li><strong>SCHIVARE:</strong> Avere l'abilità Schivare più alta possibile. Come puoi immaginare, essere in grado di schivare un colpo di un'ascia da battaglia, per esempio, può essere molto utile. Schivare e parare sono manovre integrate in questo gioco; un alto valore di Schivare dà al tuo avventuriero la massima flessibilità di scelta possibile.</li>
+                    <li><strong>MAGIA:</strong> Ricorda, il conflitto centrale nella saga è tra Legge e Caos. La Legge non approva molto la magia e resiste abbastanza bene durante la saga. Abilità elevate compensano gran parte della magia, che può essere molto più lenta da avviare rispetto a scoccare una freccia. Se il tuo avventuriero intende lanciare magie, non può avere troppa caratteristica Potere — è necessario almeno POT 16. Un POT elevato migliora anche il tiro Fortuna. Gli incantesimi si ottengono per lo più durante il gioco. Gli avventurieri potrebbero insegnarseli a vicenda se ricevessero incantesimi diversi durante la creazione del personaggio.</li>
+                    <li><strong>RAGGRUPPARE ABILITÀ:</strong> È una buona idea avere diversi tipi di abilità, ma è anche utile avere abilità che lavorano insieme. Ad esempio, alte percentuali in Muoversi Silenziosamente, Seguire Tracce e Trappole suggeriscono un personaggio che è un cacciatore o un trapper, così come alti valori in Contrattare, Intuizione e Scriba suggeriscono un mercante o un commerciante. Raggruppare le abilità crea un'area generale di competenza, dando a un avventuriero flessibilità di azione e risposta, e rendendo la sua personalità più comprensibile da interpretare.</li>
+                    <li><strong>ABILITÀ DI COMUNICAZIONE:</strong> Cerca di avere un alto valore in Parlantina, Contrattare, Oratoria o Arte — il tuo avventuriero vorrà influenzare e convincere le persone oltre a combatterle. Una buona abilità nella lingua Melnibonéana e un'alta Arte non guasteranno se hai intenzione di visitare la Città Sognante.</li>
+                    <li><strong>FAI DOMANDE PRIMA:</strong> Il tuo gamemaster sarà lieto di dirti tutto ciò che di significativo il tuo avventuriero vede, ma potresti avere idee su ciò che vuoi sapere. Non aver paura di chiedere informazioni: lo spadaccino sembra sicuro di sé? Il mercante indossa molti gioielli d'oro? I legni della nave sono brillanti e ben tenuti, o macchiati dall'età e dalla salsedine?</li>
+                    <li><strong>NON ARRABBIARTI FINCHÉ NON CONOSCI L'AVVERSARIO:</strong> Le abilità possono raggiungere centinaia di punti percentuali, la magia può essere quasi invisibile e qualsiasi individuo ben vestito può avere amici che possono mettere in allarme un'intera città. Iniziare una rissa con la persona sbagliata è sciocco. Aspetta una buona ragione, poi combatti quando l'onore lo richiede.</li>
+                    <li><strong>SAPPI CHI SONO I TUOI AMICI E TIENITELI STRETTI:</strong> Se come gruppo gli avventurieri hanno alleanze diverse, a un certo punto le vostre strade potrebbero divergere. Elric arriva a capire che la lotta tra Legge e Caos allontana le persone e crea agonia inutile. Ma Legge e Caos sono elementi all'interno della personalità di ogni persona: non devono essere elementi distruttivi. I giocatori di avventurieri Caotici devono trovare modi divertenti per esprimere creatività e stati d'animo mutevoli; i giocatori di avventurieri Legali possono essere severi e legalisti, ma ricordarsi anche di ridere; coloro che interpretano avventurieri dell'Equilibrio devono trovare spazio per il perdono e l'apprezzamento di tutto ciò che accade intorno a loro. Nonostante le diverse alleanze, cercate di interpretare il vostro ruolo puntando all'amicizia. Se il personaggio del tuo avventuriero lo impedisce attivamente, allora potrebbe aver bisogno di nuovi compagni.</li>
+                    <li><strong>AVERE UN RISCATTO CREDIBILE:</strong> Se tutto il resto fallisce, un nemico che ha il tuo avventuriero alla sua mercé potrebbe essere distolto dall'omicidio dalla promessa di un pagamento. La chiave qui è "credibile": l'importo promesso deve essere di almeno cinquemila bronzi per giustificare il disturbo, l'avventuriero deve aver pensato a un modo per consegnare in modo affidabile il denaro e poi per sfuggire alle grinfie del suo rapitore, e deve convincere il rapitore che tutto ciò che sta dicendo è praticamente vero.</li>
+                </ul>
+            </section>
+            
+        </main>
+        
+        <hr class="my-12 border-t-2 border-gray-700">
+
+        <!-- ================================================================= -->
+        <!-- INIZIO CONTENUTO DA: avventurieri_5.html                          -->
+        <!-- ================================================================= -->
+
+        <header class="text-center mb-8">
+            <h2 class="text-4xl font-bold text-red-400 section-title">Prezzi</h2>
+        </header>
+        
+        <main class="text-lg leading-relaxed space-y-8">
+
+            <section id="valuta">
+                <p>I costi sono solitamente indicati in unità standard chiamate <strong>bronzi</strong>. Un bronzo è una moneta di metallo dei Giovani Regni. Un bronzo ti compra una tazza di birra o una pagnotta di pane. Un bronzo ha abbastanza valore da essere utile, eppure non così tanto da dispiacersi troppo per perderne uno.</p>
+                <p class="mt-4">Presumiamo che ogni Giovane Regno abbia una o più monete equivalenti e, per facilità di gioco, che tutte queste monete valgano circa lo stesso e siano quindi intercambiabili, sebbene i loro disegni, nomi, date e forme varino.</p>
+                <p class="mt-4">L'alternativa realistica a questa blanda soluzione al problema del conio sarebbe l'introduzione di dozzine o centinaia di monete diverse, di cambio confuso. I gamemaster che desiderano creare un sistema di conio più realistico sono incoraggiati a farlo, ma devono farlo senza guida dalla saga.</p>
+                <p class="mt-4">Sebbene il loro cambio sia equivalente, è politicamente pericoloso tentare di spendere le monete tigre di Pan Tang a Vilmir, per esempio, o offrire dragoni d'argento Melnibonéani a Lormyr, per ragioni che le descrizioni di quei luoghi rendono chiare.</p>
+                <p class="mt-4">Un bronzo vale nominalmente venti monete più piccole chiamate <strong>groat</strong>. I groat sono fatti di vari metalli di base di dubbia reputazione, molti mercanti si rifiutano di accettarli e la maggior parte delle persone li disprezza. "Non vale un groat!" è un'imprecazione comune. I tribunali limitano abitualmente il debito massimo che può essere pagato in groat.</p>
+                <p class="mt-4">Esistono anche monete d'oro e d'argento, ma la cattiva gestione, la pirateria e i principi scialacquatori spingono le persone (tranne a Imrryr) a tesaurizzare le loro monete d'oro e d'argento, e la loro circolazione è rara. Un argento ha un valore nominale approssimativamente uguale a cinque bronzi, ma il suo valore metallico è ora di quasi 110 bronzi. (Quando Elric lancia una moneta d'argento Melnibonéana a un locandiere servile, quel locandiere ha motivo di gioire). Il valore di un oro è di quasi 1000 bronzi. Mancando di valore nominale, argenti e ori vengono spesso fusi e convertiti in gioielli o in argenteria domestica.</p>
+                <p class="mt-4">Le ruote d'oro Melnibonéane, grandi come un palmo, non sono valuta. Ognuna è un memoriale di un Imperatore Drago, e ne viene realizzata solo una per Imperatore, ciascuna scolpita in oro puro. Una ruota pesa in media poco meno di 20 libbre d'oro. Dopo l'ascesa di Elric esistono al massimo 428 ruote d'oro. Ognuna è diversa, in varia misura. Sono tutte tesori di grande bellezza, che valgono molto più del valore del loro metallo. Le ruote non appaiono in circolazione nei Giovani Regni fino a dopo il Sacco di Imrryr.</p>
+            </section>
+
+            <section id="gemme">
+                <p class="mt-8">Forse smosse durante la grande Guerra degli Elementi, le gemme si trovano in ogni terra. Solo gli schiavi di Melniboné tagliano e sfaccettano in modo affidabile le pietre trasparenti; i gioiellieri dei Giovani Regni devono accontentarsi di lucidare le pietre naturali e poi montarle per ottenere il miglior effetto. Tra le pietre preferite dagli acquirenti ci sono agate, calcedonio, diamanti, smeraldi, otredos dorati, giada, lapislazzuli, mios, onice, opali, peryx, rubini, zaffiri, topazi e turchesi. Nessuna pietra è considerata migliore o più meravigliosa, come oggi pensiamo dei diamanti.</p>
+                <p class="mt-4">Per comodità di gioco, valuta le gemme in base alla dimensione relativa e alla bellezza del colore. Usa la tabella vicina, o il gamemaster può creare uno schema alternativo.</p>
+
+                <h4 class="text-xl font-bold text-red-300 sub-section-title my-4">Valore Nominale delle Gemme (in Bronzi)</h4>
+                <table>
+                    <thead class="table-header">
+                        <tr>
+                            <th>Dimensione</th>
+                            <th>Indifferente</th>
+                            <th>Buona</th>
+                            <th>Pregiata</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Piccola</td><td>D100</td><td>D100 x5</td><td>D100 x20</td></tr>
+                        <tr><td>Media</td><td>D100 x2</td><td>D100 x20</td><td>D100 x100</td></tr>
+                        <tr><td>Grande</td><td>D100 x5</td><td>D100 x100</td><td>D100 x1000</td></tr>
+                    </tbody>
+                </table>
+                <p class="mt-4">Quindi una pietra media di buona qualità vale tra 20 e 2000 bronzi. Se il valore tirato della pietra è relativamente basso, sembrava rara ma si rivela essere un'agata o un grande cristallo di quarzo, oppure la pietra è incrinata o di forma sgradevole. Se il valore della pietra è molto alto ma non il massimo, la gemma è un esemplare eccellente, con solo un piccolo difetto. Una tabella offre solo una guida generale; i gamemaster dovrebbero aggiustare il valore come ritengono opportuno.</p>
+            </section>
+            
+            <section id="listini">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">Esempi di Prezzi</h3>
+                <p>I prezzi sono in bronzi, se non diversamente specificato. Questi sono prezzi medi. Il fatto che qualcosa costi così tanto per essere acquistato non significa che possa essere venduto per quella somma; potrebbero non esserci affatto acquirenti. I prezzi cambiano da acquirente ad acquirente a seconda delle condizioni, dei luoghi e delle stagioni. Calcola il valore dell'equipaggiamento usato in buone condizioni come la metà di quello nuovo. Trova i costi di armi, armature e scudi nel capitolo del combattimento, nelle colonne di destra delle tabelle delle armi.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+                    <div>
+                        <h4 class="text-xl font-semibold text-red-200 mb-2">SERVIZI</h4>
+                        <table><tbody>
+                            <tr><td>Cure mediche ordinarie</td><td>5</td></tr>
+                            <tr><td>Taglio di capelli o barba</td><td>2</td></tr>
+                            <tr><td>Pasto mediocre</td><td>2</td></tr>
+                            <tr><td>Buon pasto</td><td>6</td></tr>
+                            <tr><td>Pasto eccellente</td><td>25</td></tr>
+                            <tr><td>Rifugio, per notte: pavimento di una locanda</td><td>3</td></tr>
+                            <tr><td>Posto letto in dormitorio</td><td>8</td></tr>
+                            <tr><td>Camera privata</td><td>45</td></tr>
+                            <tr><td>Professionista dell'amore, per sera: novizio annoiato</td><td>5</td></tr>
+                            <tr><td>Esperto entusiasta</td><td>25</td></tr>
+                            <tr><td>Stalla per un cavallo, per notte</td><td>2-8</td></tr>
+                            <tr><td>Far scrivere una lettera</td><td>4</td></tr>
+                            <tr><td>Addestramento abilità, nominale a settimana</td><td>50</td></tr>
+                            <tr><td>Carpentiere, muratore, al giorno</td><td>40</td></tr>
+                            <tr><td>Fabbro, al giorno</td><td>50</td></tr>
+                            <tr><td>Armaiolo, al giorno</td><td>60</td></tr>
+                            <tr><td>Un servitore affidabile, a settimana</td><td>30</td></tr>
+                            <tr><td>Mazzetta a un ufficiale</td><td>20+</td></tr>
+                            <tr><td>Offerta lodevole al tempio</td><td>10+</td></tr>
+                            <tr><td>Rappresentanza in tribunale, al giorno</td><td>60+</td></tr>
+                            <tr><td>Inviare un messaggero in città</td><td>1</td></tr>
+                        </tbody></table>
+
+                        <h4 class="text-xl font-semibold text-red-200 mt-6 mb-2">CIBO & BEVANDE</h4>
+                        <table><tbody>
+                            <tr><td>Tazza di latte acido</td><td>5 groat</td></tr>
+                            <tr><td>Boccale di birra</td><td>1</td></tr>
+                            <tr><td>Brocca di birra</td><td>6</td></tr>
+                            <tr><td>Calice di vino scadente</td><td>1</td></tr>
+                            <tr><td>Calice di buon vino</td><td>3</td></tr>
+                            <tr><td>Decanter di buon vino</td><td>20</td></tr>
+                            <tr><td>Ciotola di pappa fredda</td><td>10 groat</td></tr>
+                            <tr><td>Pollo arrosto intero</td><td>5</td></tr>
+                            <tr><td>Salmone al vapore intero</td><td>10</td></tr>
+                            <tr><td>Maialino da latte arrosto intero</td><td>40</td></tr>
+                            <tr><td>Prosciutto bollito intero</td><td>15</td></tr>
+                            <tr><td>Cosciotto di manzo arrosto</td><td>25</td></tr>
+                            <tr><td>Tre uova di gallina vecchie</td><td>1</td></tr>
+                            <tr><td>Tre uova di gallina fresche</td><td>2</td></tr>
+                            <tr><td>Manciata di uova di quaglia</td><td>5</td></tr>
+                            <tr><td>Pagnotta di pane fresco</td><td>1</td></tr>
+                            <tr><td>Pezzo di pane da viaggio</td><td>1</td></tr>
+                            <tr><td>Sei cipolle</td><td>1</td></tr>
+                            <tr><td>Treccia di bulbi d'aglio</td><td>1</td></tr>
+                            <tr><td>Vasetto di miele</td><td>5</td></tr>
+                            <tr><td>Budino di sego</td><td>4</td></tr>
+                            <tr><td>Gelato al lampone, un cucchiaio</td><td>34</td></tr>
+                        </tbody></table>
+
+                        <h4 class="text-xl font-semibold text-red-200 mt-6 mb-2">ANIMALI VIVI, CONDIZIONI MEDIE</h4>
+                        <table><tbody>
+                            <tr><td>Asino</td><td>1,000</td></tr>
+                            <tr><td>Gallina ovaiola</td><td>10</td></tr>
+                            <tr><td>Mucca da latte</td><td>1,500</td></tr>
+                            <tr><td>Cane da guardia</td><td>40</td></tr>
+                            <tr><td>Maiale pregiato</td><td>650</td></tr>
+                            <tr><td>Maialino</td><td>25</td></tr>
+                            <tr><td>Cavallo da sella</td><td>2,000</td></tr>
+                            <tr><td>Mulo</td><td>1,400</td></tr>
+                            <tr><td>Bue</td><td>1,900</td></tr>
+                            <tr><td>Cane da pastore</td><td>150</td></tr>
+                        </tbody></table>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold text-red-200 mb-2">COSE</h4>
+                        <table><tbody>
+                             <tr><td>Sella e finimenti</td><td>300</td></tr>
+                            <tr><td>Libro di canti o di storia</td><td>100+</td></tr>
+                            <tr><td>Libro bianco adatto come grimorio</td><td>50</td></tr>
+                            <tr><td>Vecchio grimorio (10 voci utili)</td><td>15,000</td></tr>
+                            <tr><td>Vecchio grimorio (100 voci non testate)</td><td>50,000</td></tr>
+                            <tr><td>Zaino di pelle</td><td>40</td></tr>
+                            <tr><td>Corda (30 iarde, FOR 40)</td><td>20</td></tr>
+                            <tr><td>Catena d'acciaio (15 iarde, FOR 64)</td><td>290</td></tr>
+                            <tr><td>Lucchetto e chiave di ferro</td><td>16</td></tr>
+                            <tr><td>Collare da schiavo</td><td>20</td></tr>
+                            <tr><td>Piede di porco d'acciaio</td><td>40</td></tr>
+                            <tr><td>Pala</td><td>10</td></tr>
+                            <tr><td>Piccone</td><td>30</td></tr>
+                            <tr><td>Fascio di 20 frecce</td><td>20</td></tr>
+                            <tr><td>Set di grimaldelli</td><td>75</td></tr>
+                            <tr><td>Borraccia (2 litri)</td><td>10</td></tr>
+                            <tr><td>Telo cerato</td><td>8</td></tr>
+                            <tr><td>Tenda piccola per 2</td><td>110</td></tr>
+                            <tr><td>Tenda più grande per 4</td><td>200</td></tr>
+                            <tr><td>3 candele</td><td>1</td></tr>
+                            <tr><td>3 torce</td><td>1</td></tr>
+                            <tr><td>Lampada a olio</td><td>5</td></tr>
+                            <tr><td>Olio per lampada per 7 notti</td><td>5</td></tr>
+                            <tr><td>5 ami da pesca d'acciaio</td><td>3</td></tr>
+                            <tr><td>Padella di bronzo</td><td>15</td></tr>
+                            <tr><td>Pentola di ferro per stufato</td><td>45</td></tr>
+                            <tr><td>Carro a 2 ruote</td><td>300</td></tr>
+                            <tr><td>Carro da trasporto a 4 ruote</td><td>1,000</td></tr>
+                            <tr><td>Barca a remi grande</td><td>300</td></tr>
+                            <tr><td>Peschereccio piccolo</td><td>3,000</td></tr>
+                            <tr><td>Galera da porto a 10 schiavi</td><td>20,000</td></tr>
+                            <tr><td>Galera da guerra a 200 schiavi</td><td>150,000</td></tr>
+                            <tr><td>Veliero mercantile d'alto mare</td><td>90,000</td></tr>
+                            <tr><td>Capanna di legno e paglia</td><td>100</td></tr>
+                            <tr><td>Casa in pietra e tegole con 3 stanze</td><td>2,800</td></tr>
+                            <tr><td>Muro di pietra alto 3 iarde intorno a quella casa</td><td>2,400</td></tr>
+                            <tr><td>Dimora di un nobile minore</td><td>20,000</td></tr>
+                            <tr><td>Dimora di un ricco mercante</td><td>140,000</td></tr>
+                            <tr><td>Palazzo del re</td><td>Tutte le tasse della nazione per 4 anni</td></tr>
+                            <tr><td>Ponte di legno di 10 iarde</td><td>560</td></tr>
+                            <tr><td>Palizzata di legno di 100 iarde</td><td>3,000</td></tr>
+                            <tr><td>Schiavo adulto</td><td>8,000</td></tr>
+                            <tr><td>Schiavo adulto, istruito</td><td>20,000</td></tr>
+                            <tr><td>Erba dal continente attuale (3 dosi)</td><td>1-120</td></tr>
+                            <tr><td>Erba da un altro continente (3 dosi)</td><td>5-500</td></tr>
+                            <tr><td>Erba sconosciuta da Troos (3 dosi)</td><td>2,000</td></tr>
+                        </tbody></table>
+                        
+                        <h4 class="text-xl font-semibold text-red-200 mt-6 mb-2">VESTITI</h4>
+                        <table><tbody>
+                            <tr><td>Cappello caldo</td><td>10</td></tr>
+                            <tr><td>Stivali buoni</td><td>75</td></tr>
+                            <tr><td>Paio di sandali</td><td>10</td></tr>
+                            <tr><td>Camicia di lino</td><td>10</td></tr>
+                            <tr><td>Scialle di seta pregiata</td><td>200</td></tr>
+                            <tr><td>Abiti esterni: per un mendicante</td><td>1</td></tr>
+                            <tr><td>per un lavoratore</td><td>20</td></tr>
+                            <tr><td>per un artigiano</td><td>50</td></tr>
+                            <tr><td>per un mercenario</td><td>50</td></tr>
+                            <tr><td>per un mercante</td><td>200</td></tr>
+                            <tr><td>per un nobile minore</td><td>500</td></tr>
+                            <tr><td>Mantello da viaggio eccellente</td><td>140</td></tr>
+                        </tbody></table>
+
+                        <h4 class="text-xl font-semibold text-red-200 mt-6 mb-2">GIOIELLI, ECC.</h4>
+                        <table><tbody>
+                            <tr><td>Torque d'argento antico</td><td>2,000</td></tr>
+                            <tr><td>Anello d'oro con gemma pregiata</td><td>4,500</td></tr>
+                            <tr><td>Spilla nuova di smeraldo e argento</td><td>2,500</td></tr>
+                            <tr><td>Collana a 3 fili di agata lucidata</td><td>200</td></tr>
+                            <tr><td>Amuleto d'oro degno di un re</td><td>15,000</td></tr>
+                            <tr><td>Piccolo Nanorion</td><td>110,000</td></tr>
+                            <tr><td>Ruota d'Oro Melnibonéana</td><td>300,000+</td></tr>
+                        </tbody></table>
+
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

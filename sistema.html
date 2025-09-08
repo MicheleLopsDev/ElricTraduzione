@@ -1,0 +1,522 @@
+ <!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elric! - Sistema di Gioco Completo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Cinzel', serif; }
+        .section-title { border-bottom: 2px solid #ef4444; padding-bottom: 0.5rem; }
+        .sub-section-title { border-left: 3px solid #f87171; padding-left: 1rem; }
+        table { border-collapse: collapse; width: 100%; margin-top: 1rem; }
+        th, td { padding: 0.75rem; text-align: left; border: 1px solid #4b5563; }
+        .table-header { background-color: #374151; text-align: center; }
+        .passive-header { background-color: #374151; font-weight: bold; text-align: center;}
+        .rule-box { background-color: #1f2937; border-left: 4px solid #ef4444; padding: 1.5rem; margin-top: 1rem; border-radius: 0.25rem; }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <div class="container mx-auto p-8 max-w-5xl">
+
+        <header class="text-center mb-8">
+            <h1 class="text-5xl font-bold text-red-400 section-title">Sistema di Gioco</h1>
+            <p class="mt-4 text-gray-400">Azioni e Abilità, la Tabella della Resistenza, Esperienza e Addestramento, Aumento delle Caratteristiche, Tempo e Movimento, Ferite.</p>
+        </header>
+
+        <main class="text-lg leading-relaxed space-y-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-3 space-y-6">
+                    <section id="azioni">
+                        <h3 class="text-2xl font-bold text-red-300 sub-section-title mb-4">Azioni</h3>
+                        <p>Le azioni di gioco di routine in circostanze di routine riescono sempre. Non c'è bisogno di tirare i dadi per camminare o correre, o per l'uso di routine di qualsiasi abilità. Quando la routine diventa drammatica o straordinaria, tuttavia, si tirano i dadi per la risoluzione. Vorrai sapere se le abilità riescono quando il pericolo minaccia, o se il tuo avventuriero sfugge all'attenzione di una guardia. I dadi permettono di risolvere crisi e punti decisionali senza l'intervento di un gamemaster, proprio come gli eventi accadono nella vita.</p>
+                        <p>Alcune abilità, specialmente quelle con le armi, sono intrinsecamente drammatiche e pericolose, e richiedono sempre un tiro, così come gli incidenti come le cadute.</p>
+                        <p>Il gamemaster dice quando tirare i dadi e indica che tipo di tiro fare: un tiro abilità, un tiro sulla Tabella della Resistenza, un tiro su caratteristica, ecc.</p>
+                    </section>
+        
+                    <section id="tiri-abilita">
+                        <h3 class="text-2xl font-bold text-red-300 sub-section-title mb-4">Tiri di Abilità</h3>
+                        <p>Per sapere se un avventuriero è riuscito o ha fallito con un'abilità, il giocatore di solito tira un D100. Se il risultato è uguale o inferiore all'ammontare percentuale attuale dell'avventuriero in quell'abilità, allora l'azione è riuscita. Se il risultato è superiore all'abilità attuale, l'azione è fallita.</p>
+                        <p>Se un'abilità non legata a un'arma fallisce, potrebbe essere necessario che passi del tempo di gioco prima che l'avventuriero possa riprovare. Il gamemaster decide l'intervallo. Se un'abilità con un'arma fallisce, è solo un fischio d'aria e un colpo a vuoto. Un risultato di 00 è sempre una papera.</p>
+                        <p>In tutto, ogni abilità ha quattro livelli di risultato del tiro di dado: successo critico (di solito solo critico), successo ordinario (di solito solo successo), fallimento e papera. Le armi da affondo e da punta hanno un quinto e più alto livello di risultato, l'impalamento.</p>
+                    </section>
+                </div>
+                <div class="flex items-center justify-center">
+                    <a href="immagini.html#img-20" target="_blank" class="block">
+                        <img src="https://placehold.co/200x200/111827/e5e7eb?text=Vedi+Immagine+20" alt="Saggio Cosmico" class="rounded-lg shadow-lg border-2 border-gray-700 hover:border-red-400 transition-all duration-300">
+                    </a>
+                </div>
+            </div>
+
+            <section id="critici-papere">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title mb-4">Successi Critici, Papere</h3>
+                <p>Più basso è il risultato del D100, migliore è la performance dell'avventuriero. Un critico è un tiro di un quinto o meno delle percentuali dell'avventuriero in un'abilità. Arrotonda le frazioni per eccesso. Esempio: Huf ha un'abilità con la spada bastarda del 139 percento. Huf ottiene un colpo critico quando il suo giocatore tira D100 e ottiene un risultato di 01-28.</p>
+                <p>È sempre possibile fallire in modo abissale: questo è chiamato una papera. Le papere accadono più raramente dei critici perché le persone si esercitano per avere successo e si proteggono dal fallimento.</p>
+                <ul class="list-disc ml-6 space-y-2">
+                    <li>Per abilità del 100 percento o meno, una papera si verifica con un risultato di 99 o 00 su D100.</li>
+                    <li>Per abilità del 101 percento o più, una papera si verifica solo con un risultato di 00 su D100.</li>
+                </ul>
+            </section>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                 <div class="flex items-center justify-center">
+                    <a href="immagini.html#img-21" target="_blank" class="block">
+                        <img src="https://placehold.co/200x200/111827/e5e7eb?text=Vedi+Immagine+21" alt="Confronto" class="rounded-lg shadow-lg border-2 border-gray-700 hover:border-red-400 transition-all duration-300">
+                    </a>
+                </div>
+                <div class="md:col-span-3 space-y-6">
+                    <section id="critici-armi">
+                        <h3 class="text-2xl font-bold text-red-300 sub-section-title mb-4">Critici con le Armi, Impalamenti</h3>
+                        <p>Anche se abilità diverse hanno diversi tipi di critici e papere, un successo critico non parato infligge doppio danno: per esempio, un attacco di stocco ferisce un bersaglio per 1D6+1 punti ferita. Con un risultato critico, lo stocco affonda in un nemico per 2D6+2 punti ferita.</p>
+                        <p>Con un risultato di 01 su D100, gli attacchi non parati che impalano infliggono doppio danno e ignorano ogni armatura. Il bersaglio subisce l'intero danno tirato. Un'arma da impalamento è una che pugnala o taglia ed è abbastanza sottile da scivolare tra i segmenti dell'armatura e affondare nelle viscere di un nemico. Per maggiori informazioni su questo, vedi il capitolo sul combattimento.</p>
+                    </section>
+                </div>
+            </div>
+
+            <section id="tabella-resistenza">
+                <h2 class="text-3xl font-bold text-red-400 section-title my-6">La Tabella della Resistenza</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                    <div class="md:col-span-3">
+                         <p>Questa tabella permette agli avversari di contrapporre le caratteristiche l'una contro l'altra: per esempio, usa FOR:FOR per un braccio di ferro o INT:INT per giocare a scacchi. In questo modo gli avventurieri possono compiere molti compiti per i quali non hanno percentuali di abilità.</p>
+                         <p>Guardando la tabella, trova lungo la parte superiore il numero uguale alla caratteristica attiva o sfidante. Poi trova lungo il lato sinistro il numero difensore. La rispettiva colonna e riga si intersecano sulla tabella in un terzo numero, che rappresenta il risultato più alto su D100 con cui la caratteristica attiva può avere successo.</p>
+                    </div>
+                    <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+                        <h4 class="text-xl font-bold text-red-300">Riguardo la Tabella della Resistenza</h4>
+                        <p class="text-sm mt-2">Questa formula calcola le probabilità della Tabella della Resistenza:</p>
+                        <p class="text-sm mt-2 bg-gray-900 p-2 rounded">Probabilità Base di Successo = 50%<br>
+                        più Caratteristica Attiva x5<br>
+                        meno Caratteristica Passiva x5</p>
+                        <p class="text-sm mt-2">Estendi i numeri oltre il 31 quanto vuoi. I risultati saranno validi.</p>
+                    </div>
+                </div>
+
+                <div class="overflow-x-auto mt-6" style="font-size: 0.8rem;">
+                    <table>
+                        <caption class="text-xl font-bold text-red-300 my-4">TABELLA DELLA RESISTENZA</caption>
+                        <thead>
+                            <tr class="table-header">
+                                <th rowspan="2">PASSIVA</th>
+                                <th colspan="31">CARATTERISTICA ATTIVA</th>
+                            </tr>
+                            <tr class="table-header">
+                                <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th><th>10</th>
+                                <th>11</th><th>12</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th><th>18</th><th>19</th><th>20</th>
+                                <th>21</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th><th>27</th><th>28</th><th>29</th><th>30</th><th>31</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td class="passive-header">1</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">2</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">3</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">4</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">5</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">6</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">7</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">8</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">9</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">10</td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">11</td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">12</td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">13</td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">14</td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">15</td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">16</td><td></td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">17</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">18</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">19</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td><td></td></tr>
+                            <tr><td class="passive-header">20</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td><td></td></tr>
+                            <tr><td class="passive-header">21</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td><td></td></tr>
+                            <tr><td class="passive-header">22</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td><td>95</td></tr>
+                            <tr><td class="passive-header">23</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td><td>90</td></tr>
+                            <tr><td class="passive-header">24</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td><td>85</td></tr>
+                            <tr><td class="passive-header">25</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td><td>80</td></tr>
+                            <tr><td class="passive-header">26</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td><td>75</td></tr>
+                            <tr><td class="passive-header">27</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td><td>70</td></tr>
+                            <tr><td class="passive-header">28</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td><td>65</td></tr>
+                            <tr><td class="passive-header">29</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td><td>60</td></tr>
+                            <tr><td class="passive-header">30</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td><td>55</td></tr>
+                            <tr><td class="passive-header">31</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>05</td><td>10</td><td>15</td><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>45</td><td>50</td></tr>
+                        </tbody>
+                    </table>
+                     <p class="text-xs text-center mt-2 text-gray-500">I valori vuoti in alto a destra indicano un Successo Automatico, quelli in basso a sinistra un Fallimento Automatico.</p>
+                </div>
+            </section>
+            
+            <section id="generatore-png" class="mt-12">
+                <h2 class="text-3xl font-bold text-red-400 section-title my-6 flex items-center">
+                    <span class="mr-2">✨</span> Generatore di PNG con Gemini
+                </h2>
+                <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+                    <p class="mb-4">Sei a corto di idee per un personaggio non giocante? Inserisci alcuni spunti (es. "guerriero di Lormyr, cinico e con un occhio solo") e lascia che l'Oracolo del Fato generi un PNG completo per la tua avventura.</p>
+                    
+                    <div class="space-y-4">
+                        <input type="text" id="npc-prompt" class="w-full bg-gray-900 border border-gray-600 rounded-md p-3 text-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500" placeholder="Inserisci i tuoi spunti qui...">
+                        
+                        <button id="generate-npc-btn" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out flex items-center justify-center">
+                            <svg id="button-icon" class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                            <span id="button-text">Interroga l'Oracolo del Fato</span>
+                        </button>
+                    </div>
+
+                    <div id="npc-result-container" class="mt-6 p-4 bg-gray-900 rounded-md border border-gray-700 min-h-[100px]">
+                        <p class="text-gray-500 italic">Il fato attende le tue parole...</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="esperienza" class="mt-8">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title mb-4">Esperienza</h3>
+                <p>Riuscire in un'abilità poco conosciuta è difficile, ma si impara molto quando ci si riesce. Un esperto in un'abilità di solito riesce nel suo intento. Poiché conosce già la maggior parte di ciò che c'è da sapere su di essa, l'esperto migliora a un ritmo più lento di un novizio. Gli avventurieri sono bravi in alcune abilità e scarsi in altre, proprio come nel mondo reale.</p>
+                <p>A volte, ma non sempre, il vostro gamemaster vi chiederà di segnare un'abilità appena usata con successo in gioco. Il segno va nella casella vuota accanto all'abilità sulla scheda dell'avventuriero. I segni indicano quali abilità sono idonee al miglioramento.</p>
+                <p>Il gamemaster decide quando è il momento per i tiri di esperienza. Questo può avvenire alla fine delle avventure, o dopo circa ogni settimana di gioco, o quando un'azione importante si è conclusa, o quando un compito importante è stato portato a termine. Il gamemaster non è obbligato a richiedere tiri di esperienza in un momento particolare.</p>
+                <p>Esaminate quindi la vostra scheda dell'avventuriero per vedere quali abilità sono segnate. Per ogni abilità segnata, tirate un D100. Effettuate un solo tiro per ogni segno.</p>
+                <ul class="list-disc ml-6 space-y-2 mt-4">
+                    <li>Se il risultato è superiore alla percentuale attuale dell'abilità, allora l'avventuriero migliora in quella abilità. Il giocatore tira 1D10 e aggiunge immediatamente il numero risultante di punti a quella abilità.</li>
+                    <li>Quando l'abilità di un avventuriero supera il 100-INT percentili, allora l'avventuriero ha una probabilità dell'INT x1% di imparare qualcosa di nuovo sull'abilità. Dopodiché, la probabilità non cambia mai. Anche se un personaggio ha il 1000 percento in un'abilità, la sua probabilità di migliorare rimane INT x1%. Esempio: un giocatore il cui avventuriero ha INT 16 deve tirare un D100 e ottenere da 01 a 16 per aumentare l'abilità di stocco del suo avventuriero dell'85 percento: un risultato di 17 o superiore non riuscirà mai a migliorare l'abilità.</li>
+                    <li>Se il risultato è uguale o inferiore ai punti abilità dell'avventuriero, o superiore a INT quando si tira per un'abilità sopra 100-INT, allora il personaggio del giocatore non ha imparato nulla e la percentuale dell'abilità rimane invariata.</li>
+                </ul>
+                <p class="mt-4">Ripetete la procedura per ogni abilità segnata. Cancellate il segno quando avete finito con l'abilità.</p>
+                <p>Vedi anche <a href="#cambiamenti-caratteristiche" class="text-red-400 hover:underline">Cambiamenti nelle Caratteristiche</a>, qui vicino.</p>
+            </section>
+            
+            <section id="addestramento" class="mt-8">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title mb-4">Addestramento</h3>
+                <p>Migliorare le abilità di combattimento attraverso l'addestramento richiede più tempo, insegna meno e costa di più che imparare combattendo i nemici. Ma i nemici vogliono uccidere il vostro avventuriero, mentre gli insegnanti vogliono che rimanga in vita.</p>
+                <p>L'addestramento al combattimento è un apprendistato intimo nel mondo della vita e della morte del guerriero. Per aumentare un'abilità con un'arma o uno scudo tramite l'addestramento, lo studente deve trovare un insegnante. L'insegnante deve avere un'abilità superiore a quella dello studente e deve voler insegnare. Lo studente può continuare a imparare finché non ha tante percentuali nell'abilità quanto l'insegnante, o finché non raggiunge l'80 percento. Il gamemaster interpreta il ruolo dell'insegnante, a meno che un altro giocatore non si offra.</p>
+                <div class="rule-box">
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Lo studente ha bisogno di abbastanza FOR e DES per usare l'arma. Trovate questo dato nelle tabelle delle armi, nelle colonne che indicano FOR / DES minimi.</li>
+                        <li>Insegnante e studente si allenano quotidianamente. Ogni tre settimane di gioco, il giocatore dello studente tenta un tiro di INT x3 su D100. Con un successo, l'avventuriero aumenta di 1D6 punti nell'abilità.</li>
+                        <li>Il costo nominale per una settimana di addestramento è di 50 bronzi. Insegnanti più economici potrebbero non essere bravi. Insegnanti bravi potrebbero volere più soldi.</li>
+                    </ul>
+                    <p class="mt-4">Uno studente si addestra in una sola abilità alla volta. Tuttavia, abilità di combattimento in coppia come spada e scudo o tridente e rete si imparano insieme, 1D6 percentili ciascuna.</p>
+                    <p class="mt-2 font-bold">L'addestramento non aumenta mai un'abilità sopra l'80 percento. Dall'81 percento in su, solo l'esperienza aumenta un'abilità.</p>
+                </div>
+            </section>
+
+            <section id="addestramento-altre-abilita" class="mt-8">
+                <h4 class="text-xl font-bold text-red-300 sub-section-title mb-4">Addestramento di Altre Abilità</h4>
+                <p>L'istruzione per altre abilità assomiglia a quella per le abilità con le armi. Si svolge anche un'abilità alla volta. (Esistono università, ma sono rare e costose).</p>
+                <p>Poiché le abilità civili sono spesso più complesse, l'intervallo di addestramento per esse è di tre mesi di gioco. Alla fine di questo periodo, si tira INT x4 o meno e si aumenta l'abilità di 1D10 punti.</p>
+                <p>Come nel combattimento, l'addestramento non porta mai un'abilità sopra l'80 percento.</p>
+                <p>Le abilità civili insegnabili includono Arte, Contrattare, Scalare, Artigianato, Camuffare, Valutare, Milione di Sfere, Mondo Naturale, Navigare, Oratoria, Altra Lingua, Propria Lingua, Fisica, Scassinare, Pozioni, Cavalcare, Navigazione, Scrivere, Nuotare, Seguire Tracce, Trappole e Giovani Regni.</p>
+                <p>I Nadsokoriti insegnano Nascondere Oggetto, Schivare, Parlantina, Intuito e Muoversi Silenziosamente, così come i criminali altrove.</p>
+                <p>Nascondersi, Saltare, Ascoltare, Olfatto/Gusto, Cercare, Lanciare e Regni Sconosciuti migliorano con l'esperienza, ma non vengono insegnati di routine.</p>
+                <p>Riparare/Inventare non viene insegnato, né può migliorare con l'esperienza. Invece, si deve cercare addestramento nell'Artigianato appropriato.</p>
+            </section>
+
+            <section id="cambiamenti-caratteristiche" class="mt-8">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title mb-4">Cambiamenti nelle Caratteristiche</h3>
+                <p>Alcune caratteristiche possono aumentare attraverso una risposta speciale o un addestramento sistematico, oltre che con la magia.</p>
+                
+                <h4 class="text-xl font-semibold text-red-200 mt-4">Risposta Speciale, Esercizio</h4>
+                <p>Le caratteristiche FOR, COS, DES, INT e POT possono essere aumentate con un tiro riuscito sulla Tabella della Resistenza durante il gioco. La situazione deve essere pericolosa e l'avversario deve essere un nemico — non un altro avventuriero — che era superiore nella caratteristica per cui si è tirato. Con un successo, si segna la casella accanto alla caratteristica appropriata, proprio come si fa per le abilità.</p>
+                <p>Quando il gamemaster chiama per i tiri di esperienza, si tira anche un D100 per ogni caratteristica segnata. Se il risultato è uguale o inferiore a 21, si aumenta la caratteristica di un punto. Il massimo normale per gli esseri umani è 21. Si effettua un solo tiro per caratteristica segnata per sessione.</p>
+                <p>La caratteristica TAG può aumentare e diminuire fino a un punto a settimana se il gamemaster è d'accordo. Questo rappresenta solo ingordigia o digiuno, rispettivamente. Se si muore di fame, la perdita di metà o più della TAG causa la morte.</p>
+                <p>La caratteristica APP aumenta solo attraverso l'addestramento. Salvo magia, FOR, COS, TAG, DES e APP non possono superare 21, tutto ciò che è possibile per gli umani.</p>
+                <p>L'INT e il POT umani non hanno un massimo, eccetto la gelosia dei Signori della Legge e del Caos.</p>
+                
+                <h4 class="text-xl font-semibold text-red-200 mt-4">Addestramento delle Caratteristiche</h4>
+                <p>Le caratteristiche FOR, COS e APP possono essere deliberatamente aumentate con l'esercizio e l'addestramento, fino a un massimo di 21.</p>
+                <p>Se il gamemaster consente un aumento di TAG a causa di un aumento di FOR, tale aumento dovrebbe essere di un punto, e mai più di due.</p>
+                <p>L'addestramento di FOR consiste principalmente in allenamento con i pesi e altri esercizi. L'addestramento di COS sollecita il corpo, in particolare il cuore e i polmoni, per migliorarne la capacità.</p>
+                <p>L'addestramento di APP è tanto un corso di psicologia quanto di condizionamento fisico. Lo studente impara a creare un aspetto più lusinghiero, a muoversi con più grazia e dinamismo e a presentare questi risultati come naturali.</p>
+                <p>I regimi e le routine necessari per addestrare una caratteristica differiscono dall'addestramento delle abilità in due modi.</p>
+                <div class="rule-box">
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Quando è trascorso l'intervallo di addestramento appropriato, si tira un D100. Un risultato uguale o inferiore a 21 aumenta la caratteristica di un punto. (Una regola opzionale per mantenere tali aumenti si trova nel capitolo del gamemaster).</li>
+                        <li>L'insegnante deve avere 19 o più nella caratteristica e essere almeno un punto superiore allo studente.</li>
+                    </ul>
+                    <p class="mt-4">L'intervallo minimo necessario per addestrare una caratteristica varia. Il primo tentativo di aumentare una particolare caratteristica avviene dopo 30 giorni. Con un successo, si tenta il secondo aumento dopo 60 giorni. Con un successo, il terzo intervallo raddoppia di nuovo, a 120 giorni, e così via fino al raggiungimento del massimo nella caratteristica, o fino alla sospensione dell'addestramento. In caso di fallimento, l'intervallo fino al tentativo successivo rimane lo stesso. Se si addestrasse poi una seconda caratteristica, l'intervallo ricomincerebbe da 30 giorni, raddoppiando ad ogni successo.</p>
+                </div>
+            </section>
+            
+            <section id="tempo-movimento" class="mt-8">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title mb-4">Tempo, Movimento</h3>
+                <p>I gamemaster mescolano tipicamente le scale di movimento e di tempo. Ad esempio, un combattimento si svolge in round di combattimento, giocati colpo su colpo e quasi secondo per secondo. Sebbene un combattimento possa finire rapidamente in tempo di gioco, la risoluzione di un combattimento generale può richiedere un'ora di tempo reale.</p>
+                <p>D'altra parte, il gamemaster può riassumere un movimento locale che richiederebbe molti round di combattimento in una dichiarazione: "Ci arrivate in tre minuti." Un movimento regionale o attraverso la campagna potrebbe richiedere giorni o settimane di gioco per essere completato, ma non viene giocato affatto a meno che non accada qualcosa di interessante—un combattimento, un incontro con qualcuno di importante, ecc.</p>
+                
+                <h4 class="text-xl font-semibold text-red-200 mt-4">Movimento nel Round di Combattimento</h4>
+                <p>Le velocità di movimento variano a seconda della specie. Le velocità specifiche per molte di esse si trovano nel capitolo delle creature, accanto alla notazione MOV (movimento) nelle statistiche.</p>
+                <p>Gli umani e le specie simili agli umani come i Melnibonéani possono muoversi fino a otto unità per round: otto rappresenta la velocità massima sostenibile di movimento. Poiché questo massimo è lo stesso per tutti, non esiste una voce MOV sulla scheda dell'avventuriero.</p>
+                <p>Un'unità rappresenta da diversi a dieci iarde, a seconda della situazione. I gamemaster che necessitano di un equivalente esatto potrebbero usare cinque iarde per unità; ma la distanza relativa tra i combattenti è più importante che fissare una distanza letterale. Quando la distanza e la velocità diventano importanti, il gamemaster può fornire una misurazione specifica, ma probabilmente risponderà a tali domande in termini di gioco: "Ci vogliono due round di combattimento per arrivarci."</p>
+                
+                <h4 class="text-xl font-semibold text-red-200 mt-4">Inseguimenti tra Specie Diverse</h4>
+                <p>Tra specie con diverse velocità di movimento, sottrai la velocità inferiore da quella superiore per sapere chi guadagna terreno o lo perde. Così, una tigre all'attacco (MOV 10) guadagna non meno di due unità su un bersaglio umano per round di combattimento. Se fugge da cacciatori umani a piedi, la tigre si allontana di non meno di due unità per round.</p>
+                <p>Se continuano a correre, individui con MOV diversi devono raggiungersi o perdersi di vista. Data una lunga inseguimento, il gamemaster inizierà a chiedere tiri su COS, per sapere se qualcuno è esausto e quindi si muove più lentamente, di 1 MOV per ogni tiro su COS fallito. Per scopi pratici, un avventuriero armato e corazzato non può correre per molto più di 15 minuti al massimo MOV. I disertori di solito abbandonano la loro armatura il prima possibile, per correre più lontano.</p>
+                
+                <h4 class="text-xl font-semibold text-red-200 mt-4">Inseguimenti tra Stessa Specie</h4>
+                <p>Tra avversari della stessa velocità, si confronta COS:COS sulla Tabella della Resistenza, o si vede chi ottiene il tiro più basso su Nuotare, Scalare, ecc., per decidere chi vince una gara. A seconda del contesto, potrebbero essere necessari più tiri.</p>
+                
+                <h4 class="text-xl font-semibold text-red-200 mt-4">Condizioni</h4>
+                <p>Gli avventurieri feriti, menomati, malati, esausti, che indossano armature ingombranti o appesantiti da bottino si muovono più lentamente. Il gamemaster stabilisce la velocità, di solito non più di sei unità. Allo stesso modo neve, fango, ghiaccio, ecc., rallentano chi non può evitarli.</p>
+            </section>
+
+            <section id="movimento-locale" class="mt-8">
+                <h4 class="text-xl font-semibold text-red-200 mt-4">Movimento Locale</h4>
+                <p>Un secondo tipo di relazione movimento/tempo di gioco coinvolge intervalli. Quanto tempo impiegano le guardie per spostarsi dal muro nord del castello al muro sud? Quanto tempo impiegano gli avventurieri per correre dal palazzo a un cancello esterno della città? Quanto lontano può arrivare un avventuriero durante i cinque minuti prima che l'Ierofante dia l'allarme?</p>
+                <p>Come stime, in cinque minuti un avventuriero potrebbe avanzare con cautela per circa 120 iarde, camminare normalmente per circa 300 iarde, o correre per circa 1700 iarde. A cavallo, si raddoppiano queste distanze, sostituendo la camminata con un trotto prolungato, poiché un cavallo cammina alla velocità di un umano.</p>
+                <p>Un'unità militare ben addestrata può muoversi per mezz'ora a velocità paragonabili a quelle di avventurieri individuali, e non perdere comunque la coesione necessaria per la battaglia. Milizie, irregolari e folle si disperdono rapidamente e si dissolvono in bande sparse, anche a passo d'uomo. La notte, il maltempo e le taverne amichevoli accelerano il processo.</p>
+                <p>In una barca a remi, un avventuriero potrebbe sostenere indefinitamente 100 iarde ogni cinque minuti e remare fino al doppio di quella velocità per brevi distanze, assumendo che vento, onde e marea siano neutri o favorevoli.</p>
+            </section>
+
+            <section id="movimento-regionale" class="mt-8">
+                 <h4 class="text-xl font-semibold text-red-200 mt-4">Movimento Regionale</h4>
+                 <p>Il terzo tipo di movimento è il più astratto, raramente recitato. Di solito, lavorando da una mappa, il gamemaster calcola il numero di giorni necessari per attraversare una regione. A volte il terreno suggerisce sfide per gli avventurieri, ma altrettanto spesso il gamemaster dice semplicemente qualcosa come "Passano otto giorni. Raggiungete Bakshaan stanchi e affamati." L'avventura riprende da quel punto.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-4">
+                    <div>
+                        <table>
+                            <caption class="font-bold text-red-200 text-lg mb-2">Movimento via Terra</caption>
+                            <thead class="table-header"><tr><th>Modalità</th><th>Miglia al Giorno</th><th>Chilometri al Giorno</th></tr></thead>
+                            <tbody>
+                                <tr><td>A piedi</td><td>20</td><td>32</td></tr>
+                                <tr><td>Marcia Forzata</td><td>40</td><td>64</td></tr>
+                                <tr><td>A cavallo (tranquillo)</td><td>35</td><td>56</td></tr>
+                                <tr><td>A cavallo (forzato)</td><td>60</td><td>97</td></tr>
+                                <tr><td>Velocità di un carro</td><td>10</td><td>16</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="text-sm mt-2 text-gray-400">Questa tabella presuppone una giornata di dieci ore, con soste regolari per riposare.</p>
+                    </div>
+                    <div>
+                        <table>
+                            <caption class="font-bold text-red-200 text-lg mb-2">Velocità di Navigazione (Media)</caption>
+                            <thead class="table-header"><tr><th>Condizione</th><th>Miglia</th><th>Km</th></tr></thead>
+                            <tbody>
+                                <tr><td>Mare aperto, all'ora (favorevole)</td><td>8</td><td>13</td></tr>
+                                <tr><td>Mare aperto, all'ora (sfavorevole)</td><td>1</td><td>1.6</td></tr>
+                                <tr><td>Costa/Fiume, all'ora (favorevole)</td><td>4</td><td>6.4</td></tr>
+                                <tr><td>Costa/Fiume, all'ora (sfavorevole)</td><td>2</td><td>3.2</td></tr>
+                             </tbody>
+                        </table>
+                        <p class="text-sm mt-2 text-gray-400">Le condizioni favorevoli/sfavorevoli includono venti, tempeste, marea, rocce, banchi di sabbia, ecc.</p>
+                    </div>
+                </div>
+                 <div class="rule-box mt-6">
+                     <h4 class="text-xl font-bold text-red-300">Modificatori del Terreno e del Meteo</h4>
+                     <ul class="list-disc ml-6 mt-4 space-y-1">
+                         <li>Ogni fiume principale, a meno che non ci siano ponti o guadi, richiede un giorno intero per essere attraversato.</li>
+                         <li>Una foresta, a meno che non ci siano strade o sentieri, riduce la velocità di viaggio via terra di 1/3.</li>
+                         <li>Per colline ondulate, si riduce di 1/3.</li>
+                         <li>Per i deserti, si riduce di 1/3.</li>
+                         <li>Per tempeste violente, si riduce di 1/2.</li>
+                         <li>Per le montagne, si riduce di 2/3.</li>
+                         <li>Per paludi e acquitrini, il movimento si riduce di 2/3, anche se la disponibilità di barche potrebbe accelerare le cose.</li>
+                         <li>Per ghiaccio e neve, il movimento si riduce di 4/5, ma sci o slitte potrebbero ridurre la penalità a solo 1/3.</li>
+                     </ul>
+                      <p class="mt-4 font-bold">I modificatori si accumulano.</p>
+                     <p class="mt-2 text-gray-400 italic">Ad esempio, per tentare un movimento a cavallo tranquillo attraverso montagne boscose, si riduce la velocità di 2/3 per le montagne (da 35 a 11 e 2/3, arrotondato a 12 miglia al giorno), e si riduce quel risultato di un altro 1/3 per le foreste, scendendo a 8 miglia al giorno.</p>
+                 </div>
+            </section>
+            
+            <section id="tempo-di-gioco" class="mt-8">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-6">Tempo di Gioco</h3>
+                <p>Occasionalmente una regola o un'azione richiede un tempo di gioco specifico. Ad esempio, l'addestramento con le armi richiede tre settimane di gioco tra i tiri di esperienza, e gli avventurieri rigenerano naturalmente 1D3 punti ferita per settimana di gioco. Tale tempo di gioco è fittizio. Non ha nulla a che fare con il tempo registrato dal vostro orologio. Il tempo di gioco è anche variabile, passando al ritmo che il gamemaster desidera, in modo da poter mantenere l'azione in movimento. Se non sta accadendo nulla, il gamemaster può osservare: "Passano diversi giorni."</p>
+                
+                <h4 class="text-xl font-semibold text-red-200 mt-4">Tempo delle Abilità</h4>
+                <p>L'uso di un'abilità può anche segnare il passare del tempo di gioco. Ad esempio, dopo aver fallito con Fisica, un avventuriero aspetta ordinariamente un'ora circa di tempo di gioco prima di tentare di nuovo. Forse a quel punto ha pensato a una procedura migliore. Qualcun altro potrebbe provare la sua Fisica immediatamente, presumibilmente non ripetendo l'errore o sapendo meglio cosa fare. E potrebbero essere necessari giorni per Artigianato (Armaiolo) per riparare una spada rotta, mentre Scassinare può essere tentato ogni cinque minuti circa. D'altra parte, le abilità con le armi possono essere impiegate in vari ranghi di DES nello stesso round di combattimento.</p>
+
+                <div class="rule-box mt-6">
+                    <h4 class="text-xl font-bold text-red-300 mb-4">Tabella degli Intervalli Significativi</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-2">
+                        <div><strong>età del Fulgido Impero:</strong> circa 10.000 anni</div>
+                        <div><strong>età del mondo:</strong> 40.000+ anni.</div>
+                        <div><strong>tentare Artigianato:</strong> da 5 minuti a 10 giorni di gioco.</div>
+                        <div><strong>tentare Parlantina:</strong> 1-5 minuti di gioco.</div>
+                        <div><strong>tentare Oratoria:</strong> da 20 minuti a diverse ore di gioco.</div>
+                        <div><strong>evadere da un ottagono:</strong> 1D8 minuti di gioco.</div>
+                        <div><strong>chiamare un demone vincolato da un altro piano:</strong> 1 round di combattimento.</div>
+                        <div><strong>lanciare un incantesimo ordinario:</strong> 1 round di combattimento.</div>
+                        <div><strong>round di combattimento:</strong> circa 12 secondi.</div>
+                        <div><strong>congedare un demone:</strong> 1D8 minuti di gioco.</div>
+                        <div><strong>congedare un elementale:</strong> istantaneo.</div>
+                        <div><strong>congedare un incantesimo:</strong> istantaneo.</div>
+                        <div><strong>fare ricerca su Milione di Sfere, Scrivere, o Regni:</strong> almeno 8 ore di gioco, non più di 1 tiro al giorno.</div>
+                        <div><strong>estrarre, rinfoderare o raccogliere un'arma:</strong> 5 ranghi di DES; l'arma è pronta all'uso al sesto rango di DES.</div>
+                        <div><strong>durata dell'incantesimo:</strong> uguale al POT del lanciatore in round di combattimento.</div>
+                        <div><strong>tiri di esperienza:</strong> a discrezione del gamemaster, 1 settimana di gioco o più.</div>
+                        <div><strong>invocare:</strong> a seconda delle circostanze, da pochi minuti a 1D8 ore di gioco.</div>
+                        <div><strong>muoversi di 2 MOV:</strong> 5 ranghi di DES</div>
+                        <div><strong>muoversi di 4 MOV:</strong> 10 ranghi di DES</div>
+                        <div><strong>preparare un incantesimo:</strong> un numero di round di combattimento pari ai punti magia massimi necessari per lanciare l'incantesimo.</div>
+                        <div><strong>rigenerare tutti i punti magia:</strong> 24 ore di gioco.</div>
+                        <div><strong>rigenerare un punto magia dopo aver raggiunto lo zero:</strong> 1 ora di gioco.</div>
+                        <div><strong>rigenerare 1D3 punti ferita:</strong> 1 settimana di gioco.</div>
+                        <div><strong>cavalcare per 35 miglia:</strong> 1 giorno di gioco.</div>
+                        <div><strong>evocare Signore delle Bestie o Signore delle Piante:</strong> 1D6 ore di gioco.</div>
+                        <div><strong>evocare demone:</strong> 1D8 ore di gioco per entità non vincolate.</div>
+                        <div><strong>evocare elementale:</strong> 1D6 round di combattimento.</div>
+                        <div><strong>tiro di addestramento, armi:</strong> circa 3 settimane di gioco.</div>
+                        <div><strong>tiro di esperienza per addestramento, non-armi:</strong> circa 12 settimane di gioco.</div>
+                        <div><strong>incoscienza:</strong> 1 ora eccetto circostanze speciali.</div>
+                        <div><strong>camminare per 20 miglia:</strong> 1 giorno di gioco.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="ferite" class="mt-8">
+                <div class="flex justify-center my-8 gap-4">
+                     <a href="immagini.html#img-22" target="_blank"><img src="https://placehold.co/150x150/111827/e5e7eb?text=Vedi+Immagine+22" alt="Città in Fiamme" class="rounded-lg shadow-lg border-2 border-gray-700 hover:border-red-400 transition-all duration-300"></a>
+                     <a href="immagini.html#img-23" target="_blank"><img src="https://placehold.co/150x150/111827/e5e7eb?text=Vedi+Immagine+23" alt="Volto Demoniaco" class="rounded-lg shadow-lg border-2 border-gray-700 hover:border-red-400 transition-all duration-300"></a>
+                     <a href="immagini.html#img-24" target="_blank"><img src="https://placehold.co/150x150/111827/e5e7eb?text=Vedi+Immagine+24" alt="Esplosione Cosmica" class="rounded-lg shadow-lg border-2 border-gray-700 hover:border-red-400 transition-all duration-300"></a>
+                </div>
+
+                <h2 class="text-3xl font-bold text-red-400 section-title my-6">Ferite</h2>
+                <p>I Punti Ferita misurano la resistenza di un avventuriero e la quantità di ferite che può sopravvivere. Ferite o altre lesioni, veleni, malattie e attacchi magici possono costare punti ferita. Si sottrae l'importo perso dai punti ferita attuali indicati sulla scheda dell'avventuriero.</p>
+                
+                <h4 class="text-xl font-semibold text-red-200 mt-6">Ferita Minore</h4>
+                <p>Una ferita minore è quella che costa a un avventuriero la metà o meno dei suoi punti ferita totali. Potrebbe essere rappresentata come una distorsione, un avvelenamento lieve, una malattia leggera, una piccola frattura, una commozione cerebrale lieve o come una ferita che si chiude presto. Le ferite minori non compromettono la destrezza o la capacità di pensare e combattere.</p>
+                
+                <h4 class="text-xl font-semibold text-red-200 mt-6">Ferita Maggiore</h4>
+                <p>Una ferita o lesione maggiore è quella che costa all'avventuriero più della metà dei suoi punti ferita totali. Questo potrebbe rappresentare una grave commozione cerebrale, un dolore travolgente, la recisione di un'arteria principale o la perdita di una mano o di un piede—scegliete qualcosa di appropriato.</p>
+                <p>L'effetto di una ferita maggiore è immediato. A seconda delle ferite dell'avventuriero, potrebbe non essere in grado di combattere dopo il round della ferita. Vedi la <strong>Tabella delle Ferite Maggiori</strong>.</p>
+
+                <h4 class="text-xl font-semibold text-red-200 mt-6">Ferita Fatale</h4>
+                <p>Una ferita fatale costa più punti ferita di quanti ne abbia attualmente l'avventuriero. Porta alla morte. Se, in quel round o in quello successivo, i punti ferita salgono ad almeno +1, allora l'avventuriero era vicino alla morte ma non è morto.</p>
+                
+                <h4 class="text-xl font-semibold text-red-200 mt-6">Guarigione</h4>
+                <p>Le creature mortali guariscono naturalmente. Gli avventurieri guariscono 1D3 punti ferita per settimana di gioco. Continuano a guarire finché tutti i punti ferita naturali non sono stati ripristinati.</p>
+                
+                <div class="overflow-x-auto mt-6">
+                    <table>
+                        <caption class="font-bold text-red-200 text-lg mb-2">TABELLA DELLE FERITE MAGGIORI</caption>
+                        <thead class="table-header"><tr><th style="text-align: left;">Tiro D100</th><th style="text-align: left;">Effetto e Perdita di Caratteristica</th></tr></thead>
+                        <tbody>
+                            <tr><td>01-10</td><td>Tendini della gamba recisi che causano zoppia, o ossa della caviglia fuse che causano zoppia... Perdi 1D3 DES. Il MOV massimo è ora ridotto di quel 1D3. Ancora in grado di combattere.</td></tr>
+                            <tr><td>11-20</td><td>Gran parte del naso è stata tagliata via, o cicatrici multiple deturpano entrambe le mani, o un orecchio è stato tagliato... Perdi 1D3 APP. La deformità non può essere mascherata. Ancora in grado di combattere.</td></tr>
+                            <tr><td>21-30</td><td>Danni al polso o alla mano, o una lastra di muscolo del braccio o della spalla è stata tagliata via... Perdi 1D3 FOR; questa perdita può cambiare quali armi puoi brandire. Ancora in grado di combattere con un'arma, ma non con uno scudo.</td></tr>
+                            <tr><td>31-40</td><td>Un polmone perforato porta a un sistema respiratorio indebolito, o profonde ferite allo stomaco si reinfettano cronicamente... Perdi 1D3 COS; il MOV massimo è ora ridotto di quel 1D3, e i punti ferita potrebbero essere inferiori. Ancora in grado di combattere.</td></tr>
+                            <tr><td>41-50</td><td>Commozione cerebrale danneggia l'udito e limita Ascoltare e Intuito a un massimo del 65 percento; o tagli alla testa che richiedono d'ora in poi tiri di Fortuna ogni volta per usare le abilità Milione di Sfere, Pozioni, Regni Sconosciuti e Giovani Regni... Perdi 1D3 INT; questa perdita influisce sulla capacità dell'avventuriero di lanciare magie. Ancora in grado di combattere.</td></tr>
+                            <tr><td>51-60</td><td>Vedi 01-10 per ciò che è successo, che ora si espande alla perdita di uno o entrambi gli bracci o gambe. Perdi 1D6 DES e riduci il MOV massimo dello stesso importo. Incapace di combattere.</td></tr>
+                            <tr><td>61-70</td><td>Vedi 11-20 per ciò che è successo, che ora include mutilazioni peggiori. Perdi 1D6 APP; crea una o più deformità visibili che non possono essere mascherate. Ancora in grado di combattere.</td></tr>
+                            <tr><td>71-80</td><td>Vedi 21-30 per esempi di tagli e perdite mutilanti. Perdi 1D6 FOR; modifica i punti ferita e il bonus ai danni. Ancora in grado di combattere.</td></tr>
+                            <tr><td>81-90</td><td>Vedi 31-40 per varie ferite agli organi vitali. Perdi 1D6 COS; può influire sul bonus ai danni e riduce il MOV di un numero di unità pari al risultato di 1D6 tirato. Incapace di combattere.</td></tr>
+                            <tr><td>91-92</td><td>Gravi lesioni facciali e alle corde vocali. Perdi 1D6 APP; abbassa di conseguenza il tiro Carisma. Ancora in grado di combattere.</td></tr>
+                            <tr><td>93-94</td><td>Ossa rotte e gangli recisi. Perdi 1D6 DES; d'ora in poi l'avventuriero può usare solo scudi e armi da mischia a 1 mano. Ancora in grado di combattere.</td></tr>
+                            <tr><td>95-96</td><td>Danno ai nervi del braccio sinistro o destro. Perdi 1D6 DES; d'ora in poi solo l'altro braccio può brandire armi o scudi. Ancora in grado di combattere.</td></tr>
+                            <tr><td>97-98</td><td>Danno ai nervi di entrambe le braccia. Perdi 1D6 DES; sebbene le gambe stiano bene, né braccio né mano possono brandire nulla. Incapace di combattere.</td></tr>
+                            <tr><td>99</td><td>L'avventuriero è mutilato da ferite viziose. Perdi 1D3 punti ciascuno da APP, DES e COS e descrivi i risultati. Incapace di combattere.</td></tr>
+                            <tr><td>00</td><td>L'avventuriero è stato deliberatamente mutilato dopo essere collassato. Rimuovi 1D4 punti ciascuno da quattro caratteristiche qualsiasi e descrivi i risultati. Incapace di combattere.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <section id="esempio-gioco" class="mt-8">
+                 <h3 class="text-2xl font-bold text-red-300 sub-section-title mt-8 mb-4">Uscirne Vivi, un Esempio Riassuntivo</h3>
+                 <div class="rule-box text-base space-y-4">
+                     <p>Il seguente esempio illustra come alcune delle regole funzionano insieme. Harald l'Astuto ha rubato la preziosissima Pietra della Beatitudine Serica dalla stanza del tesoro della Setta Gialla a Quarzhasaat.</p>
+                     
+                     <p><strong>PRIMO ROUND DI COMBATTIMENTO:</strong> Infilando l'enorme zaffiro giallo nella sua cintura, Harald scivola fuori dalla stanza blindata del culto e silenziosamente lungo il passaggio oltre, fino alla camera dove ha preparato la sua fuga. Alla sua porta, un pugnale viene lanciato ad Harald da dietro. Il gamemaster ottiene un colpo, e dice che Harald è stato pugnalato in alto sulla spalla sinistra. Il gamemaster tira 1D4+2 +1D2, il danno che il pugnale infligge più metà del bonus ai danni del lanciatore. Il gamemaster ottiene un 4, il risultato più basso possibile, fortunatamente per Harald. Harald indossa come armatura una tunica di pelle morbida: come armatura, il giocatore di Harald tira 1D6-1 e ottiene un 2—l'avventuriero perde 3 punti ferita, non 4. Scende quindi a 14 punti ferita, e il suo giocatore cancella attentamente i numeri 17, 16, 15 sulla scheda di Harald.</p>
+                     
+                     <p><strong>SECONDO ROUND DI COMBATTIMENTO:</strong> Maledicendo la sua sfortuna, Harald entra nella camera e chiude la porta a catenaccio dietro di sé, poi estrae la lama malvagia e insanguinata dalla sua spalla e tenta di curare la ferita con Fisica. La Fisica di Harald è al 47 percento: il suo giocatore tira un 99—una papera! Il gamemaster annuisce placidamente al risultato. Non è necessario un tiro sulla tabella delle papere: la penalità per una papera con Fisica è sempre la perdita di 1D3 punti ferita. Il giocatore tira un 1. Il gamemaster dice che Harald si è inflitto un punto di danno extra estraendo la lama. La ferita è ora più ampia e il sangue gocciola costantemente sul pavimento. Il giocatore di Harald sospira e cancella un altro punto ferita. Harald ha ora 13 punti ferita.</p>
+                     
+                     <p><strong>TERZO ROUND DI COMBATTIMENTO:</strong> Colpi attutiti provengono dalla porta sprangata. Harald si volta e va alla finestra attraverso la quale è entrato. Afferra la corda, preparandosi a scendere. Il gamemaster alza una mano per fermare la descrizione del suo giocatore e interviene: "Harald nota che la corda sembra molto leggera. Vuole vedere perché?" Lo vuole, dice il giocatore, e fa tirare su la corda a Harald. La corda di fuga di Harald termina a una iarda sotto il davanzale. È stata tagliata. Harald è in trappola a meno che non decida di saltare in strada. Il giocatore inizia a parlare, ma il gamemaster sorride e alza di nuovo la mano. Dice: "Un assassino della Setta Gialla è sul tetto di fronte. Sta scoccando una freccia. Fai un tiro su Idea per scoprire se Harald se ne accorge." Il giocatore tira D100 e fallisce. Poiché Harald non nota l'arciere, il gamemaster sogghigna, tira 43, un colpo, e poi tira per il danno, 1D8+2. Nel frattempo il giocatore di Harald ottiene un risultato di 1 per l'armatura di cuoio di Harald, mentre il gamemaster tira 9 di danno. "È abbastanza per una ferita maggiore?" chiede innocentemente il gamemaster. Il giocatore annuisce tristemente. Cancella 9 punti ferita, portando i punti ferita di Harald a 4. Tira sulla Tabella delle Ferite Maggiori—27, e il gamemaster dice che la freccia ha colpito Harald alla spalla sinistra. Il suo tiro Fortuna riesce, quindi la ferita non è un danno permanente. Harald si sente indebolire, dice il gamemaster. Diventerà incosciente tra quattro round di combattimento, un round per ogni punto ferita che possiede attualmente. All'altro capo della stanza, la porta del corridoio sta iniziando a scheggiarsi. Harald potrebbe usare il prossimo round per provare ad applicare Fisica a questa nuova ferita, ma non può permettersi di perdere tempo.</p>
+                     
+                     <p><strong>QUARTO ROUND DI COMBATTIMENTO:</strong> Se Harald rimane nella stanza, sarà presto alla mercé della Setta Gialla, cosa non proprio auspicabile. Ci sono sei iarde fino a terra, e il giocatore di Harald si rende conto che nelle sue condizioni la caduta potrebbe uccidere l'avventuriero. Sa che Harald non esiterebbe mai. "Salto," dice. L'arciere tenta un altro tiro. Il fuoco di proiettili non può essere schivato, quindi Harald spera per il meglio. È fortunato—la freccia manca il bersaglio. "Fai il tuo tiro su Saltare, per favore." Il risultato è un 21, un successo. "Ok," dice il gamemaster, "ora tira 1D6 per la preparazione." Ottiene un 3, da sottrarre a qualsiasi danno subito dalla caduta. "E ora tira 2D6 per il danno da caduta." I suoi dadi totalizzano 5. Harald aveva 4 punti ferita, ne perde 5, ma la preparazione al salto ne salva 3—Harald ha 2 punti ferita rimasti. A 2 punti ferita, Harald è automaticamente incosciente. Non si tratta di più della metà dei punti ferita totali, quindi non c'è una nuova ferita maggiore.</p>
+                     
+                     <p><strong>QUINTO ROUND DI COMBATTIMENTO:</strong> Nel vicolo buio, l'amico di Harald, Klabber lo Spione, trova Harald immobile nella polvere. Ascoltando le grida che si avvicinano, il giocatore di Klabber decide di gettare Harald sulla sella di un cavallo, far montare il suo avventuriero sull'altro e fuggire immediatamente. Il gamemaster nota privatamente che il giocatore di Klabber non ha dichiarato di aver perquisito Harald per trovare lo zaffiro.</p>
+                     
+                     <p><strong>SESTO ROUND DI COMBATTIMENTO:</strong> A poche strade di distanza, Klabber si sente abbastanza al sicuro da fermarsi per un round. Lancia un incantesimo Guarire sulla ferita da coltello sanguinante di Harald. Con un 3 dal tiro di 1D3, i punti ferita di Harald salgono a 5, e il gamemaster stabilisce che ora è cosciente e in grado di cavalcare, ma è molto debole. Il giocatore di Klabber segna 2 punti magia spesi per l'incantesimo Guarire. Il gamemaster nota privatamente che il giocatore di Harald non ha dichiarato che Harald ha controllato la sua cintura per lo zaffiro.</p>
+                     
+                     <p><strong>DIVERSI ROUND DI COMBATTIMENTO DOPO:</strong> Il gamemaster dice che non c'è traccia di inseguimento. Stabilisce che raggiungono il loro nascondiglio. All'interno, al sicuro per il momento, Klabber usa Fisica per estrarre la freccia e curare adeguatamente quella ferita, portando i punti ferita di Harald a 7.</p>
+                     
+                     <p><strong>ROUND DI COMBATTIMENTO SUCCESSIVO:</strong> Harald ha subito anche danni da caduta. La Fisica di Klabber fallisce per quello, ma quella di Harald funziona. I 2 punti di danno da caduta vengono cancellati. La lesione è ancora presente, ma non ha più conseguenze pratiche. Ora Harald è a 9 punti ferita.</p>
+                     
+                     <p><strong>ROUND DI COMBATTIMENTO DOPO ANCORA:</strong> La Fisica di Klabber fallisce per il danno da pugnale, così come quella di Harald in precedenza.</p>
+                     
+                     <p><strong>UN ALTRO ROUND DI COMBATTIMENTO:</strong> Klabber lancia Guarire sulla ferita da freccia di Harald, per 1 punto. Harald è a 10 punti ferita, e Klabber ha ora speso 4 punti magia.</p>
+                     
+                     <p>Nessun ulteriore trattamento con Fisica è disponibile. La ferita da pugnale guarirà naturalmente in una settimana, e quella da freccia richiederà almeno due settimane. Klabber potrà lanciare un altro Guarire domani, inoltre.</p>
+
+                     <p><strong>ULTIMO ROUND DI COMBATTIMENTO:</strong> Curate le sue ferite per il momento, Harald mette mano alla cintura per estrarre lo zaffiro. "È sparito," sorride il gamemaster. "Harald sembra averlo perso. Vuole cercare la pietra adesso?" Lasciamo il suo giocatore a meditare.</p>
+                 </div>
+            </section>
+            
+        </main>
+    </div>
+
+    <script>
+        const generateNpcBtn = document.getElementById('generate-npc-btn');
+        const npcPromptInput = document.getElementById('npc-prompt');
+        const npcResultContainer = document.getElementById('npc-result-container');
+        const buttonText = document.getElementById('button-text');
+        const buttonIcon = document.getElementById('button-icon');
+    
+        generateNpcBtn.addEventListener('click', async () => {
+            const userPrompt = npcPromptInput.value.trim();
+            if (!userPrompt) {
+                npcResultContainer.innerHTML = '<p class="text-yellow-400">Devi fornire degli spunti all\'Oracolo per tessere il filo del fato.</p>';
+                return;
+            }
+    
+            // Update button state to loading
+            generateNpcBtn.disabled = true;
+            buttonText.textContent = 'L\'Oracolo sta consultando i reami...';
+            buttonIcon.innerHTML = `<svg class="animate-spin h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>`;
+            npcResultContainer.innerHTML = '<p class="text-gray-500 italic">I fili del multiverso si intrecciano...</p>';
+    
+            try {
+                // IMPORTANT: The API key is a placeholder. 
+                // In a real application, this should be handled securely and not exposed in client-side code.
+                // For this specific educational/demonstration context, it's assumed the execution environment (like Canvas) would inject the key.
+                const apiKey = "YOUR_API_KEY"; 
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash:generateContent?key=${apiKey}`;
+    
+                const systemPrompt = `Sei un Game Master esperto per il gioco di ruolo dark fantasy 'Elric!'. Il tuo compito è generare Personaggi Non Giocanti (PNG) unici e memorabili, ambientati nel mondo dei Giovani Regni. Basandoti sugli spunti dell'utente, crea un PNG dettagliato. La risposta DEVE essere in ITALIANO e deve includere le seguenti sezioni, formattate in HTML: un'intestazione <h4> per il Nome, e paragrafi <p> con <strong> etichette in grassetto per Aspetto, Personalità, Background, e un Segreto o Obiettivo. Lo stile deve essere evocativo e oscuro, in linea con le opere di Michael Moorcock.`;
+    
+                const fullUserQuery = `Crea un PNG per il gioco di ruolo 'Elric!' basato su questi spunti: "${userPrompt}".`;
+    
+                const payload = {
+                    system_instruction: {
+                        parts: [{ text: systemPrompt }]
+                    },
+                    contents: [{
+                        parts: [{ text: fullUserQuery }]
+                    }],
+                };
+    
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+    
+                if (!response.ok) {
+                    const errorBody = await response.text();
+                    throw new Error(`Errore dall'API: ${response.status} ${response.statusText}. Dettagli: ${errorBody}`);
+                }
+    
+                const result = await response.json();
+                const candidate = result.candidates?.[0];
+    
+                if (candidate && candidate.content?.parts?.[0]?.text) {
+                    npcResultContainer.innerHTML = candidate.content.parts[0].text;
+                } else {
+                    console.error("Risposta inattesa dall'API:", result);
+                    npcResultContainer.innerHTML = '<p class="text-red-500">L\'Oracolo è silenzioso. La sua risposta si è persa nel Caos. Controlla la console per i dettagli.</p>';
+                }
+    
+            } catch (error) {
+                console.error('Errore durante la chiamata all\'API Gemini:', error);
+                npcResultContainer.innerHTML = `<p class="text-red-500">Un'interferenza caotica ha interrotto la visione dell'Oracolo. Dettagli dell'errore: ${error.message}</p>`;
+            } finally {
+                generateNpcBtn.disabled = false;
+                buttonText.textContent = "Interroga l'Oracolo del Fato";
+                buttonIcon.innerHTML = `<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>`;
+            }
+        });
+    </script>
+
+</body>
+</html>
