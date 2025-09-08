@@ -9,12 +9,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* Stili Generali */
         body {
             font-family: 'Inter', sans-serif;
         }
-        h1, h2, h3 {
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Cinzel', serif;
         }
+
+        /* Stili Titoli Principali (dall'originale) */
         .title-elric {
             font-size: 4rem;
             font-weight: 700;
@@ -26,12 +29,74 @@
             color: #d1d5db; /* gray-300 */
             letter-spacing: 0.1em;
         }
-        /* Stile per le sezioni del manuale */
+
+        /* Stili per le Sezioni */
         .manual-section {
             margin-top: 4rem;
             margin-bottom: 4rem;
             padding-top: 2rem;
             border-top: 2px solid #4b5563; /* gray-600 */
+        }
+        .section-title {
+            border-bottom: 2px solid #ef4444;
+            padding-bottom: 0.5rem;
+        }
+        .sub-section-title {
+            border-left: 3px solid #f87171;
+            padding-left: 1rem;
+        }
+
+        /* Stili per le Tabelle (Uniti da tutti i file) */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid #4b5563; /* gray-600 */
+            font-size: 0.9rem;
+        }
+        tr:nth-child(even) {
+            background-color: #1f2937; /* gray-800/50 */
+        }
+        .table-header {
+            background-color: #374151; /* gray-700 */
+            text-align: center;
+        }
+        .passive-header {
+            background-color: #374151; /* gray-700 */
+            font-weight: bold;
+            text-align: center;
+        }
+
+        /* Stili Specifici per Tabelle Centrate (da avventurieri.html) */
+        #creazione-avventuriero table th, #creazione-avventuriero table td,
+        #statistiche-derivate table th, #statistiche-derivate table td,
+        #tratti-distintivi-tabella table th, #tratti-distintivi-tabella table td {
+             text-align: center;
+        }
+
+        /* Stili per Box di Contenuto (Uniti da tutti i file) */
+        .step-box, .rule-box, .occupation-block, .image-card {
+            background-color: #1f2937; /* gray-800 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1.5rem;
+            margin-top: 1rem;
+            border-radius: 0.25rem;
+        }
+        .feature-box, .info-box {
+            background-color: #1f2937;
+            border: 1px solid #374151;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+        }
+
+        .notes {
+            font-size: 0.8rem;
+            color: #9ca3af; /* gray-400 */
         }
     </style>
 </head>
