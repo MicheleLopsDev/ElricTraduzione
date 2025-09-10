@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elric! - Sezione del Gamemaster</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400;500;700&display=swap"
+          rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Cinzel', serif; }
+        .manual-section { margin-top: 4rem; margin-bottom: 4rem; padding-top: 2rem; border-top: 2px solid #4b5563; }
+        .section-title { border-bottom: 2px solid #ef4444; padding-bottom: 0.5rem; }
+        .sub-section-title { border-left: 3px solid #f87171; padding-left: 1rem; }
+        .rule-box, .info-box { background-color: #1f2937; border: 1px solid #374151; padding: 1.5rem; border-radius: 0.5rem; margin-top: 1.5rem; }
+        .image-card { background-color: #1f2937; border: 2px solid #4b5563; padding: 1rem; border-radius: 0.5rem; }
+        blockquote { border-left: 4px solid #ef4444; padding-left: 1rem; font-style: italic; color: #9ca3af; }
+        cite { display: block; text-align: right; margin-top: 0.5rem; font-style: normal; font-size: 0.9em; }
+        .gm-point { display: flex; align-items: flex-start; margin-top: 0.75rem; }
+        .gm-point-icon { color: #f87171; margin-right: 0.75rem; flex-shrink: 0; margin-top: 0.25rem; }
+        table { border-collapse: collapse; width: 100%; margin-top: 1rem; margin-bottom: 1rem; }
+        th, td { padding: 0.75rem; text-align: left; border: 1px solid #4b5563; font-size: 0.9rem; }
+        thead.table-header th { background-color: #374151; }
+        tr:nth-child(even) { background-color: #1f2937; }
+
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+<div class="container mx-auto p-8 max-w-4xl">
+    <!-- Intestazione del Capitolo - Tradotta dall'immagine -->
+    <header class="text-center my-12">
+        <h2 class="text-xl text-gray-400 tracking-wider">GIOCARE, COMMENTI PER CAPITOLO,</h2>
+        <h1 class="text-6xl md:text-8xl font-bold text-gray-100 my-4" style="text-shadow: 3px 3px 6px rgba(239, 68, 68, 0.4);">GAMEMASTER</h1>
+        <h2 class="text-xl text-gray-400 tracking-wider">INCANTAMENTI, AFFILIAZIONE, AVVENTURIERI MELNIBONÉANI E DI MYYRRHN, SOMMARIO DEI GIOVANI REGNI.</h2>
+    </header>
+
+    <div id="gamemasters" class="manual-section">
+        <!-- Pagina 103 -->
+        <div class="mb-12">
+            <div class="image-card">
+                <img src="https://placehold.co/800x1000/111827/ef4444?text=Segnaposto+Signore+dei+Rospi" alt="Illustrazione del Signore Vendicatore, il Signore dei Rospi" class="w-full h-auto rounded-md">
+            </div>
+            <blockquote class="text-center mt-6 text-lg">
+                <p>ELRIC LO AVVERTÌ: "HA UN PATTO DI PROTEZIONE CONTRO LE SPADE, RE URISH!" IL DEMONE FECE VIBRARE LE SUE SCAGLIE. "MI CHIEDO, È QUELLA UNA SPADA?" URISH ESITÒ. LA BAVA GLI COLAVA LUNGO IL MENTO E I SUOI OCCHI ROSSI ROTEARONO. "DEMONE, VATTENE! DEVO AVERE IL MIO TESORO... È MIO!"</p>
+                <cite>— La Torre che Svanisce</cite>
+            </blockquote>
+        </div>
+
+        <!-- Pagine 104-105-106-107-108 -->
+        <main class="text-lg leading-relaxed space-y-6">
+            <p><span class="font-bold text-4xl text-red-400 float-left mr-3">L</span>E REGOLE di Elric sono relativamente compatte, ma coprono molti argomenti. I nuovi giocatori devono leggere o avere familiarità con questi capitoli: Introduzione, Creare un Avventuriero, Avventurieri, Sistema di Gioco e Combattimento. La maggior parte vorrà anche esaminare i capitoli dedicati ad Abilità, Magia e ai Giovani Regni.</p>
+            <p>I Gamemaster dovrebbero leggere anche questo capitolo e quello sui Giovani Regni, ed essere consapevoli delle questioni trattate nelle Regole Rapide per il Combattimento. Ogni gamemaster dovrebbe sfogliare l'intero manuale.</p>
+
+            <section id="gamemaster-principianti" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 sub-section-title my-4">GAMEMASTER PRINCIPIANTI</h3>
+                <p>Assicuratevi di aver compreso come funzionano le abilità e di aver capito i livelli di effetto per le abilità: l'impalamento, il successo critico, il fallimento e la papera. Leggete almeno i libri di Moorcock *Elric di Melniboné* e *Tempestosa* per avere un'idea del tono impostato nella saga. Un senso della sua appassionata oscurità guiderà il vostro gioco nella giusta direzione.</p>
+                <p>Questo non è un gioco difficile, ma la combinazione di abilità, incantesimi e capacità è una questione di apprendimento graduale. Non abbiate paura di consultare qualcosa, per essere sicuri di aver dato la giusta interpretazione. (Se vi sbagliate, ammettetelo e fate ripartire il gioco).</p>
+                <p>Se state presentando uno scenario pubblicato, assicuratevi di leggere l'intero scenario prima che inizi il gioco. Modificatelo come meglio credete. Nessuno scenario è perfetto, e il vostro modo di fare le cose è sempre il migliore per voi. In particolare, esaminate le statistiche e confrontate le abilità e la magia con quelle degli avventurieri. Gli scenari pubblicati si basano su un rapporto di quattro-sei avventurieri nel gruppo. Aumentate le statistiche se partecipano più avventurieri.</p>
+                <p>Se state creando una vostra avventura, considerate anche i seguenti punti.</p>
+                <div class="info-box text-base">
+                    <div class="gm-point">
+                        <div class="gm-point-icon">▶</div>
+                        <p>Quali opportunità speciali o uniche per il gioco di ruolo esistono nella vostra storia?</p>
+                    </div>
+                    <div class="gm-point">
+                        <div class="gm-point-icon">▶</div>
+                        <p>Quali conseguenze legate all'affiliazione sono probabili?</p>
+                    </div>
+                    <div class="gm-point">
+                        <div class="gm-point-icon">▶</div>
+                        <p>In passato, quali debolezze e punti di forza hanno mostrato gli avventurieri?</p>
+                    </div>
+                    <div class="gm-point">
+                        <div class="gm-point-icon">▶</div>
+                        <p>La vostra storia è suscettibile di rafforzare o indebolire i legami tra gli avventurieri?</p>
+                    </div>
+                    <div class="gm-point">
+                        <div class="gm-point-icon">▶</div>
+                        <p>È importante che la vostra storia si colleghi a incidenti precedenti che riguardano gli avventurieri?</p>
+                    </div>
+                    <div class="gm-point">
+                        <div class="gm-point-icon">▶</div>
+                        <p>La storia sembra in qualche modo Moorcockiana? —è un problema o una sfida preimpostata? le sfumature del destino e della sorte risuonano, come nella saga? C'è un umorismo beffardo?</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="prepararsi-gioco" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 sub-section-title my-4">PREPARARSI A GIOCARE</h3>
+                <p>Avrete bisogno di un tavolo abbastanza grande perché i giocatori possano sedersi, e sedie a sufficienza. La tavola dovrebbe essere ben illuminata, abbastanza da poter leggere facilmente. Matite, gomme da cancellare e fogli di brutta possono essere utili, così come schede dell'avventuriero extra.</p>
+                <p>Fotocopiate la doppia pagina 'Creare un Avventuriero', dato che i giocatori a volte si dimenticano di portare i loro manuali. Allo stesso modo, fotocopie della Tabella della Resistenza, della Matrice di Attacco e Parata, della Tabella delle Ferite Maggiori, della Tabella delle Papere, della Tabella dei Tiri e della Tabella delle Abilità Demoniache possono risparmiare un sacco di sfoglia-pagine. Nel cercare una risposta nelle regole, non dimenticatevi dell'indice o della sezione dei termini di gioco in fondo al libro.</p>
+                <p>Tenete il vostro manuale per voi, perché siete responsabili delle regole. (Se i giocatori vogliono leggere le regole, che si ricordino di portare i propri libri.) I giocatori dovrebbero portare i propri dadi, una o più schede dell'avventuriero compilate e qualsiasi miniatura che vogliano usare in gioco. Qualcuno ha un temperamatite?</p>
+                <p>Per consuetudine, la maggior parte dei giocatori interpreta un avventuriero alla volta. Se lo desidera, un giocatore può interpretarne due alla volta. Giocarne due offre continuità: se un avventuriero è gravemente ferito o ucciso, l'altro è pronto a partire.</p>
+                <p>Scansionate le schede degli avventurieri prima che il gioco inizi. Il gamemaster, così come il giocatore, trae soddisfazione nel vedere gli avventurieri crescere e prosperare. Inoltre, certe abilità o capacità demoniache possono rendere un punto della storia scelto eccessivamente difficile o facile.</p>
+                <p>Ad alcuni gamemaster piace fotocopiare le schede degli avventurieri e usarle per aiutare a risolvere i tiri segreti. Questo ha senso per alcuni giocatori. In generale, un giocatore dovrebbe effettuare i tiri di dado pertinenti al suo avventuriero, proprio come un gamemaster tira per i suoi personaggi non giocanti. In assenza di una buona ragione per fare altrimenti, effettuate tutti i tiri apertamente, in modo che tutti possano vedere. Questo protegge l'integrità di tutti. Se gli avventurieri non dovrebbero ancora sapere qualcosa, come l'effetto di un tentativo cruciale di Navigare, allora provate a lasciare i dadi così come sono stati tirati, ma nascosti alla vista da un foglio di carta o una tazza capovolta. Rivelate il risultato al momento drammatico.</p>
+            </section>
+
+            <section id="costruire-trama" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 sub-section-title my-4">COSTRUIRE UNA TRAMA</h3>
+                <p>In senso figurato, un gamemaster ha due bastoncini e dell'esca con cui lui e i giocatori accendono un fuoco. Un bastoncino è composto dalle definizioni e procedure delle regole, e l'altro è l'universo di sfondo del gioco. L'esca sono gli avventurieri e gli altri personaggi in gioco. Se tutti danno una mano, qualcosa di caldo e a volte memorabile si accende.</p>
+                <p>La formula di scenario più semplice consiste in (1) un invito o un gancio per coinvolgere gli avventurieri, (2) un'introduzione o una definizione del problema principale, (3) sfide che devono essere affrontate e superate per risolvere il problema principale, (4) un incontro finale abbastanza convincente da essere un climax emotivo, e (5) le conseguenze, che dovrebbero rispondere a eventuali questioni in sospeso, e distribuire lodi e biasimo, punti affiliazione, contanti, status e/o punti abilità agli avventurieri, a seconda dei casi.</p>
+                <p>Ad esempio, in 'Ciò che Conta è il Pensiero', uno scenario in questo libro, si presume che gli avventurieri siano stati ingaggiati da Dobbas, un ricco mercante. Questo è il primo passo.</p>
+                <p>Dobbas spiega cosa vuole che sia fatto e come gli avventurieri dovrebbero procedere. Questo è il secondo passo.</p>
+                <p>Ottengono la statuetta da Fiorgan, solo per vedersela teleportare via durante il viaggio di ritorno. Seguono informazioni. Una nuova comprensione sorge sul fatto che Fiorgan è la causa attiva del loro problema. Questo è il terzo passo.</p>
+                <p>Si verifica uno scontro e un combattimento, che include la partecipazione di almeno un demone. Fiorgan muore, viene catturato o fugge, ma Dobbas probabilmente ottiene la sua statuetta. Gzurglechenk probabilmente non viene pagato, né gli avventurieri. Questo è il quarto passo. Lo scenario si conclude, e il gamemaster cerca di adeguare le ricompense degli avventurieri con ciò che hanno ottenuto. Questo è il quinto passo, e la fine della sessione.</p>
+                <p>Gli scenari possono diventare molto più complessi di così. Primo, il terzo passo potrebbe diventare più lungo e costellato di episodi aggiuntivi. Secondo, questi episodi potrebbero legarsi insieme in vari modi, così che risolverli o superarli diventa sia complesso che più pericoloso. Terzo, il problema stesso potrebbe diventare più importante, una questione che coinvolge città, nazioni o dèi, e di conseguenza coinvolgere più questioni, fazioni, ricchezza, ecc., di quanto possa fare il semplice trucco di Fiorgan. Quarto, la trama potrebbe diventare più riflessiva: nel risolvere ogni sfida nell'ambientazione, il resto cambia in contesto o pertinenza. Quinto, la trama potrebbe minacciare la coesione degli avventurieri, forse per allineamento, tradizione familiare, sesso, o qualcosa di fondamentale per loro.</p>
+            </section>
+
+            <section id="incontro-avventurieri" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 sub-section-title my-4">COME SI INCONTRANO GLI AVVENTURIERI?</h3>
+                <p>Dato che i giocatori hanno creato i loro avventurieri individualmente, tutti quei diversi background, diverse ex occupazioni, e provengono da regni diversi. Di conseguenza, un problema all'inizio del gioco per il gamemaster è il motivo per cui gli avventurieri si uniscono. Ecco alcuni suggerimenti per i primi incontri.</p>
+                <div class="info-box text-base">
+                    <div class="gm-point">
+                        <div class="gm-point-icon">▶</div>
+                        <p>Tutti rispondono a un'offerta di lavoro. Potrebbe essere quella di sorvegliare una principessa sotto mentite spoglie, recuperare erbe speciali, uccidere uno stregone, trovare una mappa, unirsi a un viaggio verso il Confine del Mondo, o qualsiasi altra ragione simile.</p>
+                    </div>
+                    <div class="gm-point">
+                        <div class="gm-point-icon">▶</div>
+                        <p>Tutti hanno un amico comune, che chiede un favore. Forse un amante ha bisogno di essere salvato, alcuni teppisti necessitano di una lezione, o una scorta è necessaria verso qualche porto o destinazione vicina.</p>
+                    </div>
+                    <div class="gm-point">
+                        <div class="gm-point-icon">▶</div>
+                        <p>Tutti vengono contattati da un agente o Campione del Caos, dell'Equilibrio o della Legge, che li riunisce per compiere qualche azione importante per la sua causa o per lui stesso.</p>
+                    </div>
+                    <div class="gm-point">
+                        <div class="gm-point-icon">▶</div>
+                        <p>Tutti sono presenti a qualche incidente, come un rapimento, una rissa, un furto, e così via. La loro amicizia si consolida quando vengono tutti coinvolti (e possibilmente accusati — vedi sotto).</p>
+                    </div>
+                    <div class="gm-point">
+                        <div class="gm-point-icon">▶</div>
+                        <p>Tutti vengono arrestati e detenuti nella stessa cella. Insieme dichiarano la loro innocenza, sopportano la stessa condanna o fuggono.</p>
+                    </div>
+                    <div class="gm-point">
+                        <div class="gm-point-icon">▶</div>
+                        <p>Tutti hanno lo stesso sogno misterioso riguardante lo stesso tempo e luogo. Una volta lì, scoprono di più sulla natura del loro sogno comune e intraprendono una missione correlata. Il mandante del sogno è probabilmente uno stregone, un demone maggiore, un Sovrano Elementale, un Duca dell'Inferno o un Signore della Legge.</p>
+                    </div>
+                </div>
+                <p class="mt-4">I giocatori generalmente cooperano con il gamemaster all'inizio del gioco, poiché tutti capiscono che finché i loro avventurieri non uniranno le forze, il gioco non potrà veramente iniziare. Se qualcuno si rifiuta categoricamente di unirsi agli altri, allora quel giocatore farebbe meglio a creare un nuovo avventuriero, uno più disposto a essere coinvolto. A volte l'insofferenza è reciproca — nessuno vuole fare amicizia con un Pan Tangiano.</p>
+            </section>
+
+            <section id="campagne" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 sub-section-title my-4">CAMPAGNE</h3>
+                <p>UNA CAMPAGNA è una successione di scenari o episodi in cui partecipano gli stessi avventurieri — o almeno gli stessi giocatori. Quasi sempre, una campagna rappresenta anche la visione e l'espressione personale di uno o due gamemaster. Molte presentano universi peculiari, regole personalizzate o regole mescolate da diversi sistemi di gioco. La maggior parte sono gestite da un unico individuo, i cui giocatori possono influenzarlo di volta in volta.</p>
+                <p>Il focus di una campagna può vagare nel tempo, ma solo una campagna offre il lusso di soffermarsi in un altro universo e di conoscerlo bene così come i partecipanti. Una campagna non riguarda tanto una destinazione complessa quanto un modo più piacevole di viaggiare. Le tragedie più profonde si verificano nelle campagne, così come i più grandi trionfi, i salvataggi più incredibili e i tiri di dado più improbabili. Non avrete giocato appieno finché non avrete partecipato a una di esse.</p>
+            </section>
+
+            <section id="combattimenti-massa" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 sub-section-title my-4">COMBATTIMENTI DI MASSA</h3>
+                <p>LA SAGA DESCRIVE o menziona molte battaglie terrestri e navali, incluso il famoso Sacco di Imrryr e la successiva distruzione dei predoni tramite attacco dei draghi. I giochi di ruolo si concentrano sull'individuo. Non sono intesi a mostrare le azioni di grandi numeri di truppe, né a fornire per più comandanti.</p>
+                <p>La maggior parte delle battaglie della saga sono di dimensioni moderate. Lo scontro in cui la Regina Yishana è meglio descritta, e lì le forze combattenti sembrano ammontare a un totale di dodici-quattordicimila combattenti. Nessuno dei due eserciti sembra avere un'unità più grande di un reggimento; i reggimenti sembrano composti da compagnie e squadre.</p>
+                <p>Se i combattimenti di massa devono essere giocati, suggeriamo di utilizzare miniature o giochi da tavolo alternativi, del periodo appropriato. Il vostro negozio di giochi locale può offrire una selezione tra cui scegliere. Se gli avventurieri sono persone importanti, allora ognuno potrebbe comandare una o più unità, o un'intera ala dell'esercito riunito.</p>
+                <p>Se i combattimenti individuali devono essere giocati alla luce di una battaglia più ampia, il corso della battaglia dovrebbe essere fissato. Il gamemaster condensa o espande liberamente l'azione, a seconda delle necessità della narrazione.</p>
+                <p>Il combattimento navale nei Giovani Regni è essenzialmente un combattimento nave-nave (eccetto per le galee da battaglia, con cui una dozzina di navi da combattimento ordinarie potrebbero scontrarsi). Il combattimento nave-nave è abbastanza intimo da consentire che porzioni di un assalto d'abbordaggio possano essere condotte su scala di gioco di ruolo. I singoli avventurieri possono combattere per conoscere i loro destini individuali. La rappresentazione completa di un combattimento nave-nave potrebbe richiedere un'intera serata.</p>
+                <p>Un breve libro che tratta specificamente dei combattimenti di massa nell'universo di Elric è in lavorazione.</p>
+            </section>
+
+            <section id="commenti" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 section-title my-4">COMMENTI</h3>
+
+                <div class="mt-6">
+                    <h4 class="text-2xl font-semibold text-red-200 sub-section-title my-4">CREARE UN AVVENTURIERO</h4>
+                    <p>Questo processo richiede 20-30 minuti per un principiante. Dopo un po', 10-15 minuti. Se un giocatore è a corto di tempo, potresti volerlo indirizzare verso una copia di una delle schede degli avventurieri pregenerati fornite in questo libro.</p>
+                </div>
+                <div class="mt-6">
+                    <h4 class="text-2xl font-semibold text-red-200 sub-section-title my-4">AVVENTURIERI</h4>
+                    <p>I punti di queste procedure sono di produrre un avventuriero dei Giovani Regni che sia abile e capace dall'inizio del gioco. Invece di produrre dilettanti, questo sistema crea avventurieri che possiedono abilità distinte ma moderate. Nella maggior parte dei casi, rendono un avventuriero più che adatto ad affrontare le sfide del suo primo scenario. La nozione di affiliazione non costringe gli avventurieri ad agire in un certo modo. I Sovrani Elementali, i Signori delle Bestie o i Signori delle Piante non fanno dubitare che esista una magia diversa, e la saga non dice nulla che suggerisca che un'azione sia essenzialmente del Caos, dell'Equilibrio o della Legge. È un compito più sottile. Cercate di mantenere il gioco in movimento. Non date troppo peso alla divisione delle anime. Nonostante tutti gli avventurieri si dichiarino indipendenti, a volte si alleano. Ognuno dà il proprio potere, ma perde la libertà d'azione. Le piccole storie che i giocatori cercano di definire per ogni avventuriero sono un inizio. Se un giocatore desidera un avventuriero con motivazioni più semplici, per esempio solo per la causa, ignorate tutti e tre i passaggi di occupazione. Lasciate che i giocatori abbinino la possibilità di non avere l'obbligo di accettare responsabilità funzionali della professione, a non ricevere il pacchetto di benefici che ne deriva. La sezione sulle affiliazioni offre agli avventurieri doni di punti abilità extra, ma spesso con un valore morale più grande del denaro che questi punti potrebbero fruttare. Gli elenchi di prezzi esistono per uniformare i punti di partenza. I giocatori più furbi noteranno che le tre abilità per i cavalli sono indefinite riguardo a specifiche abilità. Ciò è intenzionale. È possibile proporre queste abilità, naturalmente, ma è meglio non farlo. Vogliamo che i gamemaster e i giocatori sviluppino le abilità usuali su schede separate. Assicuratevi di circondare le definizioni scritte delle abilità con la vostra firma. La scheda dovrebbe poi essere mostrata ai gamemaster e agli altri giocatori, se lo desiderano. L'abilità Schivare è estremamente importante in combattimento. Nessun avventuriero può avere una probabilità troppo alta. Fate attenzione alle implicazioni delle abilità con armi contro le abilità Schivare. La maggior parte degli avventurieri vorrà avere una base per usare l'Antico Idioma (High Speech). Lingue diverse dividono i gruppi, ma la conoscenza, la manipolazione e il principio di potere di una lingua primaria scritta è un dono molto utile, soprattutto per gli stregoni. Dividere le abilità permette a un avventuriero di mostrare effetti sottili di lesioni o veleni attraverso un numero limitato di abilità.</p>
+                </div>
+                <div class="mt-6">
+                    <h4 class="text-2xl font-semibold text-red-200 sub-section-title my-4">SISTEMA DI GIOCO</h4>
+                    <p>Non forzate la Tabella delle Ferite Maggiori in questo capitolo. Se un giocatore dimentica, non ricordateglielo. L'addestramento per una caratteristica è deliberatamente difficile. Se si ferma l'addestramento, la perdita di almeno un punto di caratteristica è probabile. Se la caratteristica ha raggiunto livelli elevati, probabilmente si perderà più di un punto. Si consiglia un tiro Fortuna per mantenere il livello. Non è necessario un addestramento di mantenimento. Regolarizzate la manutenzione regolare dimezzando il tempo di allenamento normale o facendo un allenamento pesante lo stesso giorno di ogni settimana. Se un avventuriero ha tre giorni a settimana di allenamento caratteristica, non è necessario che siano consecutivi.</p>
+                </div>
+                <div class="mt-6">
+                    <h4 class="text-2xl font-semibold text-red-200 sub-section-title my-4">REGOLE RAPIDE PER IL COMBATTIMENTO</h4>
+                    <p>Potreste giocare questo gioco per anni e usare solo una manciata di queste regole. Non cercate di ricordarle tutte. Non c'è motivo di ricordare socialmente cose speciali, ma controllate la lista delle regole di tanto in tanto per ricordarvi cosa c'è.</p>
+                </div>
+                <div class="mt-6">
+                    <h4 class="text-2xl font-semibold text-red-200 sub-section-title my-4">COMBATTIMENTO</h4>
+                    <p>Ogni volta che qualcuno attacca, schiva o para, c'è una probabilità del 30% che una parata o schivata seguente diminuisca di 10 percentili, ma bisogna effettuare un tiro separato ogni volta. Nella maggior parte dei casi, fate sì che le parate e le schivate diminuiscano sempre. La nozione di alleanza non significa che non possa esistere alcun combattimento tra avventurieri. Le armi attaccano e parano con la stessa percentuale. Molti dei capitoli sulle armi e sulla magia si riferiscono in modo incrociato alla Tabella dei Tiri. Siate consapevoli che alcune delle vecchie armi qui elencate non sono descritte nel capitolo delle abilità. Ispezionate le note a piè di pagina e le note finali per queste.</p>
+                </div>
+                <div class="mt-6">
+                    <h4 class="text-2xl font-semibold text-red-200 sub-section-title my-4">MAGIA</h4>
+                    <p>Sembra che ci sia sempre molto da dire su questo tipo di materiale. ☐ Incantesimi ed evocazioni sono essenzialmente due tipi di magia, a volte paralleli in capacità ma molto diversi per origine e uso. ☐ Ci aspettiamo che gamemaster e giocatori creino magie aggiuntive; ricordate cosa c'è nel manuale e cosa è unico del vostro gioco. ☐ Fate attenzione a non creare incantesimi enormemente potenti. La proprietà di quel tipo di cose dovrebbe essere di competenza dei più grandi Campioni del Caos e della Legge. Gli incantesimi sono relativamente di basso livello, utili per entrare in luoghi dove sfoggiare demoni è un crimine capitale. Se si sviluppa una magia di forza superiore, dovrebbe diventare molto evidente, con scariche elettriche, nuvole temporalesche e altre manifestazioni tradizionali. ☐ Ci aspettiamo di pubblicare un grimorio contenente altri incantesimi (inclusi tre o quattro incantesimi della Legge), più abilità demoniache, altre razze demoniache e i contenuti di uno o due grimori famosi. ☐ Punti Magia per Evocare: questo indica in parte il numero di D8 necessari per le caratteristiche della razza, non il numero di punti in quelle caratteristiche. Il numero di Punti Magia necessari per evocare una razza non cambia, ma si possono aggiungere punti extra per abilità e capacità superiori. Le caratteristiche per una razza vengono sempre tirate; non cambiate mai il numero di D8 usati nei tiri caratteristica per le razze.</p>
+                </div>
+                <div class="mt-6">
+                    <h4 class="text-2xl font-semibold text-red-200 sub-section-title my-4">CREATURE</h4>
+                    <p>A differenza della maggior parte degli universi fantasy, il piano dei Giovani Regni non ha razze nemiche opposte — come gli orchi, per esempio. La maggior parte delle voci in questo capitolo compare solo una volta nella saga, e molte sono specificamente singolari, come la Farfalla del Caos. I gamemaster sono invitati a inventare liberamente nuove creature Caotiche con cui gli avventurieri dovranno confrontarsi. Tali caos sono generalmente periferici alla ri-creazione centrale della saga, il cui interesse riposa sulla ribellione appassionata di Elric contro un destino terrificante. Occasionalmente si scontra con un mostro, ma il gioco dovrebbe trattare più di odio, amore, vendetta, avidità e lussuria che di tentacoli e cose innominabili.</p>
+                </div>
+            </section>
+
+            <section id="giocare-opposizione" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 sub-section-title my-4">GIOCARE L'OPPOSIZIONE</h3>
+                <p>STATISTICHE DEI PNG: gli avventurieri usano 2D6+6 uniformemente. Suggeriamo che la maggior parte dei PNG abbia statistiche su 3D6, per promuovere una gamma più ampia di risultati. I PNG dovrebbero avere una manciata di abilità con cui distinguersi.</p>
+                <p>I Signori delle Bestie e i Signori delle Piante sono per lo più senza nome e inesplorati. Questa è un'area eccellente che i gamemaster possono espandere. I giocatori i cui avventurieri sono allineati con l'Equilibrio potrebbero volerlo fare. Ciò può portare gli avventurieri a sviluppare una relazione speciale con un Signore delle Bestie o un Signore delle Piante e a un eventuale contatto diretto con quelle entità.</p>
+            </section>
+
+            <section id="effetti-caos" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 sub-section-title my-4">EFFETTI DEL CAOS</h3>
+                <p>TERRIBILI MUTAZIONI e dissoluzioni accadono quando gli esseri viventi sono esposti al Caos. Ci sono esempi specificamente nominati negli scenari stampati; qui parliamo in generale.</p>
+                <p>La saga ritrae gli effetti del Caos in vari modi, molto spesso comportando la ricombinazione o la degenerazione di forme naturali. Nel caso più estremo, Elric incontra una vita bella e una foresta altrettanto bella con un corpo brunastro lungo un piede, la creazione dei Dharzi, il cadavere del mondo sotterraneo, il contenuto della caverna di Madja, combinano (anche se non disturbano molto) caratteristiche diverse di braccia, gambe o ali. Sulla forma naturale il cambiamento potrebbe non essere così grande, ma più braccia o gambe potrebbero essere aggiunte ad essa.</p>
+                <p>In alternativa, la persona o la bestia influenzata dal Caos potrebbe degradarsi più che cambiare. Piuttosto che aggiungere un'appendice, il Caos ha sottratto, e sebbene l'influenza sia passata, il danno è fatto. Povera Zarozinia, per sempre senza vita come una bella bambola di cera ai piedi di Elric, testimonia il potere indicibile. O gli avventurieri potrebbero incontrare cadaveri degradati e decomposti.</p>
+                <p>In un modo più primitivo o inintelligibile, il Caos è possibile, alla maniera del demone nel libro di Urish.</p>
+                <p>Una quarta influenza è l'oscurità e la rovina sottili, le morbide provocazioni di Arioch e altri signori del terrore del Caos. Proprio come nella saga, questi avvertimenti di rovina dovrebbero essere a lungo raggio e non specifici. Per ovvie ragioni, usateli con parsimonia, specialmente quelli che coinvolgono la fine del mondo.</p>
+            </section>
+
+            <section id="convertire-scenari" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 sub-section-title my-4">CONVERTIRE SCENARI</h3>
+                <p>GLI SCENARI DI *STORMBRINGER* possono essere usati facilmente con *Elric!*. Potreste voler ricalcolare i punti ferita, le armi e i bonus ai danni dei personaggi non giocanti, oppure potreste decidere che le differenze non sono abbastanza grandi da giustificare lo sforzo. La maggior parte degli scenari può essere giocata con quegli avventurieri che hanno abbastanza Potere. Decidete semplicemente se conoscono le abilità per evocare demoni o se i giocatori dovranno imparare abilità così importanti. Poiché l'universo di *Elric!* è importante, sarà necessario studiare; cercate di mantenere il numero di Punti Magia necessari per le evocazioni entro i limiti del possibile. Vedete le note di conversione per altri argomenti.</p>
+            </section>
+
+            <section id="scenari-chaosium" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 sub-section-title my-4">SCENARI DELLA CHAOSIUM</h3>
+                <p>LEGGETE LO SCENARIO abbastanza attentamente dopo averlo scelto, in modo da conoscerlo bene quando lo presentate. L'autore suggerirà toni e possibilità alternative, e discuterà le azioni in diversi contesti. Questi scenari sono più simili a storie che a labirinti da percorrere. Leggeteli se non altro per vedere cosa può essere fatto con questo gioco. Non aspettatevi scene scriptate o passaggi simili a quelli di un dramma. Sono pensati affinché gli avventurieri siano liberi di andare dove vogliono, in qualsiasi momento, e che possano esistere quante più scelte possibili. Per aiutare il gamemaster a capire le scelte degli avventurieri, le parole chiave per uno scenario sono scritte in grassetto. Quando uno scenario e una narrazione del corridoio sono spaventosi, sono dispositivi e nuovi mostri di importanza speciale.</p>
+                <p>Nel complesso, troviamo che gli scenari che incoraggiano lo sviluppo dei personaggi e dei loro prestigi sono più gratificanti. Vedere le società umane è una sorta di negozio di acquisto e traffico, e altri dispositivi che incoraggiano l'empatia con gli abitanti del gioco sono utili. I giocatori sembrano non divertirsi con i reli misch. A volte sono presentate anche speranze di sopravvivenza.</p>
+                <p>I gamemaster condividono un interesse comune con i compagni e la perpetuazione delle azioni umane. A volte presentiamo personaggi che sembrano godere genuinamente di amicizie nutrienti. La vittoria è (1) sopravvivere, (2) la crescita e (3) la conservazione della scelta. La sconfitta è la perdita di una o di tutte le possibilità.</p>
+            </section>
+
+            <section id="regola-opzionale-legale" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 sub-section-title my-4">UNA REGOLA OPZIONALE LEGALE</h3>
+                <p>SISTEMA DI GIOCO ABBIAMO ANCHE presentato quanto segue, una contropartita Legale alla regola del Caos. Suggeriamo di sperimentare con essa. Gli avventurieri che evolvono semplicemente in un ruolo dovrebbero avere un cambiamento di allineamento accettabile.</p>
+                <p>Il solo apprendere e lanciare magie aggiunge sempre punti al riquadro del Caos. Ogni volta che un'abilità raggiunge più del 20% al di sopra del suo valore precedente (ad es. al 100%, 120%, 140%, 160% ecc.), il giocatore aggiunge 1D3 punti al suo riquadro della Legge. Le predizioni di Thol sono più equilibrate. Questo può causare una deriva verso la Legge così come verso il Caos.</p>
+                <p>Un equilibrio simile esiste per il mantenimento. Le abilità sono in pace e in contesa, non competizione o composizione.</p>
+            </section>
+
+            <section id="incantamenti" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 sub-section-title my-4">INCANTAMENTI</h3>
+                <p>RAPPRESENTANO una o più qualità che impregnano un oggetto, ma sostituiscono uno o più dei normali attributi fisici o per il suo comportamento. Gli elementi erano più vitali in passato. Quando la magia e gli elementi erano più vitali, non era più possibile creare un nuovo incantamento sul piano dei Giovani Regni. Forse due incantamenti perduti vengono ritrovati ogni anno. Solo il gamemaster può introdurre un incantamento nel gioco, e il gamemaster è l'arbitro finale della sua magia.</p>
+                <p>Per usare un oggetto incantato, non è necessaria alcuna evocazione, incantesimo, sacrificio di Punti Magia o Potere. L'oggetto funziona per chi lo usa, e il suo scopo è evidente. Un anello incantato può essere rubato, venduto o donato, e funziona comunque con la sua magia.</p>
+                <p>Data una grande virtù, fedeltà o un destino straziante, un avventuriero potrebbe guadagnare un incantamento da un Signore della Legge. Lui dovrebbe distinguersi, affinché ogni incantamento sia memorabile.</p>
+                <p class="mt-4">Un incantamento unico nel suo genere, creato per uno scopo o una persona specifici. Ogni incontro riafferma la propria unicità per grandi atti, e le azioni specifiche dovrebbero portare a una grande avventura.</p>
+                <p>Gli incantamenti hanno alcune somiglianze.</p>
+                <div class="info-box text-base">
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>La creazione è lunga e mortale, e di solito Melnibonéana.</li>
+                        <li>L'oggetto incantato non è vivo e non ha personalità — la personalità è di competenza dei demoni e degli elementali. Un oggetto incantato ha comunicato.</li>
+                        <li>Un oggetto incantato attende l'eroe per il quale è stato creato.</li>
+                        <li>Può essere attaccato a incantamenti, o altri effetti di possedere oggetti propri.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="esempi-oggetti-incantati" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 sub-section-title my-4">ESEMPI DI OGGETTI INCANTATI</h3>
+                <p>Di seguito è riportata una manciata di oggetti incantati. Nell'usarli, o nel crearne di propri, il gamemaster dovrebbe rispondere a domande relative alla storia dell'oggetto, ai suoi poteri e ai limiti, per quanto possibile. Fornire indizi sulla natura e l'origine di un oggetto, e quindi permettere agli avventurieri di scoprire gradualmente l'oggetto. Una volta che la spada, l'amuleto, ecc. sono compresi, diventano meno interessanti. Le seguenti domande chiariscono alcuni dei problemi.</p>
+                <div class="info-box text-base">
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li><strong>UNA FRECCIA:</strong> un'arma d'oro forgiata da un processo ormai perduto, quest'arma conferisce 2D6+2db di danno contro i Campioni del Caos, 1D6+1/2db di danno contro altri esseri magici, e nessun danno a obiettivi non magici. Quest'arma colpisce normalmente i Campioni del Caos alla fine del round in cui viene scoccata, la freccia scompare e riappare nella faretra di chi la possiede. Perde i suoi poteri magici e tutte le proprietà magiche una volta che il danno abbassa i suoi punti ferita a zero.</li>
+                        <li><strong>UNA SPADA LARGA:</strong> un'arma leggendaria, trovata quando il suo precedente proprietario è morto in battaglia, richiedeva una forza sovrumana. Sono richiesti un minimo di STR 40 e DES 40 per maneggiarla efficacemente. Per ogni cinque punti al di sopra del minimo, aumenta il danno massimo del bonus ai danni del portatore di uno. La spada ha 40 punti ferita. Se rotta, può essere riforgiata tra le mani di un eroe la cui devozione alla restaurazione della terra sia totale.</li>
+                        <li><strong>UNO STOCCO:</strong> questa spada d'acciaio, dall'aspetto ordinario tranne che per la sua elsa a otto punte, potrebbe essere un'arma del Caos. È micidiale in combattimento, conferendo attacchi flessibili e veloci. Se il sigillo del Caos sull'elsa viene spezzato, le abilità critiche di quest'arma diventano immediatamente importanti. Un tiro di 01-05 è un impalamento. Le ferite totali sono raddoppiate, come al solito. Una volta liberato, l'impalamento infligge 1D6 punti ferita per round di danno da veleno fino alla morte. Gli oggetti incantati perdono tutte le loro proprietà magiche una volta che il danno abbassa i loro punti ferita a zero.</li>
+                        <li><strong>UN LIBRO:</strong> è un libro di iarde di lato con rilegatura in pelle e spesse pagine di pergamena. Otto occhi sono incastonati nella copertina anteriore e possono parlare. Si può trovare la verità sul futuro. Le pagine non sono ancora scritte. Se il lettore pone una domanda, le parole appaiono sulla pagina a caso, rispondendo alla domanda e fornendo la pagina del testo dove trovare la risposta. La risposta appare nel passato. Il libro risponderà a tre domande per ogni persona, non di più. La prima domanda è gratuita. Per le altre domande, il lettore deve tirare POT x3 o meno; fallendo, perde 1 POT. Per la terza domanda, tira POT x1 o meno; fallendo, il lettore non ottiene la risposta ma continua a studiare e a trovare nuove risposte fino alla morte o fino a quando la sua libertà non arriva. Trascinato via dopo il terzo tiro, fallito, da allora sogna ossessivamente il libro, ma non riesce a ritrovare la strada per tornare ad esso.</li>
+                        <li><strong>UN GUANTO:</strong> questo guanto d'acciaio appare ordinario. Un'ispezione attenta mostra che è ovunque inciso con minuscole immagini di bilance in equilibrio. Sulla mano di un Campione dell'Equilibrio, stringendo momentaneamente la mano di un'altra persona in amicizia, può cancellare giornalmente 1D6 punti Caos o Legge (a seconda di quale sia il più alto) da 1D6 persone.</li>
+                        <li><strong>UN PAIO DI STIVALI:</strong> una runa dell'aria decora vistosamente ogni stivale. Gli stivali di pelle nera sembrano essere della taglia dell'ultima persona che li ha indossati, ma si espandono o si restringono per adattarsi alla taglia di chiunque li indossi. Indossati, gli stivali sollevano magicamente chi li indossa appena dalla superficie su cui si trova. Finché sono indossati, chi li indossa tratta tutte le superfici allo stesso modo. Quindi un pollice o più di palude, pietra, acqua, neve e sabbie mobili offrono lo stesso appoggio saldo — anche l'aria sul lato opposto di un burrone di uguale altezza a portata di vista. Chi li indossa si muove a velocità normale; un incantesimo come Velocità di Vezhan aumenta la velocità di MOV mentre si indossano gli stivali.</li>
+                        <li><strong>UN MURO DI PIETRA:</strong> è un segmento ordinario di pietra squadrata, ma chiunque vi si appoggi e lo tocchi con la mano destra dice solo la verità mentre lo tocca. Chi parla mantiene il controllo di sé e delle proprie parole, e non ha bisogno di dire tutto, ma qualsiasi parola pronunciata e le intenzioni dietro di esse sono vere come il momento lo permette.</li>
+                        <li><strong>UNO SPECCHIO DA PARETE:</strong> guardando nello specchio dalla cornice ornata, l'osservatore vede alternativamente il suo volto come era e come sarà. Più a lungo si guarda, più varie sono le visioni. Per alcune ore, una sensazione di tranquilla contentezza pervade l'osservatore, e la pace di Tanelorn sembra a portata di mano.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="affiliazione-gm" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 section-title my-4">AFFILIAZIONE</h3>
+                <p>Il gamemaster ha a disposizione alcuni punti utili per controllare le affiliazioni dei personaggi. Benché non ci siano regole ferree a riguardo, nessun giocatore dovrebbe essere costretto ad agire contro la sua volontà, nell'interesse della mente dei giocatori. Per loro, un fallimento è il risultato di 99 o 00 su un tiro D100. Se il risultato è 101 o più, un fallimento si verifica solo con 00.</p>
+                <div class="info-box text-base">
+                    <ul class="list-disc ml-6 space-y-2">
+                        <li>Poiché l'Equilibrio è più interessato alla morte che alla vita, un Campione dell'Equilibrio che muore viene ricondotto in vita dalla morte per un'unica ragione. Interviene solo quando la morte è stata una causa Caotica, per definizione ingiusta.</li>
+                        <li>La via più ovvia per morire è l'omicidio, non per Legge, per il destino o per avventura. Il gamemaster che deve affrontare l'apparente must-be di un personaggio lo riporterà in gioco in un momento successivo, con un tiro D100 riuscito. Ogni volta che la possibilità viene tentata, il gamemaster tira segretamente un D100, e una probabilità del 1% esiste, più l'ammontare corrispondente nel riquadro di affiliazione del personaggio.</li>
+                        <li>(2) Per trattare un avventuriero come amico di una delle forze, l'Equilibrio, il Caos o la Legge, il punteggio dell'Equilibrio deve essere raddoppiato rispetto a ciascuno degli altri due punteggi nel riquadro dell'affiliazione corrispondente.</li>
+                        <li>(3) Per ogni cento punti completi accumulati in uno dei tre riquadri, aggiungi dieci punti percentuali alla probabilità dell'avventuriero di essere riconosciuto dagli osservatori per le sue gesta nell'aiutare quella forza. Tira D100. Un riconoscimento favorevole dipende dall'allineamento dell'osservatore. Essere famosi o famigerati può aggiungere o sottrarre ai tiri per Arte, Contrattare, Mascherarsi, Parlantina, Intuito, Oratoria e Carisma, a discrezione del gamemaster.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="punti-caos-equilibrio-legge" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 section-title my-4">PUNTI CAOS, EQUILIBRIO E LEGGE</h3>
+                <p>SULLA TABELLA sottostante, solo una forza aumenta per azione. Il gamemaster dichiara quale forza aumenta, ma dovrebbe essere ovvio nella maggior parte dei casi. Si tratta di ricompense insolite, fatte per riconoscere circostanze speciali o eventi unici. Una serata di gioco potrebbe vedere una tale ricompensa.</p>
+                <div class="overflow-x-auto mt-4">
+                    <table>
+                        <thead class="table-header">
+                        <tr>
+                            <th>L'avventuriero...</th>
+                            <th>caos</th>
+                            <th>equilibrio</th>
+                            <th>legge</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td>vincola un elementale</td><td>—</td><td>-1</td><td>—</td></tr>
+                        <tr><td>libera qualcuno</td><td>1</td><td>1</td><td>—</td></tr>
+                        <tr><td>fa carità</td><td>—</td><td>1</td><td>—</td></tr>
+                        <tr><td>guarisce qualcuno mortalmente malato</td><td>—</td><td>1</td><td>—</td></tr>
+                        <tr><td>imprigiona qualcuno</td><td>—</td><td>1</td><td>1</td></tr>
+                        <tr><td>un'invocazione ripristina la vita di qualcuno</td><td>2</td><td>-2</td><td>1</td></tr>
+                        <tr><td>uccide un elementale</td><td>1/10 del POT dell'E.</td><td>—</td><td>1/10 del POT dell'E.</td></tr>
+                        <tr><td>uccide un demone</td><td>—</td><td>—</td><td>1/10 del POT del D.</td></tr>
+                        <tr><td>uccide un nemico giurato in un combattimento leale</td><td>—</td><td>—</td><td>1</td></tr>
+                        <tr><td>impara a lanciare magie</td><td>1</td><td>—</td><td>—</td></tr>
+                        <tr><td>ama un altro</td><td>—</td><td>3</td><td>—</td></tr>
+                        <tr><td>crea qualcosa di unico e bello</td><td>—</td><td>1</td><td>—</td></tr>
+                        <tr><td>assassina</td><td>1</td><td>—</td><td>—</td></tr>
+                        <tr><td>vincola un elementale a un oggetto</td><td>—</td><td>-5</td><td>—</td></tr>
+                        <tr><td>rifiuta la carità</td><td>—</td><td>-2</td><td>-1</td></tr>
+                        <tr><td>salva qualcuno dal pericolo</td><td>1</td><td>2</td><td>1</td></tr>
+                        <tr><td>invoca un Signore del Caos o della Legge</td><td>2</td><td>—</td><td>1</td></tr>
+                        <tr><td>parla con i morti</td><td>1</td><td>-1</td><td>—</td></tr>
+                        <tr><td>ruba qualcosa di importante</td><td>1</td><td>—</td><td>—</td></tr>
+                        <tr><td>evoca un demone</td><td>1</td><td>—</td><td>—</td></tr>
+                        <tr><td>racconta una menzogna significativa</td><td>1</td><td>—</td><td>—</td></tr>
+                        <tr><td>racconta una verità significativa</td><td>—</td><td>1</td><td>1</td></tr>
+                        <tr><td>si vendica</td><td>1</td><td>—</td><td>1</td></tr>
+                        <tr><td>approfitta di qualcuno</td><td>1</td><td>—</td><td>—</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="azioni-per-le-forze" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 sub-section-title my-4">AZIONI PER LE 3 FORZE</h3>
+                <p>IN AGGIUNTA ai punti affiliazione regolarmente accumulati con i tiri di 1D8 o 1D6, il gamemaster può occasionalmente desiderare di assegnare un piccolo numero di punti in risposta a qualche azione. Assegnare tali punti è interamente a discrezione del gamemaster.</p>
+                <p>I punti guadagnati tramite le azioni dovrebbero variare con la loro importanza nel gioco di ruolo. Gli atti più significativi sono sempre quelli compiuti con passione e che, una volta fatti, chi li compie non può annullare. Le azioni compiute come stratagemmi per manipolare le regole non dovrebbero avere alcun effetto, o un effetto imprevisto. Il gamemaster decide sempre il numero effettivo di punti e la ragione per cui li assegna. Assegnare più di tre punti dovrebbe essere straordinariamente raro.</p>
+                <p>Nella saga, il Caos è chiaramente la forza della massima crudeltà, ma Elric si rende anche conto che il trionfo della Legge alla fine non sarebbe più soddisfacente. I migliori sulla Terra si aggrappano all'Equilibrio, finché il Fato non spazza via tutto.</p>
+            </section>
+
+            <section id="non-umani" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 sub-section-title my-4">NON-UMANI</h3>
+                <p>A discrezione del gamemaster, i giocatori possono interpretare avventurieri non-umani. Se giocatore e gamemaster non sono d'accordo, che siano i dadi a decidere. Se il giocatore può ottenere un risultato di 01, può interpretare un Melnibonéano o uno della Razza Alata di Myyrrhn. Queste potenti razze creano circostanze insolite in gioco.</p>
+
+                <div class="mt-6">
+                    <h4 class="text-2xl font-semibold text-red-200 sub-section-title my-4">MELNIBONÉANI</h4>
+                    <p>I MELNIBONÉANI sono crudeli ed eleganti, felini nei loro sensi del piacere e dello sport. Sono per lo più privi di sentimento e delle passioni più dolci. (In contraddizione a ciò, Elric era decisamente diverso, come lui stesso capiva.) Liberati da ogni cosa tranne che dal comando dei loro molti schiavi, le volontà individuali governano Melniboné, comandate dal loro imperatore.</p>
+                    <p>I Melnibonéani sono potenti stregoni e hanno governato il mondo per 10.000 anni. I Giovani Regni li disprezzano tanto quanto i demoni che evocano. Altamente intelligenti e inclini alla magia, la lunga associazione dei Melnibonéani con il Caos ha contaminato i loro stessi esseri.</p>
+                    <p>I Melnibonéani sono distaccati ed eruditi. Assegna 30 punti abilità a ciascuna delle seguenti: tre diverse Arti, Valutare, Milione di Sfere, Mondo Naturale, Navigare, Oratoria, Fisica, Pozioni, Cavalcare, Scrivere e una qualsiasi classe di armi. Tutte le probabilità di base rimangono come per gli umani, eccetto Rissa (40%) e Lotta (35%).</p>
+                    <p>Creare un avventuriero personalizzato è forse la scelta più appropriata per i signori della Città Sognante, poiché ogni membro della società Imrryriana persegue liberamente i propri studi, arti e altri piaceri. Distribuisci 300 punti abilità tra le abilità, come ritieni opportuno, oppure seleziona un'occupazione e distribuisci la stessa quantità a queste abilità. Delle occupazioni nel capitolo degli avventurieri di questo libro, quella di Mercenario, Nobile Minore, Speziale, Scriba, Sacerdote o Soldato è appropriatamente Melnibonéana.</p>
+                    <p>Un avventuriero Melnibonéano con POT sufficiente conosce un numero di incantesimi pari alla sua INT prima del gioco. Con un tiro Fortuna riuscito, aggiungi 1D3 demoni vincolati con un'abilità ciascuno. Aggiungi un punto Caos per ogni incantesimo o demone. Il limite di INT dei Melnibonéani per la magia è il doppio di quello degli umani. Vista Stregata è un'abilità innata per i Melnibonéani; vedi gli incantesimi per cosa fa.</p>
+                    <p>Un Melnibonéano di solito possiede un'armatura a piastre Melnibonéana, qualsiasi arma desideri, una scuderia di cavalli e armi favolose. Per gli spiccioli, moltiplica per dieci qualsiasi somma di denaro indicata nella creazione di un avventuriero.</p>
+                    <p>Infine, contempla perché il tuo Melnibonéano ha lasciato il paradiso di Imrryr per andare all'avventura. È curioso del mondo? Disprezza la decadenza in cui è caduto il Fulgido Impero? È un reietto? È fuggito temendo vendetta? Va in cerca di qualcosa? Deve esistere una forte motivazione, poiché pochi si scrollano di dosso le droghe beate della Città Sognante per entrare nel freddo e rozzo mondo dei Giovani Regni.</p>
+                    <div class="info-box mt-4">
+                        <h5 class="text-xl font-bold text-red-200 text-center mb-2">MELNIBONÉANO MEDIO</h5>
+                        <table class="w-full text-sm">
+                            <thead class="table-header">
+                            <tr>
+                                <th>caratteristiche</th>
+                                <th>tiri</th>
+                                <th>medie</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr><td>Caos 20, Equilibrio 0, Legge 0</td><td></td><td></td></tr>
+                            <tr><td>STR</td><td>2D8+4</td><td>13</td></tr>
+                            <tr><td>COS</td><td>2D8+4</td><td>13</td></tr>
+                            <tr><td>TAG</td><td>2D8+4</td><td>13</td></tr>
+                            <tr><td>INT</td><td>3D8+8</td><td>21-22</td></tr>
+                            <tr><td>POT</td><td>3D8+8</td><td>21-22</td></tr>
+                            <tr><td>DES</td><td>2D8+4</td><td>13</td></tr>
+                            <tr><td>APP</td><td>2D8+8</td><td>17</td></tr>
+                            <tr><td>MOV run-8</td><td></td><td>av. HP 13</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="mt-2"><strong>Bonus Danni Medio:</strong> +1D4.</p>
+                        <p><strong>Armi:</strong> Rissa 40%, danno 1D3+db; Lotta 35%, danno speciale; altre armi partono dalle probabilità di base umane.</p>
+                        <p><strong>Armatura:</strong> 1D10+6 (elmo indossato), Armatura a Piastre Melnibonéana.</p>
+                        <p><strong>Incantesimi:</strong> dato POT 16 o superiore, quel numero è pari a INT, e aggiungi 1D3 demoni vincolati con un'abilità ciascuno.</p>
+                        <p><strong>Abilità:</strong> le probabilità di base sono come per gli umani, ma aggiungi un'abilità Vista Stregata 30%.</p>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <h4 class="text-2xl font-semibold text-red-200 sub-section-title my-4">MYYRRHN</h4>
+                    <p>LA RAZZA ALATA di Myyrrhn è isolata e orgogliosa. Dimorano in alto nei loro nidi aerei nella Valle di Myyrrhn, e si occupano dei propri affari. Nobili, severi e taciturni, sono anche belli, forti e agili.</p>
+                    <p>Non tutti i Myyrrhn hanno le ali. Fai un tiro Fortuna per il tuo avventuriero. Se il tiro riesce, è alato e può volare. Coloro che non hanno le ali le desiderano ardentemente, e cercano magia e conoscenza per trovarle, e non sono consolati dal fatto di poter correre leggermente più veloce, a MOV 8, dei loro fratelli alati.</p>
+                    <p>La razza è la più antica tra i Giovani Regni. Come discendenti dei bestiali clakar, tira le loro caratteristiche con i D8.</p>
+                    <p>Dai agli avventurieri di Myyrrhn 20 punti ciascuno nelle abilità Arte, Contrattare, Scalare, Nascondere Oggetto, Mascherarsi, Schivare, Valutare, Saltare, Mondo Naturale, Fisica, Cercare e un'arma qualsiasi.</p>
+                    <p>Le occupazioni adatte alla razza alata includono Cacciatore, Smarrito, Mercenario, Sciamano, Piccolo Commerciante, Soldato e Stregone. Distribuisci 250 punti abilità per l'occupazione scelta.</p>
+                    <p>I Myyrrhn sono abili nella stregoneria, e tra loro sono noti negromanti. Dato un POT di 16 o superiore, prendi fino a metà INT in incantesimi prima del gioco. Dato un tiro Fortuna riuscito, aggiungi un demone vincolato dotato di 1D3 abilità. Il limite di INT della razza per la magia è il doppio di quello degli umani. Aggiungi un punto Caos o Legge per ogni magia appropriata.</p>
+                    <p>I Myyrrhn hanno le probabilità di base umane. I Myyrrhn che volano non usano cavalli; i Myyrrhn senza ali possono usare i cavalli, e hanno una normale probabilità di base per Cavalcare. Entrambi i tipi di Myyrrhn hanno altre probabilità di base umane.</p>
+                    <p>Preferiscono non indossare armature di metallo. Iniziano con la quantità standard di denaro e armi.</p>
+                    <p>Infine, perché questa persona ha lasciato la sicurezza del nido aereo per avventurarsi nei quattro angoli di un mondo potenzialmente ostile? Si è sentita limitata dalla società insulare di Myyrrhn? Sente il bisogno di mettersi alla prova agli occhi della sua famiglia? Ha infranto una legge tribale? Se non ha le ali, l'obiettivo dell'avventura è chiaro. Nella saga, Shaarilla della Nebbia Danzante attraversò due continenti alla ricerca di quell'obiettivo, ma non trovò gioia.</p>
+
+                    <div class="info-box mt-4">
+                        <h5 class="text-xl font-bold text-red-200 text-center mb-2">MYYRRHN ALATO MEDIO</h5>
+                        <table class="w-full text-sm">
+                            <thead class="table-header">
+                            <tr>
+                                <th>caratteristiche</th>
+                                <th>tiri</th>
+                                <th>medie</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr><td>Caos 5, Equilibrio 10, Legge 5</td><td></td><td></td></tr>
+                            <tr><td>STR</td><td>2D8+8</td><td>17</td></tr>
+                            <tr><td>COS</td><td>2D8+8</td><td>17</td></tr>
+                            <tr><td>TAG</td><td>2D8+8*</td><td>17</td></tr>
+                            <tr><td>INT</td><td>2D8+8</td><td>17</td></tr>
+                            <tr><td>POT</td><td>2D8+8</td><td>17</td></tr>
+                            <tr><td>DES</td><td>2D8+8</td><td>17</td></tr>
+                            <tr><td>APP</td><td>2D8+8</td><td>17</td></tr>
+                            <tr><td>MOV fly-11, run-7</td><td></td><td>av. HP 17</td></tr>
+                            <tr><td colspan="3">* un Myyrrhn senza ali è 2D8+4.</td></tr>
+                            </tbody>
+                        </table>
+                        <p class="mt-2"><strong>Bonus Danni Medio:</strong> +1D4.</p>
+                        <p><strong>Armi:</strong> tradizionalmente arco e lancia, ma tutte le armi sono possibili; per volare con uno scudo mezzo o piccolo, il Myyrrhn deve avere STR 17 o superiore.</p>
+                        <p><strong>Armatura:</strong> piume da 2 punti; occasionalmente cuoio morbido.</p>
+                        <p><strong>Incantesimi:</strong> fino a tre; scegli tra quelli delle occupazioni umane nel capitolo degli avventurieri.</p>
+                        <p><strong>Abilità:</strong> usa le probabilità di base umane, ma parti da zero per Cavalcare per i Myyrrhn alati e aumenta Cercare delle percentuali precedentemente destinate a Cavalcare.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="yk-digest" class="pt-6">
+                <h3 class="text-3xl font-bold text-red-300 section-title my-4">SOMMARIO DEI G.R. (Y.K. DIGEST)</h3>
+                <p>USA QUESTI personaggi non giocanti come personaggi principali nelle tue avventure, o attingi da loro quando hai bisogno di qualcuno in più. I tuoi giocatori si allontanano sempre dal tuo percorso attentamente costruito e si dirigono da qualche parte di completamente inaspettato? Un avventuriero desidera sedurre una cameriera di locanda mentre un altro vuole attaccar briga con la guardia cittadina? Le statistiche qui sotto aiutano a improvvisare molti incontri.</p>
+                <p>I bonus ai danni sono mostrati sia separatamente sia inclusi nei danni delle armi. Quelli con un Potere abbastanza alto da eseguire magie sono equipaggiati con alcuni incantesimi, ma senza demoni o elementali. I demoni in particolare dovrebbero essere creati su misura per la situazione. Se i personaggi provengono da terre Caotiche, dovrebbero essere equipaggiati anche con demoni e possibilmente elementali vincolati. Per statistiche ancora più complesse, vedi il capitolo delle personalità.</p>
+                <p>La maggior parte dei personaggi è dotata di abilità non presenti nel capitolo delle abilità. Queste sono per la comodità del gamemaster e rappresentano le tendenze del personaggio.</p>
+                <p>Non esistono punti affiliazione per i personaggi, poiché il gamemaster deve scegliere i loro allineamenti. Il gamemaster dovrebbe sempre aggiungere o cambiare le statistiche per adattarle al suo senso di appropriatezza. Mentre le caratteristiche degli avventurieri umani sono sempre determinate da 2D6+6, gli umani non giocanti usano 3D6.</p>
+
+
+            </section>
+
+        </main>
+
+    </div>
+</div>
+
+</body>
+</html>
+

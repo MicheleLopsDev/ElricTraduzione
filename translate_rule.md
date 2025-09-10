@@ -95,11 +95,9 @@ Questa sezione elenca le decisioni prese e i punti da discutere man mano che si 
 * **Completato:** Avventurieri (04a a 04e)  
 * **Completato:** Abilità (05a a 05c)  
 * **Completato:** Sistema di Gioco (06a a 06c)  
-* **Completato:** Regole Rapide di Combattimento (07\_combattimento\_regole\_rapide.html)  
-* **Completato:** Combattimento (Parte 1: Basi) (08a\_combattimento\_basi.html)  
-* **Completato:** Combattimento (Parte 2: Corpo a Corpo) (08b\_combattimento\_corpo\_a\_corpo.html)  
-* **In Corso:** Combattimento (Parte 3: Tabelle Armi) (08c\_combattimento\_tabelle\_armi.html)  
-* **Prossimo Passo:** Iniziare la traduzione del capitolo **"Magia" (Magic)**.
+* **Completato:** Combattimento   
+* **Completato:** Magia   
+* **Prossimo Passo:** Iniziare la traduzione del capitolo **"GameMasters**.
 
 #### **7\. Fasi Successive e Revisione Finale**
 
