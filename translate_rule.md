@@ -97,7 +97,8 @@ Questa sezione elenca le decisioni prese e i punti da discutere man mano che si 
 * **Completato:** Sistema di Gioco (06a a 06c)  
 * **Completato:** Combattimento   
 * **Completato:** Magia   
-* **Prossimo Passo:** Iniziare la traduzione del capitolo **"GameMasters**.
+* **Completato:** Gamemasters
+* **Prossimo Passo:** Iniziare la traduzione del capitolo **"Personalities**.
 
 #### **7\. Fasi Successive e Revisione Finale**
 
