@@ -98,7 +98,8 @@ Questa sezione elenca le decisioni prese e i punti da discutere man mano che si 
 * **Completato:** Combattimento   
 * **Completato:** Magia   
 * **Completato:** Gamemasters
-* **Prossimo Passo:** Iniziare la traduzione del capitolo **"Personalities**.
+* **Completato:** Personalities
+* **Prossimo Passo:** Iniziare la traduzione del capitolo **"Creatures**.
 
 #### **7\. Fasi Successive e Revisione Finale**
 

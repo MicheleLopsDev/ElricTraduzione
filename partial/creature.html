@@ -1,0 +1,2000 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elric! - Bestiario Completo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Stili Generali */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* gray-900 */
+            color: #d1d5db; /* gray-300 */
+            scroll-behavior: smooth;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', serif;
+        }
+
+        /* Stili Titoli Principali */
+        .title-elric {
+            font-size: 4rem;
+            font-weight: 700;
+            color: #f87171; /* red-400 */
+            text-shadow: 2px 2px 4px #000;
+        }
+        .subtitle-elric {
+            font-size: 1.25rem;
+            color: #d1d5db; /* gray-300 */
+            letter-spacing: 0.1em;
+        }
+
+        /* Stili per le Sezioni */
+        .manual-section {
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+            border-top: 2px solid #4b5563; /* gray-600 */
+        }
+        .section-title {
+            border-bottom: 2px solid #ef4444;
+            padding-bottom: 0.5rem;
+        }
+        .sub-section-title {
+            border-left: 3px solid #f87171;
+            padding-left: 1rem;
+            color: #f87171;
+            font-size: 1.8rem;
+        }
+        .sub-sub-section-title {
+            border-left: 2px solid #ef4444;
+            padding-left: 0.75rem;
+            margin-top: 2rem;
+            font-size: 1.5rem;
+        }
+
+        /* Tabelle */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid #4b5563; /* gray-600 */
+            font-size: 0.9rem;
+        }
+        tr:nth-child(even) {
+            background-color: #1f2937; /* gray-800 */
+        }
+        tbody th {
+            background-color: #1f2937;
+            font-weight: bold;
+            text-align: center;
+        }
+        .table-header {
+            background-color: #374151; /* gray-700 */
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Box di Contenuto */
+        .rule-box,
+        .occupation-block {
+            background-color: #1f2937; /* gray-800 */
+            border-left: 4px solid #ef4444; /* red-500 */
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.25rem;
+        }
+        .info-box {
+            background-color: #1f2937;
+            border: 1px solid #4b5563; /* gray-600 */
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+        }
+        .verse-box {
+            background-color: #111827;
+            border-left: 4px solid #f87171;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+            font-family: 'Cinzel', serif;
+        }
+        .verse-box p {
+            margin: 0;
+            font-style: italic;
+            color: #d1d5db;
+        }
+
+        /* Liste GM */
+        .gm-points li {
+            background-color: #1f2937;
+            padding: 1rem;
+            border-left: 4px solid #ef4444;
+            margin-bottom: 0.75rem;
+            border-radius: 0.25rem;
+        }
+
+        /* Note */
+        .notes {
+            font-size: 0.9rem;
+            color: #9ca3af; /* gray-400 */
+            background-color: #1f2937;
+            padding: 1rem;
+            border-radius: 0.25rem;
+            border-left: 3px solid #6b7280; /* gray-500 */
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        .footnote-section {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid #4b5563;
+        }
+        .footnote-section ol {
+            padding-left: 1.5rem;
+            color: #9ca3af;
+        }
+        .footnote-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Immagini e Layout */
+        .image-placeholder {
+            width: 100%;
+            max-width: 250px;
+            height: 300px;
+            background-color: #374151;
+            border: 2px dashed #6b7280;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #9ca3af;
+            float: left;
+            margin-right: 2rem;
+            margin-bottom: 1rem;
+            border-radius: 0.25rem;
+        }
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Pulsante "Torna Su" */
+        .torna-su {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            background-color: #ef4444; /* red-500 */
+            color: white;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: none; /* Inizialmente nascosto */
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .torna-su:hover {
+            background-color: #f87171; /* red-400 */
+            transform: translateY(-5px) scale(1.1);
+        }
+        .torna-su svg {
+            width: 32px;
+            height: 32px;
+        }
+         .index-box {
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            border: 1px solid #4b5563;
+            display: flex;
+            justify-content: space-around;
+            background-color: #1f2937;
+            border-radius: 0.5rem;
+        }
+        .index-box ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .index-box a {
+            text-decoration: none;
+            color: #f87171;
+            font-weight: bold;
+        }
+        .index-box a:hover {
+            text-decoration: underline;
+            color: #ef4444;
+        }
+        .explanation-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .explanation-list li {
+            padding-left: 1em;
+            text-indent: -1em;
+        }
+        .explanation-list li::before {
+            content: "▶";
+            margin-right: 0.5em;
+            color: #f87171;
+        }
+    </style>
+</head>
+<body>
+<div id="creature" class="manual-section container mx-auto p-8 max-w-4xl">
+    <h1 class="title-elric" style="text-align: center;">CREATURE</h1>
+    <p class="subtitle-elric" style="text-align: center; margin-bottom: 3rem;">
+        NEMICI SELEZIONATI INCONTRATI DA ELRIC O DAI SUOI AMICI; SOMMARI DI ANIMALI E MOSTRI TERRESTRI TRADIZIONALI ALLA FINE DI QUESTO CAPITOLO.
+    </p>
+
+    <div class="bg-gray-800 p-8 rounded-lg border border-gray-700 shadow-lg mb-12">
+        <h3 class="text-2xl font-bold text-center text-red-400 mb-8 section-title">Indice delle Creature</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4">
+            <div>
+                <ul class="list-disc list-inside text-gray-400 space-y-2">
+                    <li><a href="#babuini-giganti" class="text-red-400 hover:text-red-300 font-semibold">Babbuini Giganti</a></li>
+                    <li><a href="#farfalla-del-caos" class="text-red-400 hover:text-red-300 font-semibold">Farfalla del Caos</a></li>
+                    <li><a href="#clakar" class="text-red-400 hover:text-red-300 font-semibold">Clakar</a></li>
+                    <li><a href="#creature-di-malik" class="text-red-400 hover:text-red-300 font-semibold">Creature di Malik</a></li>
+                    <li><a href="#cavalieri-demoniaci-pan-tang" class="text-red-400 hover:text-red-300 font-semibold">Cavalieri Demoniaci di Pan Tang</a></li>
+                    <li><a href="#draghi" class="text-red-400 hover:text-red-300 font-semibold">Draghi</a></li>
+                    <li><a href="#elenoin" class="text-red-400 hover:text-red-300 font-semibold">Elenoin</a></li>
+                    <li><a href="#scarabei-di-fuoco" class="text-red-400 hover:text-red-300 font-semibold">Scarabei di Fuoco</a></li>
+                    <li><a href="#ghoul" class="text-red-400 hover:text-red-300 font-semibold">Ghoul</a></li>
+                    <li><a href="#golem" class="text-red-400 hover:text-red-300 font-semibold">Golem</a></li>
+                    <li><a href="#grahluk" class="text-red-400 hover:text-red-300 font-semibold">Grahluk</a></li>
+                    <li><a href="#guardiano-di-ashaneloon" class="text-red-400 hover:text-red-300 font-semibold">Guardiano di Ashaneloon</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="list-disc list-inside text-gray-400 space-y-2">
+                    <li><a href="#cani-caccia-dei-dharzi" class="text-red-400 hover:text-red-300 font-semibold">Cani da Caccia dei Dharzi</a></li>
+                    <li><a href="#khorghakh" class="text-red-400 hover:text-red-300 font-semibold">Khorghakh</a></li>
+                    <li><a href="#i-kyrenee" class="text-red-400 hover:text-red-300 font-semibold">I Kyrenee</a></li>
+                    <li><a href="#gigante-della-nebbia" class="text-red-400 hover:text-red-300 font-semibold">Gigante della Nebbia</a></li>
+                    <li><a href="#olab" class="text-red-400 hover:text-red-300 font-semibold">Olab</a></li>
+                    <li><a href="#oonai" class="text-red-400 hover:text-red-300 font-semibold">Oonai</a></li>
+                    <li><a href="#maiali-serpente-creatura" class="text-red-400 hover:text-red-300 font-semibold">Maiali, Serpente, Creatura</a></li>
+                    <li><a href="#quaolnargn" class="text-red-400 hover:text-red-300 font-semibold">Quaolnargn</a></li>
+                    <li><a href="#servi-di-agak-gagak" class="text-red-400 hover:text-red-300 font-semibold">Servi di Agak & Gagak</a></li>
+                    <li><a href="#destrieri-di-nihrain" class="text-red-400 hover:text-red-300 font-semibold">Destrieri di Nihrain</a></li>
+                    <li><a href="#rovina-di-urish" class="text-red-400 hover:text-red-300 font-semibold">Rovina di Urish</a></li>
+                    <li><a href="#razza-alata-di-myyrrhn" class="text-red-400 hover:text-red-300 font-semibold">Razza Alata di Myyrrhn</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-box">
+        <p>
+            LE CREATURE qui presentate includono la maggior parte di quelle contro cui si verificano combattimenti significativi nella saga, o a cui (nel caso dei draghi) Moorcock dedica spazio e amorevole attenzione. Le generalità su demoni ed elementali si trovano nel capitolo della magia. Ciò che viene ordinariamente evocato o invocato appare lì; qui le voci sono per cose più mondane o molto più rare, inclusi demoni della saga, ma specialmente quelle cose create Caoticamente da forme naturali, come la Farfalla del Caos o i Maiali. Tutti noi sappiamo già che aspetto hanno e come si comportano un cavallo, un leone, un serpente, ecc., quindi includiamo solo le statistiche di gioco più rilevanti per gli animali naturali. Durante il gioco, i gamemaster potrebbero voler creare entità più deboli di quelle qui presentate. Molte di queste apparizioni erano quasi troppo potenti per Elric, per non parlare di avventurieri novizi.
+        </p>
+        <h4 style="font-family: 'Cinzel', serif; margin-top: 2rem;">SPIEGAZIONE DELLE VOCI</h4>
+        <p>
+            Ogni voce ha lo stesso contenuto generale. Prima viene il nome dell'entità, e talvolta una frase aggiuntiva. Seguono poi una o più citazioni descrittive per ritrarre l'entità o la specie, e viene fornita la fonte della citazione. In appendice alla citazione ci sono il titolo del libro e la posizione interna del libro e del capitolo della citazione. Successivamente, compare un nuovo commento riguardante la voce. Il suo scopo generale è integrare la saga con il sistema di gioco. Tranne in alcuni casi, non abbiamo aggiunto nuovi attacchi, abilità, ecc. Queste voci sono abbinate alle intenzioni di Moorcock. Una piccola illustrazione dell'entità si trova vicino alle sue statistiche.
+        </p>
+        <p>
+            Ci sono due tipi di statistiche. Se si tratta di una specie, i tiri di dado e le medie consentono al gamemaster di generare un numero qualsiasi di individui diversi. Oppure può valutare a occhio le medie e improvvisare se ha bisogno di una statistica singola e veloce. Le percentuali fornite per attacchi e abilità dovrebbero essere intese come la media per gli adulti che è probabile trovare armati. Se si tratta di un individuo, le informazioni statistiche fornite sono specifiche per quell'individuo; un altro rappresentante potrebbe essere molto diverso.
+        </p>
+        <ul class="explanation-list" style="margin-top: 1rem;">
+            <li>I valori di <strong>MOV</strong> sono dati in unità; una singola parola (corsa, nuoto, volo, ecc.) definisce il mezzo attraverso cui si ottiene il movimento.</li>
+            <li>Aggiungere il bonus al danno solo agli attacchi a cui è annessa la notazione <strong>+db</strong>. Alcuni attacchi, in particolare quelli di morso, sono stati calcolati includendo già parte del potenziale del bonus al danno.</li>
+            <li>Molti attacchi includono una spiegazione delle meccaniche in nota. Occasionalmente, tali informazioni compaiono nella parte conclusiva del commento, per enfasi o chiarezza.</li>
+        </ul>
+    </div>
+
+    <div class="occupation-block clearfix" id="babuini-giganti">
+        <h3 class="sub-section-title">BABBUINI, Arancioni e Giganti</h3>
+        <div class="verse-box">
+            <p>
+                Elric vide grandi occhi feroci scrutare dall'oscurità davanti a sé. Udì un rumore stridente, un suono impetuoso, e gli occhi divennero sempre più grandi. La creatura era un babbuino, ma enorme, con una bocca rossa, pelliccia gialla e zanne arancioni... e ce n'erano almeno una dozzina altri che seguivano il primo.
+                <br>— Il Navigatore sui Mari del Fato I,4.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Babbuino Gigante)
+        </div>
+        <p>
+            La misteriosa Nave ha raggiunto un'isola su un altro piano. Elric e altre tre incarnazioni del Campione Eterno devono combattere una successione di nemici prima di distruggere Agak e Gagak, stregoni alieni. Incontrano i babbuini subito dopo aver sconfitto i Servi di Agak, che si vedono anche in questo capitolo. Moorcock descrive il più grande dei babbuini come più grande di Elric, più del doppio delle dimensioni normali.
+        </p>
+        <p>
+            I babbuini attaccano nell'oscurità, in uno stretto corridoio, e ne consegue un combattimento particolarmente crudo in cui i Campioni sono trascinati negli scontri ravvicinati e non possono arretrare per liberare le loro spade. Questi ominidi hanno poche possibilità in campo aperto, ma nello stretto corridoio possono lanciare tutti i loro attacchi.
+        </p>
+        <p>
+            Un babbuino può attaccare simultaneamente con Morso e Artiglio, o con Morso e Lotta. Se effettua un attacco con Artiglio, il bersaglio può liberarsi con un tiro Fortuna riuscito; con un attacco di Lotta, il bersaglio si libera con un tiro riuscito di FOR:FOR sulla Tabella della Resistenza.
+        </p>
+
+        <h4>BABBUINI, Arancioni e Giganti</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>3D6+6</td><td>16-17</td></tr>
+            <tr><th>COS</th><td>3D6</td><td>10-11</td></tr>
+            <tr><th>TAG</th><td>3D6+12</td><td>22-23</td></tr>
+            <tr><th>INT</th><td>1D6+1</td><td>4-5</td></tr>
+            <tr><th>POT</th><td>2D6</td><td>7</td></tr>
+            <tr><th>DES</th><td>3D6+6</td><td>16-17</td></tr>
+            <tr><th>MOV corsa-10</th><td colspan="2"><strong>HP medi 16-17</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno:</strong> +1D6.</p>
+        <p>
+            <strong>Armi:</strong> Morso 40%, danno 1D8+1<br>
+            Artiglio 45%, danno 1D6+2<br>
+            Lotta 55%, danno speciale.
+        </p>
+        <p><strong>Armatura:</strong> 1D2-1 pelliccia.</p>
+
+        <h4>Abilità</h4>
+        <p>
+            Scalare 60%, Schivare 35%, Nascondersi 55%, Saltare 65%, Muoversi Silenziosamente 50%, Olfatto/Gusto 30%, Lanciare 40%.
+        </p>
+    </div>
+
+    <div class="occupation-block clearfix" id="farfalla-del-caos">
+        <h3 class="sub-section-title">FARFALLA DEL CAOS</h3>
+        <div class="verse-box">
+            <p>
+                Creata da Theleb K'aarna. Una grande forma alata si stava dirigendo verso di loro. Aveva l'aspetto di una farfalla, ma con ali così enormi da oscurare il sole... aveva un corpo d'uomo, coperto di peli o piume colorate come quelle di un pavone... L'aria sibilava mentre scendeva, i suoi cinquanta piedi d'apertura alare facevano sembrare minuscoli i sette piedi di testa e corpo. Dalla sua testa spuntavano due corna ricurve, e le sue braccia terminavano con lunghi artigli. Le ali si piegarono per proteggere il suo corpo. Stormbringer rimase impigliata nella strana, appiccicosa carne... Elric capì che non si trattava di un vero abitante soprannaturale dei mondi inferiori, ma di una creatura un tempo umana deformata dalla stregoneria di Theleb K'aarna.
+                <br>— Il Fato del Lupo Bianco III,5.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Farfalla del Caos)
+        </div>
+        <p>
+            Un umano trasmutato da una stregoneria di alto livello, la Farfalla del Caos si dimostra un nemico formidabile finché Elric non scopre come evocare Haaashaastaak. Il Signore delle Lucertole si manifesta come un'enorme iguana, arriccia la sua lingua enorme attorno alla farfalla del Caos e la ingoia. Fino a quel momento, però, la gigantesca farfalla aveva avuto la meglio sul combattimento, strappando Elric dall'osso e trascinandolo a sé con i suoi attacchi Presa d'Artiglio e Lotta, con l'intenzione di impalare infine l'albino con le sue corna.
+        </p>
+        <p class="notes">
+            Nell'illustrazione qui accanto, l'umano è stato ulteriormente degenerato dal Caos.
+        </p>
+
+        <h4>FARFALLA DEL CAOS</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>FOR</th><th>COS</th><th>TAG</th><th>INT</th><th>POT</th><th>DES</th><th>HP</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="text-align: center;">
+                <td>35</td><td>35</td><td>30</td><td>5</td><td>13</td><td>9</td><td>33</td>
+            </tr>
+            </tbody>
+        </table>
+        <p style="margin-top:-1rem; text-align: center;"><strong>MOV volo-11</strong></p>
+
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno:</strong> +3D8.</p>
+        <p>
+            <strong>Armi:</strong> Presa d'Artiglio 50%, danno Lotta*<br>
+            *Tiro di FOR:FOR sulla Tabella della Resistenza per sfuggire.<br>
+            Fendente d'Ala 40%, danno 1D8+db<br>
+            Cornata 40%, danno 2D8+db
+        </p>
+        <p>
+            <strong>Armatura:</strong> Ali Appiccicose, 30% di probabilità per un attacco di rimanere incastrato in un'ala**<br>
+            **Incastrata in un'ala, un'arma è tenuta con 4D8 FOR; tiro di FOR:FOR sulla Tabella della Resistenza per liberarla.
+        </p>
+
+        <h4>Abilità</h4>
+        <p>
+            Valutare Cibo 45%, Cercare 50%.
+        </p>
+    </div>
+
+    <div class="occupation-block clearfix" id="clakar">
+        <h3 class="sub-section-title">CLAKAR, Scimmie Alate</h3>
+        <div class="verse-box">
+            <p>
+                Massicce creature scimmiesche, portate da grandi ali coriacee... che borbottano e farfugliano, mostrando lunghe zanne nelle [loro] bavose fauci.
+                <br>— Il Fato del Lupo Bianco II,4.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Clakar)
+        </div>
+        <p>
+            Elric e Moonglum incontrano queste bestie in un mondo sotterraneo durante la ricerca di Elric del Libro degli Dei Morti. A giudicare dall'aspetto, dal comportamento e dal simbolo del Caos sopra l'ingresso del tunnel che conduce al loro mondo, sono Caotici per origine, anche se Sharilla, una donna alata di Myyrrhn, nota che "sono i primordiali antenati del mio popolo, di origine più antica del tempo registrato".
+        </p>
+        <p>
+            I clakar attaccanti mostrano poca cautela nei loro assalti, forse perché sono in grado di ignorare lo shock delle ferite maggiori. Il loro mondo neutralizza la magia di Stormbringer e rende il loro incontro con Elric una vera battaglia; se un clakar venisse portato in superficie, non godrebbe di tale beneficio.
+        </p>
+        <p>
+            Nella saga, queste creature attaccano dal cielo, volteggiando e poi atterrando o piombando direttamente su bersagli ignari. Le loro grandi ali sono uno svantaggio in terreni accidentati o boscosi.
+        </p>
+
+        <h4>CLAKAR</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>COS</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>TAG</th><td>3D8+8</td><td>21-22</td></tr>
+            <tr><th>INT</th><td>1D8+3</td><td>7-8</td></tr>
+            <tr><th>POT</th><td>3D8</td><td>13-14</td></tr>
+            <tr><th>DES</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>MOV volo-11, corsa-7</th><td colspan="2"><strong>HP medi 19-20</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno:</strong> +2D8.</p>
+        <p>
+            <strong>Armi:</strong> Morso 40%, danno 1D8<br>
+            Artiglio 45%, danno 1D8+db
+        </p>
+        <p><strong>Armatura:</strong> 1D2-1 pelliccia; sente poco dolore.</p>
+
+        <h4>Abilità</h4>
+        <p>
+            Scalare 40%, Schivare 15%, Saltare 35%, Muoversi Silenziosamente 15%, Olfatto/Gusto 35%, Cercare 45%, Saltare 15%, Pistare 15%.
+        </p>
+    </div>
+
+    <div class="occupation-block clearfix" id="creature-di-malik">
+        <h3 class="sub-section-title">CREATURE DI MATIK, Creazioni Melnibonéane</h3>
+        <div class="verse-box">
+            <p>
+                Dalle fessure nel terreno, forme mostruose balzarono fuori! Leoni dalla testa d'avvoltoio, alti quindici piedi, si aggiravano in famelica attesa verso di loro, le loro criniere piumate frusciavano mentre si avvicinavano... Ma Elric conosceva bene questo branco spettrale, poiché i suoi stessi antenati lo avevano creato per i propri scopi una dozzina di secoli prima... Code piumate sferzavano, gli artigli entravano e uscivano dai polpastrelli, scavando grandi squarci nella roccia.
+                <br>— Tempestosa II,4.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Creatura di Matik)
+        </div>
+        <p>
+            Queste cose si annidano “ai confini tra il Caos e la Terra”, una risorsa per qualsiasi stregone che le trovi. Persino uno stregone potente come Jagreen Lern non conosceva la loro origine né il loro speciale legame con Melniboné. Elric è in grado non solo di dissolverli, ma anche di scagliarli contro i Duchi dell'Inferno riuniti a Hwamgaarl stessa.
+        </p>
+        <p>
+            È stato ipotizzato che queste creature siano state create da Matik di Melniboné per aiutare nelle guerre contro i Dharzi, ma l'epoca della loro creazione precede la scomparsa dei Dharzi di circa 200 anni. Forse la data delle guerre Dharzi rappresenta solo la lotta finale in un conflitto più lungo.
+        </p>
+
+        <h4>CREATURE DI MATIK</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>5D8+16</td><td>33-34</td></tr>
+            <tr><th>COS</th><td>6D8+8</td><td>36</td></tr>
+            <tr><th>TAG</th><td>5D8+24</td><td>41-42</td></tr>
+            <tr><th>INT</th><td>1D8</td><td>4-5</td></tr>
+            <tr><th>POT</th><td>3D8</td><td>13-14</td></tr>
+            <tr><th>DES</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>MOV corsa-12</th><td colspan="2"><strong>HP medi 38-39</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno Medio:</strong> +4D8.</p>
+        <p>
+            <strong>Armi:</strong> Morso 45%, danno 2D8<br>
+            Artiglio 50%, danno 2D8+db
+        </p>
+        <p><strong>Armatura:</strong> 1D8+4 pelle Caotica.</p>
+
+        <h4>Abilità</h4>
+        <p>
+            Schivare 35%, Guardia 45%, Obbedire ai Melnibonéani 95%, Olfatto/Gusto 80%, Pistare 50%.
+        </p>
+    </div>
+
+    <div class="occupation-block clearfix" id="cavalieri-demoniaci-pan-tang">
+        <h3 class="sub-section-title">CAVALIERI DEMONIACI DI PAN TANG</h3>
+
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Cavaliere Demoniaco di Pan Tang)
+        </div>
+
+        <p>
+            Questi cavalieri di cavalleria pesante accompagnano le loro tigri nella mischia come una potente unità d'assalto. La lucertola-cavalcatura attacca solitamente solo quando provocata dal Cavaliere Demoniaco.
+        </p>
+        <p>
+            Sembra che ci siano da 500 a 600 Cavalieri Demoniaci nel reggimento.
+        </p>
+
+        <h4>CAVALIERE DEMONIACO, Cavaliere Medio</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>FOR</th><th>COS</th><th>TAG</th><th>INT</th><th>POT</th><th>DES</th><th>APP</th><th>HP</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="text-align: center;">
+                <td>15</td><td>15</td><td>13</td><td>10</td><td>11</td><td>14</td><td>9</td><td>14</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno:</strong> +1D4.</p>
+        <p>
+            <strong>Armi:</strong> Lancia 1D8+1+db<br>
+            Scimitarra 75%, danno 1D8+1+db<br>
+            Pugnale 40%, danno 1D4+2+db<br>
+            Scudo Piccolo 45%, parata KB+1D3+db, 20 PF
+        </p>
+        <p><strong>Armatura:</strong> 1D8+1 (elmo), Mezza Armatura.</p>
+
+        <h4>Abilità</h4>
+        <p>
+            Atteggiamento Scontroso 75%, Comando Tigre 35%, Disciplina 70%, Schivare 35%, Saltare 65%, Cavalcare 65%, Cercare 40%.
+        </p>
+
+        <hr style="border-color: #4b5563; margin: 2rem 0;">
+
+        <h4>CAVALCATURA: LUCERTOLA DEMONIACA, Rettile a 6 Zampe</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>3D6+12</td><td>22-23</td></tr>
+            <tr><th>COS</th><td>1D6+12</td><td>15-16</td></tr>
+            <tr><th>TAG</th><td>3D6+18</td><td>28-29</td></tr>
+            <tr><th>INT</th><td>4</td><td>4</td></tr>
+            <tr><th>POT</th><td>3D6</td><td>10-11</td></tr>
+            <tr><th>DES</th><td>2D6+3</td><td>10</td></tr>
+            <tr><th>MOV corsa-9</th><td colspan="2"><strong>HP medi 32</strong></td></tr>
+            </tbody>
+        </table>
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno Medio:</strong> +2D6.</p>
+        <p>
+            <strong>Armi:</strong> Morso 40%, danno 1D10<br>
+            Colpo di Coda** 40%, danno 1D6+1+db
+        </p>
+        <p class="notes">
+            * In grado di effettuare entrambi gli attacchi in un singolo round, ma non contro lo stesso bersaglio.<br>
+            ** Il bersaglio deve superare un tiro D100 di FOR x3 o meno, altrimenti viene abbattuto. Le punte della coda sono avvitate.
+        </p>
+        <p><strong>Armatura:</strong> 1D4+1 pelle squamosa.</p>
+        <h4>Abilità</h4>
+        <p>Schivare 10%, Olfatto/Gusto 35%, Pistare 15%.</p>
+
+        <hr style="border-color: #4b5563; margin: 2rem 0;">
+
+        <h4>CAVALCATURA: TIGRE, al Guinzaglio e Addestrata all'Attacco</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>3D6+12</td><td>22-23</td></tr>
+            <tr><th>COS</th><td>3D6</td><td>10-11</td></tr>
+            <tr><th>TAG</th><td>3D6+6</td><td>16-17</td></tr>
+            <tr><th>INT</th><td>5</td><td>5</td></tr>
+            <tr><th>POT</th><td>3D6</td><td>10-11</td></tr>
+            <tr><th>DES</th><td>2D6+12</td><td>19</td></tr>
+            <tr><th>MOV corsa-10</th><td colspan="2"><strong>HP medi 16-17</strong></td></tr>
+            </tbody>
+        </table>
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno Medio:</strong> +1D6.</p>
+        <p>
+            <strong>Armi:</strong> Morso 45%, danno 1D10<br>
+            Artiglio 70%, danno 1D6+db<br>
+            Squartare* 60%, danno 2D8+db
+        </p>
+        <p class="notes">
+            * Come i leoni, una tigre con un attacco riuscito con l'Artiglio può quindi aggrapparsi con le zampe anteriori e simultaneamente mordere e squarciare con gli artigli posteriori.
+        </p>
+        <p><strong>Armatura:</strong> 1D2 pelliccia.</p>
+        <h4>Abilità</h4>
+        <p>Schivare 60%, Muoversi Silenziosamente 75%, Nascondersi 80%, Pistare 50%.</p>
+
+    </div>
+
+    <div class="occupation-block clearfix" id="draghi">
+        <h3 class="sub-section-title">DRAGHI DI MELNIBONÉ</h3>
+        <div class="verse-box">
+            <p>
+                Muso snello dai riflessi verdi e rossi; denti affilati come rasoi; saliva che sibilava colpendo il suolo; un debole alito fumoso che usciva dalle narici svasate, mentre una lunga e spessa coda squamosa sferzava dietro.
+                <br>— La Vendetta della Rosa I,1.
+            </p>
+            <p>
+                L'apertura alare media di questi mostri quasi estinti era di circa trenta piedi. I loro corpi serpentini, che iniziavano con una testa dal muso stretto e terminavano in una terribile frusta di coda, erano lunghi quaranta piedi e, sebbene non sputassero il leggendario fuoco e fumo, Elric sapeva che il loro veleno era combustibile e poteva incendiare legno o tessuto al contatto.
+                <br>— Il Fato del Lupo Bianco I,4.
+            </p>
+            <p>
+                Le grandi forme sdraiate dei draghi addormentati giacevano, le loro ali coriacee ripiegate si ergevano nelle ombre, le loro scaglie verdi e nere brillavano debolmente, le zampe artigliate ripiegate e i loro musi sottili arricciati all'indietro, anche nel sonno, per mostrare i lunghi denti d'avorio che sembravano tante stalattiti bianche. Le loro narici rosse dilatate gemevano in un torpido sonno. L'odore delle loro pelli e del loro respiro era inconfondibile.
+                <br>— Tempestosa IV,1.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Drago di Melniboné)
+        </div>
+        <p>
+            Di tutte le entità nella saga di Elric, Moorcock ritorna più e più volte a una sola specie, cremisi su simboli d'oro: i draghi. I draghi di Melniboné, rinomati dormienti e serpenti aerei, hanno un'origine sconosciuta, anche se una questione di disputa. I draghi hanno sonnecchiato nelle caverne di Melniboné da prima dell'arrivo del primo Signori dei Draghi.
+        </p>
+        <p>
+            Essi rappresentano "la prima significativa fonte della nostra razza e la più pura", (RR I,2). Nei giorni in cui il numero dei draghi era grande, e nel controllarli i Melnibonéani governavano il mondo. Eppure, impiegare un drago deve richiedere una saggezza e un giudizio ponderati, poiché per un drago sono necessarie centinaia di anni per ogni giorno di attività. Negli ultimi millenni, i draghi sono diminuiti, parallelamente al declino dell'Impero Luminoso. Quando Elric suona il Corno del Fato, solo nove draghi sognanti si svegliano e volano con lui verso la battaglia finale.
+        </p>
+        <p>
+            Un drago melnibonéano non sputa fuoco, ma il suo alito è acido. Invece, espelle un veleno acido-simile di POT uguale al suo POT. In volo, il drago attacca spruzzando ripetutamente questo veleno su vaste aree. Ogni cosa infiammabile che il veleno tocca prende fuoco. Un drago può effettuare molti di questi attacchi, ma il numero è finito: Flamefang, il drago cavalcato da Elric, si è esaurito in trenta-sessanta minuti. Calcolare il numero di attacchi come il CON del drago.
+        </p>
+        <p>
+            Catturata in un elmo d'acciaio o contenitore simile, una goccia di veleno di drago si raffredda e indurisce in una pasta che (presa con acqua) può "dare a un uomo [un uomo] la forza di combattere per cinque giorni e cinque notti senza sentire dolore" (RR I,2), ma solo i Melnibonéani conoscono questo sapere. Con un'immersione sostanziale nel veleno di drago, il danno per round sarebbe pari ai punti ferita del POT del drago.
+        </p>
+        <p>
+            I draghi vivono per molte migliaia di anni, la maggior parte di quel tempo addormentati, o ciò che noi immaginiamo come sonno. È anche noto che un guerriero solitario possa cavalcare ogni drago usando una sella pesante creata su misura per quella bestia. Moorcock menziona le scaglie più morbide a metà del collo dove una spada potrebbe penetrare.
+        </p>
+
+        <h4>DRAGHI, Melnibonéani</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>6D8+30</td><td>61</td></tr>
+            <tr><th>COS</th><td>12D8+16</td><td>60</td></tr>
+            <tr><th>TAG</th><td>10D8+24</td><td>64</td></tr>
+            <tr><th>INT</th><td>3D8+6</td><td>18-19</td></tr>
+            <tr><th>POT</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>DES</th><td>1D8+8</td><td>12-13</td></tr>
+            <tr><th>MOV volo-14</th><td colspan="2"><strong>HP medi 62</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno Medio:</strong> +7D8.</p>
+        <p>
+            <strong>Armi:</strong> Morso 25%, danno 3D8<br>
+            Veleno Combustibile 70%, danno 1D6+4 per round a ogni bersaglio entro un'area di raggio CON.<br>
+            Goccia di Drago, il tocco danneggia 1D4-1 alla pelle umana, al cuoio o al bronzo, ma non all'acciaio.<br>
+            Veleno di Drago, POT = veleno con POT se ingerito.<br>
+            Colpo di Coda 20%, danno 1D8+db
+        </p>
+        <p><strong>Armatura:</strong> 2D8+8 scaglie gigantesche (2D8+4 a metà collo).</p>
+
+        <h4>Abilità</h4>
+        <p>Contemplare il Fato 80%, Ponderare Sogni 90%, Ricordare 75%, Cercare 80%.</p>
+
+    </div>
+
+    <div class="occupation-block clearfix" id="elenoin">
+        <h3 class="sub-section-title">ELENOIN, Nemici dei Grahluk dell'Ottavo Piano</h3>
+        <div class="verse-box">
+            <p>
+                Non sono donne. Sono Elenoin. Provengono dall'Ottavo Piano e non sono né l'uno né l'altro. Donne dai capelli rossi i cui alberi quasi coprivano i loro corpi nudi. E poi vide i loro denti: lunghi, appuntiti denti che luccicavano come metallo... Il canto si fece più forte finché le fece male alle orecchie e fece sanguinare il naso. Gli Elenoin scossero di nuovo le spalle e cominciarono a roteare le lunghe spade sopra le loro teste, fissando tutti con occhi bestiali, insensati e malevoli.
+                <br>— La Torre Evanescente II,5.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Elenoin)
+        </div>
+        <p>
+            Gli occhi di queste tre creature sono grandi e arancioni. Le elenoin sono cannibali e fanno una pausa nel bel mezzo della battaglia per tentare di mangiare le vittime umane dopo aver riso nel vederle morire.
+        </p>
+        <p class="notes">
+            Il libro ritrae una sequenza con il loro attacco, prima incantando con l'effetto di un Incantesimo del Medio, poi purificando per brandire le loro spade a cinque piedi, e poi lottando con i loro capelli animati per segnare i bersagli e infine portare a segno i loro attacchi di Morso. Essendo così Caotici, gli elenoin sono particolarmente difficili da uccidere. Persino Stormbringer richiede due colpi per eliminare un singolo elenoin splendente. Elric è sorpreso di vedere che gli uomini di Tanelorn in qualche modo sono riusciti a uccidere diversi elenoin perdendo metà dei loro effettivi.
+        </p>
+        <p>
+            Gli elenoin hanno tre Abilità Caotiche: punti ferita doppi, un lamento snervante che fa entrare in panico i mortali, e lunghi capelli che possono animare e avvolgere i bersagli vicini.
+        </p>
+        <p>
+            Elric contrasta gli elenoin evocando i loro antichi nemici, i Grahluk. Proprio come gli elenoin sembrano rappresentare stereotipi di femminilità, così i Grahluk possono rappresentare una parodia della mascolinità. L'evocazione di massa degli elenoin rappresenta uno dei più grandi trionfi di Theleb K'aarna.
+        </p>
+
+        <h4>ELENOIN, Nemici Caotici dei Grahluk</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>4D8+8</td><td>26</td></tr>
+            <tr><th>COS</th><td>4D8+8</td><td>26</td></tr>
+            <tr><th>TAG</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>INT</th><td>1D8</td><td>4-5</td></tr>
+            <tr><th>POT</th><td>3D8+8</td><td>21-22</td></tr>
+            <tr><th>DES</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>MOV corsa-8</th><td colspan="2"><strong>HP medi 43*</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno Medio:</strong> +2D8.</p>
+        <p>
+            <strong>Armi:</strong> Spadone 60%, danno 2D8 +db<br>
+            Morso 30%, danno 1D8<br>
+            Lamento 10% speciale*<br>
+            Capelli Animati 30%, danno Lotta
+        </p>
+        <p class="notes">
+            * Gli eroi devono superare un tiro D100 di POT x6 o meno, o aver bisogno di tiri riusciti di POT x5 per attaccare.<br>
+            ** L'armatura degli Elenoin consiste in punti ferita naturali doppi—calcolare come al solito, ma non dividere per due.
+        </p>
+
+        <h4>Abilità</h4>
+        <p>Scalare 40%, Schivare 60%, Saltare 45%, Olfatto/Gusto 50%.</p>
+
+    </div>
+
+    <div class="occupation-block clearfix" id="scarabei-di-fuoco">
+        <h3 class="sub-section-title">SCARABEI DI FUOCO, del Deserto che Sospira</h3>
+        <div class="verse-box">
+            <p>
+                Un corpo massiccio, color carne, su una dozzina di zampe, le sue mandibole che schioccavano mentre inseguiva i ratti che erano chiaramente la sua preda naturale... Con qualche strano trucco biologico, i giganteschi scarabei secernevano pozze oleose nei loro pesanti carapace [rosa e grigi]. Queste pozze, esposte al sole e talvolta alle fiamme già ardenti sulle loro schiene, prendevano fuoco così che a volte fino a venti punti bruciavano [e] venivano estinti solo quando una bestia si apriva un varco nel sottosuolo durante la sua stagione riproduttiva.
+                <br>— La Fortezza della Perla I,3.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Scarabeo di Fuoco)
+        </div>
+        <p>
+            Quando l'olio sulle loro schiene prende fuoco, il fumo può essere visto da lontano, e il fetore dei fuochi nelle vicinanze è nauseante. Come ci si aspetterebbe da superfici spesso in fiamme, i loro carapace sono eccezionalmente corazzati: con Stormbringer, Elric colpisce la schiena di uno di essi e non infligge quasi alcun danno. Più tardi vede che sono vulnerabili al di sotto.
+        </p>
+        <p>
+            Elric viene accidentalmente coinvolto e quasi ucciso da uno sciame di queste creature, che sono unicamente intente a radunare e mangiare un branco di roditori. Gli esseri umani non sono una preda normale per gli scarabei di fuoco.
+        </p>
+        <p>
+            Spessi e disgustosi sciami di mosche accompagnano tipicamente gli scarabei di fuoco, nutrendosi di scarti e sterco di scarabeo, e probabilmente sviluppandosi da larve nutrite con gli oli sulla schiena degli scarabei.
+        </p>
+
+        <h4>SCARABEI DI FUOCO</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>6D6+20</td><td>41</td></tr>
+            <tr><th>COS</th><td>4D6+4</td><td>18</td></tr>
+            <tr><th>TAG</th><td>7D6+20</td><td>44-45</td></tr>
+            <tr><th>INT</th><td>4</td><td>4</td></tr>
+            <tr><th>POT</th><td>3D6</td><td>10-11</td></tr>
+            <tr><th>DES</th><td>2D6+4</td><td>11</td></tr>
+            <tr><th>MOV corsa-15, scavo-4</th><td colspan="2"><strong>HP medi 31-32</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno Medio:</strong> +4D6.</p>
+        <p>
+            <strong>Armi:</strong> Mascelle 45%, danno 2D6+3+db
+        </p>
+        <p>
+            <strong>Armatura:</strong> la parte superiore del carapace è invulnerabile a danni non divini, ma 2D6+6 sotto.
+        </p>
+
+        <h4>Abilità</h4>
+        <p>Scavare 45%, Mangiare 65%, Cercare 35%.</p>
+
+    </div>
+
+    <div class="occupation-block clearfix" id="ghoul">
+        <h3 class="sub-section-title">GHOUL, del Limbo e di Org</h3>
+        <div class="verse-box">
+            <p>
+                Ma ora era tenuto da mani umide e quando vide i suoi rapitori rabbrividì. Ombre creature del limbo lo tenevano prigioniero—ghoul evocati dalla stregoneria. I loro volti morti sorridevano ma i loro occhi morti rimanevano morti. Elric sentì il calore e la forza lasciare il suo corpo ed era come se i ghoul la succhiassero dal suo stesso corpo al loro.
+                <br>— La Torre Evanescente II,3.
+            </p>
+            <p>
+                Ghoul bianco-lebbrosi... ghoul dal volto bianco, senza sangue.... Questi erano gli antenati morti viventi di coloro che ora gozzovigliavano nella Grande Sala. Forse questi erano in realtà il Popolo Condannato. Era quella la loro condanna? Non riposare mai? Non morire mai? Solo degenerare in ghoul senza cervello?
+                <br>— La Maledizione della Spada Nera II,3.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Ghoul)
+        </div>
+        <p>
+            Chiaramente i ghoul devono essere umani, ma la saga non spiega come nascano. I due tipi citati sopra non sembrano molto diversi. I ghoul prosciugano la forza vitale dei vivi, apparentemente per facilitare il cannibalismo.
+        </p>
+        <p>
+            Nell'attaccare, un ghoul drena la COS del bersaglio ogni round che lo tocca, ma questa perdita è temporanea e senza molte conseguenze a meno che tutta la COS non venga drenata.
+        </p>
+        <p class="notes">
+            Bellbane, il Gigante della Nebbia, è anche definito un ghoul; vedere quella voce per maggiori dettagli.
+        </p>
+
+        <h4>GHOUL, Generico</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>3D8+4</td><td>17-18</td></tr>
+            <tr><th>COS</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>TAG</th><td>2D8+4</td><td>13</td></tr>
+            <tr><th>INT</th><td>1</td><td>1</td></tr>
+            <tr><th>POT</th><td>1</td><td>1</td></tr>
+            <tr><th>DES</th><td>1D4+4</td><td>6-7</td></tr>
+            <tr><th>MOV camminata-4</th><td colspan="2"><strong>HP medi 15</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno Medio:</strong> +2D8.</p>
+        <p>
+            <strong>Armi:</strong> Morso 35%, danno 1D8<br>
+            Lotta 25%, danno speciale<br>
+            Risucchio COS 1D3 per round, automatico al tocco
+        </p>
+        <p>
+            <strong>Armatura:</strong> nessuna, ma funziona normalmente finché tutti i punti ferita non sono esauriti.
+        </p>
+
+        <h4>Abilità</h4>
+        <p>Mangiare 35%, Cercare 25%.</p>
+
+    </div>
+
+    <div class="occupation-block clearfix" id="golem">
+        <h3 class="sub-section-title">GOLEM, del Castello di Kaneloon</h3>
+        <div class="verse-box">
+            <p>
+                Una cosa enorme, simile a un uomo, con mani come tenaglie di ferro... Era un piede o due più alto di lui, con occhi ovali e sfaccettati che avevano una lucentezza grigia e metallica. La sua faccia era spigolosa e, per sua natura, sembrava metallica. La maggior parte del suo corpo era composta da metallo brunito, unito a mo' di armatura. Sulla testa portava un cappuccio aderente, borchiato d'ottone. Emanava un'aria di tremenda e insensata potenza, anche se non si muoveva... Il golem non rispose se non con le mani — che in realtà erano composte da quattro punte di metallo ciascuna — che iniziarono a flettersi lentamente, e ancora il golem rimaneva immobile.
+                <br>— Il Fato del Lupo Bianco, PROLOGO.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Golem)
+        </div>
+        <p>
+            Il golem proveniva interamente dalla mente di Aubec, poiché tutte le difese del castello erano tratte dall'immaginazione dell'intruso. Myshella osserva: "È un uomo raro quello che può affrontare e sconfiggere la propria immaginazione." Aubec specchiò la cosa immaginando cosa avrebbe temuto, la risposta essendo un nemico terribile quanto lui.
+        </p>
+        <p>
+            Aubec divenne un Campione della Legge e fu in grado di avanzare contro il Caos, dirigendolo con la sua immaginazione. Per implicazione, Aubec creò alcuni dei Continenti Meridionali e forse alcuni di quelli Occidentali. Il golem di Aubec era più alto e veloce di lui, e impermeabile ai suoi colpi e tagli.
+        </p>
+
+        <h4>GOLEM, Riflesso della Paura di Aubec</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>FOR</th><th>COS</th><th>TAG</th><th>INT</th><th>POT</th><th>DES</th><th>HP</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="text-align: center;">
+                <td>30</td><td>30</td><td>20</td><td>19</td><td>22</td><td>19</td><td>25</td>
+            </tr>
+            </tbody>
+        </table>
+        <p style="margin-top:-1rem; text-align: center;"><strong>MOV 9</strong></p>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno:</strong> +2D6.</p>
+        <p>
+            <strong>Arma:</strong> Schiacciare 70%, danno 2D6 per round.
+        </p>
+        <p>
+            <strong>Armatura:</strong> acciaio brunito da 20 punti.
+        </p>
+
+        <h4>Abilità</h4>
+        <p>Essere implacabile 101%.</p>
+
+    </div>
+
+    <div class="occupation-block clearfix" id="grahluk">
+        <h3 class="sub-section-title">GRAHLUK, Nemici degli Elenoin dell'Ottavo Piano</h3>
+        <div class="verse-box">
+            <p>
+                Erano creature scimmiesche, bestiali come gli Elenoin. Portavano reti e corde e scudi. Una volta, si diceva, Grahluk ed Elenoin erano stati parte della stessa specie che si era evoluta e divisa... Vivono solo per distruggere gli Elenoin. Una volta fatto ciò, non hanno più nulla per cui esistere.
+                <br>— La Torre Evanescente II,5.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Grahluk)
+        </div>
+        <p>
+            Elric è in grado di evocare la massa dei grahluk perché usa "l'energia [del Dio Morente] per compiere l'invocazione" e creare il passaggio per loro. Ed è in grado di compiere l'invocazione solo perché si era ricordato come fare da un grimorio di suo padre.
+        </p>
+        <p>
+            I goffi grahluk e i striduli elenoin erano "parte della stessa specie che si era evoluta e divisa". I Grahluk hanno una tattica, avvicinarsi per intrappolare usando scudo e rete, e poi mordere e divorare crudelmente i loro nemici. Missione compiuta, cadono sulle spade degli elenoin morti e muoiono. Vedi anche gli Elenoin, sopra.
+        </p>
+
+        <h4>GRAHLUK, Distruttori Degenerati</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>4D8+16</td><td>34</td></tr>
+            <tr><th>COS</th><td>4D8+16</td><td>34</td></tr>
+            <tr><th>TAG</th><td>3D8+8</td><td>21-22</td></tr>
+            <tr><th>INT</th><td>1D8</td><td>4-5</td></tr>
+            <tr><th>POT</th><td>3D8+8</td><td>21-22</td></tr>
+            <tr><th>DES</th><td>4D8</td><td>18</td></tr>
+            <tr><th>MOV corsa-8</th><td colspan="2"><strong>HP medi 45*</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno Medio:</strong> +2D8.</p>
+        <p>
+            <strong>Armi:</strong> Lotta 60%, danno 1D8+2<br>
+            Morso 60%, danno 1D6+2<br>
+            Rete 60%, danno intrappola<br>
+            Scudo Completo 90%, parata kb+1D4+db, 20 PF
+        </p>
+        <p>
+            <strong>Armatura:</strong> * i grahluk hanno punti ferita doppi; calcolare normalmente ma non dividere per due; sono invulnerabili al lamento degli Elenoin.
+        </p>
+
+        <h4>Abilità</h4>
+        <p>Ascoltare per Elenoin 55%, Odorare Elenoin 60%.</p>
+
+    </div>
+
+    <div class="occupation-block clearfix" id="guardiano-di-ashaneloon">
+        <h3 class="sub-section-title">GUARDIANO DEMONIACO di Ashaneloon</h3>
+        <div class="verse-box">
+            <p>
+                Occhi cerchiati di rosso pieni di malizia insensata.
+                <br>— La Torre Evanescente I,6.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Guardiano Demoniaco)
+        </div>
+        <p>
+            Ha denti lunghi, artigli squamosi, una coda seghettata, una testa cornuta e narici bovine. Si muove, ma non parla. Anche se armato di Stormbringer, Elric deve combattere con determinazione per ucciderlo. Theleb K'aarna pone questa creatura al cancello del Castello di Ashaneloon, per tenere fuori Myshella.
+        </p>
+        <p>
+            Dopo averlo ucciso, Elric nota "qualcosa che luccica tra le viscere nere e gialle [era] il cuore del demone - una pietra di forma irregolare di un profondo colore viola e verde. Il cuore è bagnato e pulsa, e quasi abbastanza caldo da bruciargli la mano, sebbene il suo proprietario sia morto."
+        </p>
+
+        <h4>GUARDIANO del Cancello di Ashaneloon, demone maggiore, umanoide, razza sconosciuta.</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>FOR</th><th>COS</th><th>TAG</th><th>INT</th><th>POT</th><th>DES</th><th>HP</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="text-align: center;">
+                <td>24</td><td>40</td><td>22</td><td>14</td><td>25</td><td>20</td><td>31</td>
+            </tr>
+            </tbody>
+        </table>
+        <p style="margin-top:-1rem; text-align: center;"><strong>MOV 10</strong></p>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno:</strong> +2D8.</p>
+        <p>
+            <strong>Abilità:</strong> Artiglio (x2), 60% ciascuno, danno fisso 1D8+db ciascuno.<br>
+            Carapace, 1D10+1D2 scaglie.<br>
+            Rigenerazione, automatica, 1 HP per round, solo su se stesso.
+        </p>
+        <p class="notes">
+            <strong>Necessità:</strong> la solitudine è coerente con le sue azioni, ma non è annotata alcuna necessità.<br>
+        </p>
+
+        <h4>Abilità</h4>
+        <p>Scalare 70%, Schivare 60%, Saltare 40%, Muoversi Silenziosamente 60%, Possedere Piano 15%, Linguaggio dell'Invocatore INT x2%, Pistare 30%.</p>
+
+        <p style="margin-top: 1.5rem;"><strong>Punti Magia per Evocazione:</strong> 71.</p>
+    </div>
+
+    <div class="occupation-block clearfix" id="cani-caccia-dei-dharzi">
+        <h3 class="sub-section-title">CANI DA CACCIA DEI DHARZI</h3>
+        <div class="verse-box">
+            <p>
+                [Il branco era] metà cane e metà uccello, con i corpi e le zampe magre dei cani ma con artigli da uccello al posto delle zampe e becchi selvaggiamente ricurvi che scattavano dove avrebbero dovuto esserci musi.
+                <br>— Il Fato del Lupo Bianco II,2.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Cane da Caccia dei Dharzi)
+        </div>
+        <p>
+            I Dharzi sono nemici sconfitti di Melniboné, morti da mille anni. I Signori del Caos (“Entropia” nel racconto) si opposero alla ricerca di Elric del Libro degli Dei Morti; tra gli ostacoli che sollevarono contro di lui c'erano due attacchi di questi fantasmi onnipresenti. Stormbringer è efficace contro di loro, ma Elric si sbarazza dei Dharzi e dei loro cani facendo in modo che i Re della Terra (Grome e i suoi elementali) inghiottano queste entità che con la morte erano diventate di loro legittima proprietà.
+        </p>
+        <p>
+            I cani da caccia hanno le teste e gli artigli di uccelli rapaci, e somigliano alle Creature di Matik nei loro attacchi, sebbene più piccoli e veloci. Il loro alito è fetido.
+        </p>
+
+        <h4>CANI DA CACCIA DEI DHARZI</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>COS</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>TAG</th><td>1D8+6</td><td>12-13</td></tr>
+            <tr><th>INT</th><td>1D8</td><td>4-5</td></tr>
+            <tr><th>POT</th><td>3D8</td><td>13-14</td></tr>
+            <tr><th>DES</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>MOV corsa-13</th><td colspan="2"><strong>HP medi 14-15</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno Medio:</strong> +1D8.</p>
+        <p>
+            <strong>Armi:</strong> Morso 50%, danno 1D4+4<br>
+            Squarcio con Artiglio 60%, danno 1D8+db
+        </p>
+        <p>
+            <strong>Armatura:</strong> 1D2-1 pelliccia.
+        </p>
+
+        <h4>Abilità</h4>
+        <p>Scalare 30%, Schivare 35%, Saltare 40%, Muoversi Silenziosamente 25%, Olfatto/Gusto 75%, Pistare 45%.</p>
+
+    </div>
+
+    <div class="occupation-block clearfix" id="khorghakh">
+        <h3 class="sub-section-title">KHORGHAKH, Il Rospo Demoniaco</h3>
+        <div class="verse-box">
+            <p>
+                Due enormi occhi dalle palpebre verdi incastonati in una nodosa testa da rettile, le cui narici si dilatavano e la cui lunga bocca scarlatta si apriva per rivelare una lingua rosa e guizzante, mentre il peso straordinariamente denso della carne squamosa era sorretto da massicci piedi palmati, arti spessi come tronchi d'olmo, il tutto che tremava per lo sforzo del suo respiro.
+                <br>— La Vendetta della Rosa II,3.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Khorghakh)
+        </div>
+        <p>
+            Il Principe Gaynor portò con sé questa creatura durante la navigazione attraverso il Mare Pesante. Fece pulizia dopo la battaglia con i Cacciatori di Rospi Dramiani.
+        </p>
+
+        <h4>KHORGHAKH, demone maggiore, rettiliano, animale domestico in gabbia di Gaynor, razza sconosciuta.</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>FOR</th><th>COS</th><th>TAG</th><th>INT</th><th>POT</th><th>DES</th><th>HP</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="text-align: center;">
+                <td>60</td><td>60</td><td>60</td><td>8</td><td>14</td><td>6</td><td>60</td>
+            </tr>
+            </tbody>
+        </table>
+        <p style="margin-top:-1rem; text-align: center;"><strong>MOV balzo-7, nuoto-8</strong></p>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno:</strong> +6D8.</p>
+        <p>
+            <strong>Abilità:</strong> Carapace, 1D10+1D2 pelle grassa.<br>
+            Distendere, a 7x per 7 round.<br>
+            Lingua, al 150%.
+        </p>
+        <p class="notes">
+            <strong>Necessità:</strong> consumare giornalmente animali pari a 1/5 della sua TAG.
+        </p>
+
+        <h4>Abilità</h4>
+        <p>Consumare Cacciatori di Rospi Dramiani 110%, Saltare 70%, Possedere Piano 15%, Linguaggio dell'Invocatore INT x2%.</p>
+
+        <p style="margin-top: 1.5rem;"><strong>Punti Magia per Evocazione:</strong> 73.</p>
+    </div>
+
+    <div class="occupation-block clearfix" id="i-kyrenee">
+        <h3 class="sub-section-title">I KYRENEE, Una Creatura delle Nuvole Temporalesche</h3>
+        <div class="verse-box">
+            <p>
+                Enorme come una nuvola temporalesca, nero come il suo Inferno nativo, il Kyrenee cresceva dall'aria circostante e muoveva la sua massa informe verso le Navi di Xerlerenes, inviando viticci fluenti di veleno verso di loro. I barcaioli gemettero mentre le spire si avvolgevano intorno... e li schiacciavano.
+                <br>— La Maledizione della Spada Nera, EPILOGO.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(I Kyrenee)
+        </div>
+        <p>
+            Un Signore Narjhan del Caos radunò un esercito a Nadsokor e si avventurò contro Tanelorn, evocando il Kyrenee, un demone maggiore, durante il suo assedio. Lamsar fece sì che molti elementi del fuoco si unissero contro il Kyrenee, ed elementali e mostro furono distrutti in una grande esplosione.
+        </p>
+        <p>
+            La creatura è come una grande nuvola, a tratti vaporosa e semi-solida dove i suoi tentacoli prendono forma. Direttamente sotto di essa, piove una rugiada velenosa.
+        </p>
+
+        <h4>I KYRENEE, demone maggiore, razza sconosciuta.</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>FOR</th><th>COS</th><th>TAG</th><th>INT</th><th>POT</th><th>DES</th><th>HP</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="text-align: center;">
+                <td>120</td><td>80</td><td>112</td><td>16</td><td>30</td><td>8</td><td>216</td>
+            </tr>
+            </tbody>
+        </table>
+        <p style="margin-top:-1rem; text-align: center;"><strong>MOV fluttuare-2</strong></p>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno:</strong> +2D8.</p>
+        <p>
+            <strong>Armi:</strong> Schianto Tentacolare* 80%, danno 2D8+db +veleno**<br>
+            Scariche Elettriche Incidentali 05%, danno 5D8 ***<br>
+            Rugiada Velenosa 99% sotto, danno POT 6 per round.
+        </p>
+        <p class="notes">
+            * produce 1D8 attacchi tentacolari per round con un raggio di 100 iarde.<br>
+            ** il veleno ha POT 16, somministrato al tocco.<br>
+            *** qualsiasi bersaglio entro 100 iarde.
+        </p>
+        <p>
+            <strong>Armatura:</strong> casualmente vaporosa o insostanziale, diminuisce tutti gli attacchi di metà.
+        </p>
+
+        <h4>Abilità</h4>
+        <p>Lotta 70%.</p>
+
+    </div>
+
+    <div class="occupation-block clearfix" id="gigante-della-nebbia">
+        <h3 class="sub-section-title">GIGANTE DELLA NEBBIA, o Bellbane</h3>
+        <div class="verse-box">
+            <p>
+                Era bianco, come la nebbia, eppure in qualche modo più scuro. Si allungava sopra la testa di Elric. Era alto quasi otto piedi e quasi altrettanto largo. Ma era solo un contorno, che sembrava non avere né volto né arti — solo movimento: un movimento rapido, sottile e malevolo!... Due occhi, del colore del pus sottile e giallo, erano incastonati nel corpo della creatura, sebbene non avesse una testa separata. Una fessura sbavante e oscena, piena di zanne, si trovava appena sotto gli occhi. Non aveva naso né orecchie che Elric potesse vedere. Quattro appendici spuntavano dalle sue parti superiori e il suo corpo inferiore si snodava lungo il terreno, non supportato da alcun arto.... Incredibilmente disgustoso da vedere e il suo corpo amorfo emanava un puzzo di morte e decomposizione... Era un Gigante della Nebbia — forse l'unico Gigante della Nebbia, Bellbane. Persino i maghi più saggi erano incerti se ce ne fosse uno o molti... un ghoul delle paludi che si nutriva delle anime degli uomini e delle bestie.
+                <br>— Il Fato del Lupo Bianco II,2.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Gigante della Nebbia)
+        </div>
+        <p>
+            Dopo averlo ucciso, Elric si sveglia accanto ai suoi resti, un "innominabile colore... che evapora, emanando un odore nauseabondo". Così poco è noto che Elric non sa se si tratti di una cosa caotica o di un membro di qualche razza rara e crudele.
+        </p>
+        <p>
+            Il gigante della nebbia è una creatura vaporosa contro cui anche le armi magiche infliggono solo metà danno. Attacca afferrando un bersaglio e poi lentamente divorandone l'anima (POT) con il suo morso, apparentemente consumando il POT del bersaglio mentre mastica.
+        </p>
+        <p>
+            Non è influenzato dalla perdita di punti ferita finché non sono tutti esauriti (a quel punto muore). Non interrompe un attacco a causa di danni. Se un bersaglio lotta per liberarsi, il mostro può scegliere di inseguirlo o di smaterializzarsi finché i suoi punti ferita non si sono rigenerati.
+        </p>
+        <p>
+            Il gigante della nebbia apparentemente può creare la nebbia da cui lancia i suoi attacchi, ma ciononostante viene segnalato caratteristicamente in paludi, acquitrini e vicino ai fiumi. Il significato del nome "Bellbane" è sconosciuto.
+        </p>
+
+        <h4>GIGANTI DELLA NEBBIA</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>6D8+16</td><td>43</td></tr>
+            <tr><th>COS</th><td>5D8+24</td><td>46-47</td></tr>
+            <tr><th>TAG</th><td>2D8+12</td><td>20-21</td></tr>
+            <tr><th>INT</th><td>1D8+2</td><td>6-7</td></tr>
+            <tr><th>POT</th><td>3D8+8</td><td>21-22</td></tr>
+            <tr><th>DES</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>MOV strisciare-7</th><td colspan="2"><strong>HP medi = COS</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno Medio:</strong> +3D8.</p>
+        <p>
+            <strong>Armi:</strong> Morso 75%, risucchia 1D6 POT per round.<br>
+            Risucchio Anima (POT) 85%
+        </p>
+        <p>
+            <strong>Armatura:</strong> vaporosa.
+        </p>
+
+    </div>
+
+    <div class="occupation-block clearfix" id="olab">
+        <h3 class="sub-section-title">OLAB, Abitanti Rettiliani della Giungla</h3>
+        <div class="verse-box">
+            <p>
+                Le creature erano essenzialmente rettiliane ma con creste piumate e bargigli sul collo, sebbene i loro volti fossero quasi umani. Le loro zampe anteriori erano come le braccia e le mani degli uomini. Le loro zampe posteriori erano incredibilmente lunghe e simili a quelle delle cicogne. In equilibrio su queste zampe, i loro corpi si ergevano sull'acqua. Portavano grandi clave in cui erano state tagliate delle fessure e senza dubbio queste erano ciò che usavano per lanciare i dischi cristallini... Sebbene dalle gambe in su fossero solo leggermente più grandi di un uomo alto e ben piantato, avevano più vitalità di qualsiasi essere umano e i tagli più profondi sembravano colpirli a malapena, anche quando somministrati da Stormbringer.
+                <br>— Il Navigatore sui Mari del Fato, III,3.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Olab)
+        </div>
+        <p>
+            Hanno anche scaglie, bocche rosse, sangue nero, e nella loro agonia e rabbia sibilano la loro sfida. Nel loro primo attacco intendono fare a pezzi la nave e massacrare l'equipaggio.
+        </p>
+        <p>
+            Questi feroci guerrieri sono tra i nemici più tenaci dell'intera saga. Elric invoca il Re Nnuuurrrr'c del Popolo degli Insetti, che invia a malincuore una nuvola di gigantesche libellule che divorano tutti gli olab che non possono fuggire.
+        </p>
+        <p>
+            Imperterriti da Stormbringer o da interventi soprannaturali, gli olab tornano ad attaccare quando Elric e una manciata di compagni penetrano via terra verso la città perduta di R'lin K'ren A'a. Alla fine, sopravvivono solo Elric e Smiorgan.
+        </p>
+        <p>
+            La clava olab è un'interessante arma a duplice scopo, per colpire e per lanciare i dischi cristallini larghi un piede. A giudicare dalla descrizione degli olab, queste clave devono essere lunghe da sei a sette piedi, per garantire una leva adeguata per il lancio. Una clava di quella lunghezza supererebbe qualsiasi arma dei Regni Giovani eccetto la lancia lunga e l'arco. Gli umani combattono con grande svantaggio: i dischi affilati come rasoi possono essere lanciati con forza sufficiente a decapitare un uomo, anche se la forma di tali proiettili deve rendere la loro precisione problematica.
+        </p>
+        <p>
+            Questi dischi possono impalare; ogni guerriero ne porta 1D8. Tutti i dischi vengono lanciati, poi l'olab si avvicina e ingaggia con la sua clava.
+        </p>
+
+        <h4>OLAB, Guadiatori Rettiliani di R'lin K'ren A'a</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>2D8+8</td><td>15</td></tr>
+            <tr><th>COS</th><td>4D8+8</td><td>26</td></tr>
+            <tr><th>TAG</th><td>2D8+6</td><td>15</td></tr>
+            <tr><th>INT</th><td>2D8+4</td><td>13</td></tr>
+            <tr><th>POT</th><td>2D8+6</td><td>15</td></tr>
+            <tr><th>DES</th><td>2D8+7</td><td>16</td></tr>
+            <tr><th>MOV corsa-9</th><td colspan="2"><strong>HP medi 20-21</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno Medio:</strong> +1D8.</p>
+        <p>
+            <strong>Armi:</strong> Clava 60%, danno 1D8-1+db<br>
+            Disco Cristallino (lanciato con clava a fessura) 50%, danno 3D8, gittata base 50 iarde, 1 per round.<br>
+            Disco Cristallino (a mano libera) 35%, danno 2D8, gittata base 30 iarde, 1 per round.
+        </p>
+        <p>
+            <strong>Armatura:</strong> nessuna, ma subisce danni solo quando un tiro Fortuna fallisce. Persino Stormbringer non riuscì a fare molti progressi contro di loro — un nemico deve fare molti attacchi piuttosto che pochi attacchi devastanti.
+        </p>
+
+        <h4>Abilità</h4>
+        <p>Scalare 50%, Schivare 60%, Nascondersi 45%, Muoversi Silenziosamente 55%, Olfatto/Gusto 25%, Cercare 45%, Lanciare 90%, Pistare 40%.</p>
+
+    </div>
+
+    <div class="occupation-block clearfix" id="oonai">
+        <h3 class="sub-section-title">OONAI, Creature Terrificanti del Caos</h3>
+        <div class="verse-box">
+            <p>
+                Per ora, a mezz'aria, le forme erano cambiate. Non avevano più l'aspetto di draghi, ma questa volta sembravano cigni multicolori, le cui piume scintillanti catturavano e diffrangevano i pochi raggi di luce rimasti... Possono cambiare forma a volontà. Uno stregone di grande disciplina mentale, di poteri superlativi, che conosce gli incantesimi appropriati può dominarli e determinare il loro aspetto. [Uno è gravemente ferito.] Cadde in ginocchio e la lucentezza svanì dalle sue piume, morì dalle sue scaglie, scomparve dalla sua pelle. Calciò una volta e poi rimase immobile — una pesante, nera creatura simile a un maiale il cui corpo goffo era la cosa più brutta che Elric e Moonglum avessero mai visto.
+                <br>— La Torre Evanescente, I,2.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Oonai)
+        </div>
+        <p>
+            Elric riconosce rapidamente il volo degli oonai. Queste creature sono ben note agli stregoni Melnibonéani, poiché sono in grado di diventare sbalorditive successioni di entità diverse. Nell'attaccare Elric e Moonglum, si trasformano in draghi, enormi cigni zannuti e una dozzina di altre creature prima ancora di finire di mangiare i cavalli. Solo quando sono morti assumono la loro vera forma, descritta nella citazione finale sopra.
+        </p>
+
+        <h4>OONAI, Mutaforma del Caos</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>8D8</td><td>34</td></tr>
+            <tr><th>COS</th><td>8D8</td><td>34</td></tr>
+            <tr><th>TAG</th><td>4D8</td><td>18</td></tr>
+            <tr><th>INT</th><td>2D8</td><td>9</td></tr>
+            <tr><th>POT</th><td>4D8</td><td>18</td></tr>
+            <tr><th>DES</th><td>3D8</td><td>13-14</td></tr>
+            <tr><th>MOV corsa-9*</th><td colspan="2"><strong>HP medi 26</strong></td></tr>
+            </tbody>
+        </table>
+        <p class="notes" style="margin-top:-1rem;">* In forma nativa.</p>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno Medio:</strong> +1D8.</p>
+        <p>
+            <strong>Armi:</strong> speciale — assume gli attacchi medi, ecc., della specie in cui si trasforma.
+        </p>
+        <p>
+            <strong>Armatura:</strong> qualsiasi armatura la forma attuale possieda naturalmente.
+        </p>
+
+        <h4>Abilità</h4>
+        <p>Navigare 15%, Cercare 60%.</p>
+
+    </div>
+
+    <div class="occupation-block clearfix" id="maiali-serpente-creatura">
+        <h3 class="sub-section-title">MAIALI, SERPENTE, & CREATURA</h3>
+        <div class="verse-box">
+            <p>
+                Cinque nemici in un'imboscata. Quando le zanne gli emersero da un'oscurità polverosa, il volto si contorse... I suoi nuovi denti avrebbero perforato i corpi di circa cinquanta uomini di statura media. La lingua scattò fuori. Le sue due metà guizzarono e si ritirarono... Cinque paia di occhi rosso fuoco luccicavano, fissi sulla sua preda. La lingua sibilò di nuovo con anticipazione mentre le cinque teste si protendevano, poi emergeva da una massa informe, informe, che si sollevava implacabilmente dalle foglie.
+                <br>— Elric di Melniboné II,5.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Maiali, Serpente, Creatura)
+        </div>
+        <p>
+            Mentre Elric si fa strada attraverso la Porta dell'Ombra alla ricerca di Yyrkoon e delle Due Spade, Elric e il suo nuovo amico Rackhir affrontano un'imboscata vicino all'antica città di Ameeron. Sollecitati da Yyrkoon, i tre, Maiale, Serpente e Creatura, attaccano lì Elric.
+        </p>
+        <p>
+            Abbiamo una sola citazione della Creatura, ma Rackhir osserva che "le statistiche [per tutti e cinque] erano quasi uguali. Un tempo umani, prima di stringere un patto con il Caos, ora sono mentalmente e fisicamente deformati dal loro demone. Da allora Rackhir li ha abbattuti immediatamente, e pugnala un polmone di un terzo mentre impara sui loro robot. Furono uomini spada; ogni Maiale e Creatura è attaccata insieme."
+        </p>
+        <p class="notes">
+            Quindici teste di Serpente e quindici corpi umani spuntano dal corpo di Serpente. Ciascuna testa di Serpente è attaccata a due teste. Un attacco riuscito significa solo che una testa e il suo corpo con spada sono stati annientati. Concentrandosi su una corta lancia, il Serpente può schivare, ecc. ma normalmente deve rimanere in una posizione generale dato che i suoi due attacchi con la testa stanno uscendo da direzioni contraddittorie.<br>
+            Queste tre creature rinascono ogni notte nella loro forma caotica; ogni forma dura quattro round. Suggeriamo attacchi dalle forme naturali e umane, a integrazione del testo di Moorcock.
+        </p>
+
+        <h4 class="sub-sub-section-title">MAIALI, Tre Spadaccini Zannuti Caotici</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th></th>
+                <th>Maiale 1</th>
+                <th>Maiale 2</th>
+                <th>Maiale 3</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>13</td><td>11</td><td>12</td></tr>
+            <tr><th>COS</th><td>14</td><td>15</td><td>12</td></tr>
+            <tr><th>TAG</th><td>14</td><td>11</td><td>12</td></tr>
+            <tr><th>INT</th><td>15</td><td>10</td><td>12</td></tr>
+            <tr><th>POT</th><td>12</td><td>14</td><td>15</td></tr>
+            <tr><th>DES</th><td>8</td><td>8</td><td>8</td></tr>
+            <tr><th>MOV</th><td>8</td><td>6</td><td>6</td></tr>
+            <tr><th>Punti Ferita</th><td>12</td><td>8</td><td>10</td></tr>
+            <tr><th>Bonus Danno</th><td>+1D4</td><td>0</td><td>+1D4</td></tr>
+            <tr><th>Spada Larga</th><td>75%</td><td>75%</td><td>85%</td></tr>
+            <tr><th>Spadone (20 pf)</th><td>55%</td><td>90%</td><td>90%</td></tr>
+            <tr><th>Armatura (pelle di cinghiale)</th><td>1D8-1</td><td>1D8-1</td><td>1D8-1</td></tr>
+            </tbody>
+        </table>
+        <p class="notes" style="margin-top:-1rem;">
+            <strong>Abilità:</strong> Attenzione 25%, Scherno 70%, Comandare Maiali 45%, Schivare 45%, Saltare 40%, Muoversi Silenziosamente 55%, Cercare 30%, Olfatto/Gusto 35%, Prendere Ordini 45%.
+        </p>
+
+        <h4 class="sub-sub-section-title">SERPENTE, Mostro Velenoso a 15 Teste</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>FOR</th><th>COS</th><th>TAG</th><th>INT</th><th>POT</th><th>DES</th><th>HP</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="text-align: center;">
+                <td>25</td><td>30</td><td>18</td><td>11</td><td>10</td><td>23</td><td>24</td>
+            </tr>
+            </tbody>
+        </table>
+        <p style="margin-top:-1rem; text-align: center;"><strong>MOV corsa-8</strong></p>
+        <p><strong>Bonus Danno:</strong> +1D8.</p>
+        <p><strong>Armi:</strong> Morso x15 65%, danno POT 10 veleno, gittata uguale a TAG dell'avversario.</p>
+        <p><strong>Armatura:</strong> metà Piastre & Maglia, 1D8 (senza elmo).</p>
+
+        <h4 class="sub-sub-section-title">CREATURA, Un Mutaforma Caotico</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>FOR</th><th>COS</th><th>TAG</th><th>INT</th><th>POT</th><th>DES</th><th>HP</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="text-align: center;">
+                <td>18</td><td>18</td><td>16</td><td>9</td><td>9</td><td>16</td><td>17</td>
+            </tr>
+            </tbody>
+        </table>
+        <p style="margin-top:-1rem; text-align: center;"><strong>MOV come da animale</strong></p>
+        <p><strong>Bonus Danno:</strong> +1D8.</p>
+        <p><strong>Armi:</strong> come da attacco animale.</p>
+        <p><strong>Armatura:</strong> nessuna da trasformato; come da animale se in quella forma, o 1D8-2 se sempre umana.</p>
+        <h4>Abilità</h4>
+        <p>Schivare 25%, Intuizione 45%, Ascoltare 75%, Cercare 60%.</p>
+
+    </div>
+
+    <div class="occupation-block clearfix" id="quaolnargn">
+        <h3 class="sub-section-title">QUOLNARGN, L'Assassino Cieco</h3>
+        <div class="verse-box">
+            <p>
+                Un grande vortice verde, che saltò fuori, si materializzò nella sua ombra protetta dalla Terra, si slanciò verso Elric così che l'albino non sapesse che era a dieci piedi da lui.
+                <br>— La Maledizione della Spada Nera I,3.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Quaolnargn)
+        </div>
+        <p>
+            Sul piano dei Giovani Regni, Quaolnargn può percepire solo la forza vitale di una vittima e la caccia fino alla morte. Il bersaglio catturato, drena i punti magia, quindi consuma l'anima. Elric scappò perché Theleb K'aarna lo evocò di nuovo.
+        </p>
+
+        <h4>QUOLNARGN, demone minore, razza sconosciuta.</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>FOR</th><th>COS</th><th>TAG</th><th>INT</th><th>POT</th><th>DES</th><th>HP</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="text-align: center;">
+                <td>60</td><td>100</td><td>100</td><td>4</td><td>18</td><td>10</td><td>100</td>
+            </tr>
+            </tbody>
+        </table>
+        <p style="margin-top:-1rem; text-align: center;"><strong>MOV 5</strong></p>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno:</strong> +6D8.</p>
+        <p>
+            <strong>Abilità:</strong> Risucchio d'Anima, al 60%, transmuta il POT del bersaglio in punti magia del demone.<br>
+            Vista dell'Anima, al 60%, percepisce il POT e altro.<br>
+            Caratteristica Caotica Speciale: invulnerabile alle ferite, ma un colpo mirato al cervello che infligge danni lo dissolve.
+        </p>
+        <p class="notes">
+            <strong>Necessità:</strong> estrarre la forza vitale dalle vittime umane.<br>
+            <strong>Abilità:</strong> Possedere Piano 15%, Linguaggio dell'Invocatore INT x2%.
+        </p>
+
+        <p style="margin-top: 1.5rem;"><strong>Punti Magia per Evocazione:</strong> 87.</p>
+    </div>
+
+    <div class="occupation-block clearfix" id="servi-di-agak-gagak">
+        <h3 class="sub-section-title">SERVI DI AGAK E GAGAK</h3>
+        <div class="verse-box">
+            <p>
+                Le bestie erano di una specie primitiva, con bocche perennemente spalancate e corpi viscidi, ma ce n'erano una ventina che si dirigevano verso i venti uomini... Le creature emettevano un terribile suono sibilante mentre si avvicinavano e i denti d'osso che digrignavano sembravano alti come loro.
+                <br>— Il Navigatore sui Mari del Fato I,4.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Servo di Agak & Gagak)
+        </div>
+        <p>
+            Queste creature puzzolenti sono come anticorpi all'interno del corpo gigantesco dei gemelli stregoni, Agak e Gagak. Elric e i suoi compagni desiderano distruggere i maghi. I Servi sono facili da uccidere, ma Elric discerne la subdola trappola. Gli eroi resistono e combattono centinaia di cadaveri. L'odore dei Servi accumulerà e riempirà il passaggio d'aria, e gli uomini crolleranno privi di sensi e verranno mangiati. Il fetore corretto continua a muoversi e a far cadere i servi man mano che arrivano. Quando il gruppo raggiunge un passaggio più ampio, il fetore si attenua.
+        </p>
+
+        <h4>COSE SERVITRICI di Agak e Gagak</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>1D8</td><td>4-5</td></tr>
+            <tr><th>COS</th><td>1D8</td><td>4-5</td></tr>
+            <tr><th>TAG</th><td>1D8</td><td>4-5</td></tr>
+            <tr><th>INT</th><td>1D8</td><td>4-5</td></tr>
+            <tr><th>POT</th><td>1D8</td><td>4-5</td></tr>
+            <tr><th>DES</th><td>1D8</td><td>4-5</td></tr>
+            <tr><th>MOV strisciare-4</th><td colspan="2"><strong>HP medi 4-5</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno Medio:</strong> nessuno</p>
+        <p>
+            <strong>Armi:</strong> Morso 50%, danno 1D8
+        </p>
+        <p>
+            <strong>Armatura:</strong> 1% di probabilità per fetore che l'aria sia resa irrespirabile; il gamemaster può consentire un tiro D100 di COS x3 o meno per risvegliare un avventuriero...
+        </p>
+        <p class="notes" style="margin-top:-1rem;">* per sonno improvviso.</p>
+
+        <h4>Abilità</h4>
+        <p>Continuare ad Arrivare 100%.</p>
+
+    </div>
+
+    <div class="occupation-block clearfix" id="destrieri-di-nihrain">
+        <h3 class="sub-section-title">DESTRIERI DI NIHRAIN</h3>
+        <div class="verse-box">
+            <p>
+                Elric e Moonglum [cavalcarono] robusti destrieri di Nihrain che sembravano non necessitare di riposo e non stancarsi mai. I cavalli di Nihrain erano un dono speciale, poiché possedevano poteri aggiuntivi alla loro innaturale forza e resistenza. Sepiriz aveva detto loro che i destrieri non avevano piena esistenza sul piano terreno, e che i loro zoccoli non toccavano il suolo in senso stretto, ma toccavano la materia del loro altro piano. Questo dava loro la capacità di apparire al galoppo sull'aria o sull'acqua.
+                <br>— Tempestosa II,4.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Destriero di Nihrain)
+        </div>
+        <p>
+            I destrieri di Nihrain galoppano ugualmente bene sulla terra e sull'acqua, e, appena prima delle mura di Hwamgaarl, Elric comanda loro di sollevarsi in aria, cosa che fanno immediatamente.
+        </p>
+        <p>
+            I Nihrain sono una razza più antica dei Melnibonéani; di loro rimangono solo i Dieci. Sepiriz è il loro capo, e fornisce questi meravigliosi destrieri a Elric diverse volte durante gli ultimi giorni dei Giovani Regni.
+        </p>
+        <p>
+            Probabilmente erano equipaggiati per il combattimento. In linea con la rappresentazione della loro straordinaria resistenza, abbiamo aggiunto una difesa magica. Questi cavalli sono grandi, simili a cavalli da guerra.
+        </p>
+
+        <h4>DESTRIERI DI NIHRAIN</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>&infin;D6</td><td>&infin;</td></tr>
+            <tr><th>COS</th><td>&infin;D6</td><td>&infin;</td></tr>
+            <tr><th>TAG</th><td>4D6+14</td><td>32</td></tr>
+            <tr><th>INT</th><td>1D6+3</td><td>5-6</td></tr>
+            <tr><th>POT</th><td>3D6</td><td>10-11</td></tr>
+            <tr><th>DES</th><td>2D6+8</td><td>15</td></tr>
+            <tr><th>MOV corsa-12 su qualsiasi superficie</th><td colspan="2"><strong>HP = TAG</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno Medio:</strong> +2D6.</p>
+        <p>
+            <strong>Armi:</strong> Posteriori & Zoccoli 101%, danno 2D8+db<br>
+            Calcio 101%, danno 1D8+db
+        </p>
+        <p>
+            <strong>Armatura:</strong> pelle 1D2, più armatura metallica 1D6+6, più ignora i primi 10 punti di danno che penetrano l'armatura.
+        </p>
+
+        <h4>Abilità</h4>
+        <p>Scalare il Cielo 101%, Saltare 101%, Ascoltare 101%, Muoversi Silenziosamente 101%, Olfatto/Gusto 101%.</p>
+
+    </div>
+
+    <div class="occupation-block clearfix" id="rovina-di-urish">
+        <h3 class="sub-section-title">ROVINA DI URISH, L'Imbroglione</h3>
+        <div class="verse-box">
+            <p>
+                Una cosa grassa e squamosa di giallo e verde e nero. Un fetore marrone si sprigionava dalla bocca digrignante e saliva dalle sue molte zampe in una parodia di saluto.
+                <br>— La Torre Evanescente II, 4 e 6.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Rovina di Urish)
+        </div>
+        <p>
+            Un'incarnazione di Urish e del demone in questo libro. Vinto, il demone si rivela essere Arioch travestito, che si era impossessato del demone di Urish per un po' di tempo.
+        </p>
+
+        <h4>ROVINA DI URISH, demone maggiore, umanoide, razza sconosciuta.</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>FOR</th><th>COS</th><th>TAG</th><th>INT</th><th>POT</th><th>DES</th><th>HP</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr style="text-align: center;">
+                <td>22</td><td>30</td><td>23</td><td>22</td><td>25</td><td>14</td><td>27</td>
+            </tr>
+            </tbody>
+        </table>
+        <p style="margin-top:-1rem; text-align: center;"><strong>MOV 7</strong></p>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno:</strong> +2D8.</p>
+        <p>
+            <strong>Abilità:</strong> Assorbire Missile, all'80%.<br>
+            Carapace, 2D10 scaglie.<br>
+            Resistenza, a 5x per 5 round.<br>
+            Rigenerazione, automatica, 1 HP per round, solo su se stesso.<br>
+            Patto di Guardia, contro spade e frecce, riflette i danni dell'attacco.
+        </p>
+        <p class="notes">
+            <strong>Necessità:</strong> indovinelli e giochi di parole sono coerenti con il suo carattere, ma nessuna necessità è annotata.<br>
+        </p>
+
+        <h4>Abilità</h4>
+        <p>Bargain 70%, Insight 50%, Listen 40%, Own Plane 15%, Summoner's Language INT x2%.</p>
+
+        <p style="margin-top: 1.5rem;"><strong>Punti Magia per Evocazione:</strong> 79.</p>
+    </div>
+
+    <div class="occupation-block clearfix" id="razza-alata-di-myyrrhn">
+        <h3 class="sub-section-title">RAZZA ALATA DI MYYRRHN</h3>
+        <div class="verse-box">
+            <p>
+                Le donne seminude di Myyrrhn avevano volti da falco, con i loro occhi sognanti, bocche tranquille e un'aria generale di dignità, che parlavano raramente.
+                <br>— Tempestosa I,3.
+            </p>
+        </div>
+        <div class="image-placeholder">
+            SEGNAPOSTO IMMAGINE<br/>(Razza Alata di Myyrrhn)
+        </div>
+        <p>
+            Questa razza è menzionata spesso nella saga, e Sharilla (che spinge alla ricerca del Libro dei Morti) è una donna senza ali di Myyrrhn, ma non visitiamo mai la patria dei Myyrrhn. La razza alata forma la riserva della Regina Yishana durante la battaglia con Jagreen Lern per l'Occidente. I combattenti di Lern li affrontano producendo una forza di gufi giganti, "nemici secolari... che si pensava esistessero persino a Myyrrhn, la terra delle loro origini. Queste civette non sono altrimenti descritte."
+        </p>
+
+        <h4>RAZZA ALATA DA MYYRRHN</h4>
+        <table>
+            <thead>
+            <tr class="table-header">
+                <th>Caratteristiche</th>
+                <th>Tiri</th>
+                <th>Medie</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr><th>FOR</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>COS</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>TAG</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>INT</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>POT</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>DES</th><td>2D8+8</td><td>17</td></tr>
+            <tr><th>MOV volo-11, corsa-7</th><td colspan="2"><strong>HP medi 17</strong></td></tr>
+            </tbody>
+        </table>
+
+        <h4>Bonus, Armi e Armatura</h4>
+        <p><strong>Bonus Danno Medio:</strong> +1D4.</p>
+        <p>
+            <strong>Armi:</strong> Arco da Caccia 55%, danno 1D6+1<br>
+            Lancia Lunga 50%, danno 1D10+1+db
+        </p>
+        <p>
+            <strong>Armatura:</strong> 2 punti piume, a volte più Cuoio Morbido.
+        </p>
+
+        <h4>Abilità</h4>
+        <p>Immersione 45%, Schivare 45%, Ascoltare 55%, Navigare 35%, Appollaiarsi 45%, Cercare 50%.</p>
+
+    </div>
+
+    <div class="occupation-block" id="bestie-naturali-tabella">
+        <h3 class="sub-section-title">TABELLA DELLE BESTIE NATURALI E DEI MOSTRI GENERICI</h3>
+        <p style="margin-top: 1.5rem;">
+            Tutti conoscono queste creature. Qui riassumiamo le informazioni di gioco. Dare INT naturali di 3 o 4 agli animali e +db significa aggiungere il bonus al danno. I punti ferita = (COS+TAG)/2. Esaminare le note a piè di pagina per ulteriori dettagli.
+        </p>
+
+        <div style="overflow-x:auto;">
+            <table>
+                <thead>
+                <tr class="table-header">
+                    <th>Nome</th>
+                    <th>FOR</th>
+                    <th>COS</th>
+                    <th>TAG</th>
+                    <th>INT</th>
+                    <th>POT</th>
+                    <th>DES</th>
+                    <th>MOV</th>
+                    <th>HP medi</th>
+                    <th>BD</th>
+                    <th>Attacco & Danno</th>
+                    <th>Abilità per Adulti Medi</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>Scimmia, Grande Nera <br> armatura 1D2-1 pelliccia</th>
+                    <td>2D6+12</td>
+                    <td>3D6+12</td>
+                    <td>3D6+12</td>
+                    <td>1D6+6</td>
+                    <td>2D6+6</td>
+                    <td>3D6+6</td>
+                    <td>corsa-12</td>
+                    <td>24-25</td>
+                    <td>+2D6</td>
+                    <td>Morso 40%, 1D10<br>Lotta 45%, 3D6+db</td>
+                    <td>Scalare 40%, Muoversi Silenziosamente 60%, Ascoltare 35%</td>
+                </tr>
+                <tr>
+                    <th>Orso, Nero/Bruno <br> armatura 1D4 pelliccia</th>
+                    <td>3D6+10</td>
+                    <td>2D6+10</td>
+                    <td>3D6+10</td>
+                    <td>1D6+1</td>
+                    <td>2D6+6</td>
+                    <td>2D6+6</td>
+                    <td>corsa-10</td>
+                    <td>20-21</td>
+                    <td>+2D6</td>
+                    <td>Morso 25%, 1D10<br>Artiglio x2 35%, 1D6+db</td>
+                    <td>Scalare 35%, Fiutare 35%, Cercare 35%</td>
+                </tr>
+                <tr>
+                    <th>Cammello, ecc. <br> armatura 1D2-1 pelle</th>
+                    <td>4D6+12</td>
+                    <td>2D6+11</td>
+                    <td>4D6+12</td>
+                    <td>1D6+1</td>
+                    <td>2D6+6</td>
+                    <td>1D6+6</td>
+                    <td>corsa-14</td>
+                    <td>18-19</td>
+                    <td>+3D6</td>
+                    <td>Morso 15%, 1D4<br>Calcio 45%, 1D6+db</td>
+                    <td>Resistenza 65%</td>
+                </tr>
+                <tr>
+                    <th>Coccodrillo, ecc. <br> armatura 1D4+1 pelle</th>
+                    <td>4D6+8</td>
+                    <td>3D6+11</td>
+                    <td>4D6+17</td>
+                    <td>1D6+1</td>
+                    <td>2D6+6</td>
+                    <td>2D6+6</td>
+                    <td>nuoto-6</td>
+                    <td>25 av</td>
+                    <td>+4D6</td>
+                    <td>Morso 50%, 1D10+db</td>
+                    <td>Nascondersi 60%, Olfatto/Gusto 30%, Pistare 30%</td>
+                </tr>
+                <tr>
+                    <th>Elefante <br> armatura 1D6+2 pelle</th>
+                    <td>6D6+34</td>
+                    <td>2D6+27</td>
+                    <td>6D6+42</td>
+                    <td>1D6+6</td>
+                    <td>2D6+6</td>
+                    <td>—</td>
+                    <td>corsa-10, galoppo-25</td>
+                    <td>45-46</td>
+                    <td>+7D6</td>
+                    <td>Zanne 50%, 2D8+db<br>Calpestare 25%, 4D6+db</td>
+                    <td>Ascoltare 85%, Muoversi Silenziosamente, Fiutare 65%</td>
+                </tr>
+                <tr>
+                    <th>Fantasma<sup>6</sup></th>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>varie</td>
+                    <td>varie</td>
+                    <td>—</td>
+                    <td>na</td>
+                    <td>—</td>
+                    <td>POT:POT</td>
+                    <td>terrore, ecc.</td>
+                    <td>Farfugliare 30%</td>
+                </tr>
+                <tr>
+                    <th>Cavallo da Sella <br> armatura 1D2-1 muscoli</th>
+                    <td>3D6+18</td>
+                    <td>2D6+12</td>
+                    <td>4D6+12</td>
+                    <td>1D6+6</td>
+                    <td>2D6+6</td>
+                    <td>2D6+11</td>
+                    <td>corsa-12, nuoto-2</td>
+                    <td>26</td>
+                    <td>+3D6</td>
+                    <td>Morso 20%, 1D3<br>Calcio 40%, 1D6+db</td>
+                    <td>Schivare 25%, Sentire 25%, Nascondersi 25%</td>
+                </tr>
+                <tr>
+                    <th>Leone<sup>4</sup> <br> armatura 1D2-1 pelliccia</th>
+                    <td>2D6+12</td>
+                    <td>2D6+8</td>
+                    <td>2D6+6</td>
+                    <td>1D6+6</td>
+                    <td>2D6+11</td>
+                    <td>2D6+12</td>
+                    <td>corsa-10, nuoto-2</td>
+                    <td>13 av</td>
+                    <td>+1D6</td>
+                    <td>Morso 40%, 1D10<br>Artiglio x2 70%, 1D6+db<br>Squartare 80%, 2D6+db</td>
+                    <td>Schivare 20%, Nascondersi/Fiutare/Gusto 40%, Pistare 15%</td>
+                </tr>
+                <tr>
+                    <th>Mastodonte <br> armatura 1D6+4 pelle</th>
+                    <td>6D6+40</td>
+                    <td>4D6+16</td>
+                    <td>6D6+30</td>
+                    <td>1D6+6</td>
+                    <td>2D6+11</td>
+                    <td>—</td>
+                    <td>corsa-10, nuoto-2</td>
+                    <td>50</td>
+                    <td>+7D6</td>
+                    <td>Zanne 50%, 2D8+db<br>Calpestare 25%, 4D6+db</td>
+                    <td>Ascoltare 85%, Fiutare 25%, Cercare 35%</td>
+                </tr>
+                <tr>
+                    <th>Polpo, Gigante<sup>1</sup> <br> armatura 1D2 pelle</th>
+                    <td>6D6+6</td>
+                    <td>2D6+6</td>
+                    <td>6D6</td>
+                    <td>1D6+6</td>
+                    <td>2D6+6</td>
+                    <td>2D6+6</td>
+                    <td>nuoto-8</td>
+                    <td>17</td>
+                    <td>+2D6</td>
+                    <td>Costringere 60%, 2D3+db</td>
+                    <td>Schivare 45%, Nascondersi 15%, Cercare 15%</td>
+                </tr>
+                <tr>
+                    <th>Branco di Ratti<sup>2</sup> <br> armatura na</th>
+                    <td>na</td>
+                    <td>na</td>
+                    <td>na</td>
+                    <td>na</td>
+                    <td>na</td>
+                    <td>na</td>
+                    <td>corsa-10, nuoto-8</td>
+                    <td>na</td>
+                    <td>na</td>
+                    <td>carica è # di ratti x5%<br> morso x8 # di ratti x5%</td>
+                    <td>Carica e Sgomento 90%</td>
+                </tr>
+                <tr>
+                    <th>Rinoceronte <br> armatura 2D4+2 pelle</th>
+                    <td>4D6+20</td>
+                    <td>4D6+6</td>
+                    <td>6D6+20</td>
+                    <td>1D6+6</td>
+                    <td>2D6+6</td>
+
+                    <td>2D6+6</td>
+                    <td>corsa-10, nuoto-1</td>
+                    <td>41 av</td>
+                    <td>+5D6</td>
+                    <td>Carica 60%, 3D10+db<br>Calpestare 75%, 3D10+db</td>
+                    <td>Schiamazzo Forte e Grida 65%<br>Ascoltare 55%, Muoversi Silenziosamente 20%, Fiutare 60%</td>
+                </tr>
+                <tr>
+                    <th>Squalo, Medio <br> armatura 1D4 pelle</th>
+                    <td>3D6+12</td>
+                    <td>3D6+6</td>
+                    <td>3D6+12</td>
+                    <td>1D6+6</td>
+                    <td>2D6+6</td>
+                    <td>2D6+3</td>
+                    <td>nuoto-8</td>
+                    <td>20-21</td>
+                    <td>+2D6</td>
+                    <td>Morso 40%</td>
+                    <td>Fiutare Frenetico 15%, Cercare 25%, Cacciare 60%</td>
+                </tr>
+                <tr>
+                    <th>Serpente, marino corazzato <br> armatura 1D2 scaglie</th>
+                    <td>3D6</td>
+                    <td>nessuna</td>
+                    <td>3D6</td>
+                    <td>1D6+1</td>
+                    <td>1D6+1</td>
+                    <td>3D6</td>
+                    <td>nuoto-6</td>
+                    <td>10-11</td>
+                    <td>+0</td>
+                    <td>un'arma a mano per DES</td>
+                    <td>Notare Vibrazioni 70%</td>
+                </tr>
+                <tr>
+                    <th>Serpente, costrittore<sup>3</sup> <br> armatura nessuna</th>
+                    <td>3D6+12</td>
+                    <td>2D6+6</td>
+                    <td>2D6+6</td>
+                    <td>1D6+1</td>
+                    <td>1D6+11</td>
+                    <td>3D6</td>
+                    <td>striscia-5, nuoto-3</td>
+                    <td>16-17</td>
+                    <td>+1D6</td>
+                    <td>Morso 45%, 1D6<br>Stritolare POT:CON sulla Tabella Resistenza</td>
+                    <td>Schivare 45%, Nascondersi 65%, Muoversi Silenziosamente 55%, Cercare 25%</td>
+                </tr>
+                <tr>
+                    <th>Serpente, velenoso<sup>5</sup> <br> armatura 1D2 scaglie</th>
+                    <td>1D6+6</td>
+                    <td>1D6+6</td>
+                    <td>1D6+1</td>
+                    <td>1D6+1</td>
+                    <td>2D6+6</td>
+                    <td>3D6+6</td>
+                    <td>striscia-5, nuoto-3</td>
+                    <td>3-4 av</td>
+                    <td>+0</td>
+                    <td>Morso 65%, 1D3 +veleno</td>
+                    <td>Schivare 65%, Nascondersi 70%, Muoversi Silenziosamente 80%</td>
+                </tr>
+                <tr>
+                    <th>Lupo<sup>7</sup> <br> armatura 1D2-1 pelliccia</th>
+                    <td>2D6+6</td>
+                    <td>3D6</td>
+                    <td>2D6+1</td>
+                    <td>1D6+6</td>
+                    <td>2D6+6</td>
+                    <td>2D6+6</td>
+                    <td>corsa-12</td>
+                    <td>10-11</td>
+                    <td>+0</td>
+                    <td>Morso 35%, 1D6+db</td>
+                    <td>Schivare 35%, Saltare 35%, Fiutare/Gusto 60%, Pistare 50%</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footnote-section">
+            <ol>
+                <li>Un polpo è legato a un luogo specifico, e non si allontana molto da esso. Ha qualche legame con il terreno.</li>
+                <li>Un branco di ratti si muove come un'unica creatura. Un attacco riuscito lo disperde, e continua a vivere, per riformarsi con il suo prossimo round. Se entrambi gli attacchi hanno successo, il branco si disperde, e muore.</li>
+                <li>Se entrambi gli attacchi hanno successo, il bersaglio è immobilizzato, e subisce sia la costrizione che il danno da morso nello stesso round. Una volta che la costrizione ha successo, il bersaglio subisce automaticamente il danno. Il morso può anche essere velenoso, di POT uguale al POT del serpente.</li>
+                <li>Un leone può attaccare un bersaglio una volta alla volta, e può fare sia la costrizione che i danni da artiglio nello stesso round dopo un attacco con artiglio riuscito. L'attacco con artiglio infligge anche un danno da squarcio. Armi non danneggiate continuano ad attaccare. Il tiro di dadi è uguale al numero attuale di ratti nel branco x5.</li>
+                <li>La maggior parte dei serpenti velenosi non sono letali per gli esseri umani; per questi, un attacco riuscito è POT vs CON sulla Tabella della Resistenza. Se il serpente vince, la vittima subisce 1D4 danni da veleno per round.</li>
+                <li>Per l'incorporeità, vedi le caratteristiche dei demoni. 50% poco vulnerabile alle armi fisiche eccetto quelle fatte d'argento, che infliggono danni normali. Vulnerabile ad armi magiche o alle armi usate da incantatori, ma non ad attacchi diretti con incantesimi.</li>
+                <li>HP medi per adulto.</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<a href="#" class="torna-su" aria-label="Torna su">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+    </svg>
+</a>
+
+<script>
+    const tornaSuBtn = document.querySelector('.torna-su');
+    window.onscroll = () => {
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            tornaSuBtn.style.display = 'flex';
+        } else {
+            tornaSuBtn.style.display = 'none';
+        }
+    };
+</script>
+
+</body>
+</html>
