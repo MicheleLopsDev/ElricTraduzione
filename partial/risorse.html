@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elric! - Risorse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400;500;700&display=swap"
+          rel="stylesheet">
+    <style>
+        /* Stili Generali */
+     body {
+         font-family: 'Inter', sans-serif;
+         background-color: #111827; /* gray-900 */
+         color: #d1d5db; /* gray-300 */
+     }
+     h1, h2, h3, h4, h5, h6 {
+         font-family: 'Cinzel', serif;
+     }
+
+     /* Stili per le Sezioni */
+     .manual-section {
+         margin-top: 4rem;
+         margin-bottom: 4rem;
+         padding-top: 2rem;
+         border-top: 2px solid #4b5563; /* gray-600 */
+     }
+     .section-title {
+         border-bottom: 2px solid #ef4444;
+         padding-bottom: 0.5rem;
+     }
+     .sub-section-title {
+         border-left: 3px solid #f87171;
+         padding-left: 1rem;
+         color: #f87171;
+         font-size: 1.8rem;
+     }
+     table {
+         border-collapse: collapse;
+         width: 100%;
+         margin-top: 1rem;
+         margin-bottom: 2rem;
+     }
+     th, td {
+         padding: 0.75rem;
+         text-align: left;
+         border: 1px solid #4b5563; /* gray-600 */
+         font-size: 0.9rem;
+     }
+     tr:nth-child(even) {
+         background-color: #1f2937; /* gray-800 */
+     }
+     .table-header {
+         background-color: #374151; /* gray-700 */
+         text-align: center;
+         font-weight: bold;
+     }
+
+     /* Box di Contenuto */
+     .info-box {
+         background-color: #1f2937;
+         border: 1px solid #4b5563; /* gray-600 */
+         padding: 1.5rem;
+         margin-top: 1.5rem;
+         margin-bottom: 1.5rem;
+         border-radius: 0.5rem;
+     }
+     .verse-box {
+         background-color: #111827;
+         border-left: 4px solid #f87171;
+         padding: 1.5rem;
+         margin-top: 1.5rem;
+         border-radius: 0.25rem;
+         font-family: 'Cinzel', serif;
+     }
+     .verse-box p {
+         margin: 0;
+         font-style: italic;
+         color: #d1d5db;
+     }
+
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+<div id="risorse" class="manual-section container mx-auto p-8 max-w-4xl">
+    <header class="text-center mb-12">
+        <h1 class="text-6xl md:text-8xl font-bold text-gray-100 my-4" style="text-shadow: 3px 3px 6px rgba(239, 68, 68, 0.4);">RISORSE</h1>
+        <h2 class="text-xl text-gray-400 tracking-wider">MATERIALI AGGIUNTIVI PER GIOCATORI E GAMEMASTER</h2>
+    </header>
+
+    <main class="text-lg leading-relaxed space-y-8">
+        <section id="conversioni">
+            <h2 class="text-4xl font-bold text-red-400 section-title mb-6">CONVERSIONI</h2>
+            <p>
+                QUESTA SEZIONE fornisce le istruzioni per trasferire gli avventurieri di Stormbringer in Elric!. Potreste preferire creare nuovi avventurieri per Elric! e usarli per qualche sessione mentre prendete confidenza con le regole. Una volta che sapete come scorre il gioco, trasferite i vostri vecchi avventurieri.
+            </p>
+            <p class="mt-4">
+                Consultate il vostro gamemaster durante il processo di conversione e mostrategli copie delle vecchie e nuove schede dell'avventuriero quando avete finito. Il vostro gamemaster è il miglior arbitro.
+            </p>
+            <p class="mt-4">
+                Iniziate con una scheda dell'avventuriero di Elric! vuota. Tutti i dettagli personali — nome, patria, religione, denaro, ecc., rimangono invariati. Sulla nuova scheda c'è più spazio per tali dettagli, tuttavia, e maggiori informazioni si trovano nel capitolo dell'avventuriero. Potreste ritrovarvi a fare nuove annotazioni.
+            </p>
+
+            <div class="info-box">
+                <h3 class="text-2xl font-bold text-red-300 text-center mb-4">ARGOMENTI</h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-2 text-base">
+                    <ol class="list-decimal list-inside space-y-1">
+                        <li>Caratteristiche</li>
+                        <li>Bonus al Danno</li>
+                        <li>Punti Ferita, Punti Magia</li>
+                        <li>Abilità</li>
+                    </ol>
+                    <ol class="list-decimal list-inside space-y-1" start="5">
+                        <li>Armi e Armature</li>
+                        <li>Caos, Equilibrio, Legge</li>
+                        <li>Magia</li>
+                        <li>Oggetti Magici</li>
+                    </ol>
+                    <ol class="list-decimal list-inside space-y-1" start="9">
+                        <li>Demoni</li>
+                        <li>Elementali</li>
+                        <li>Virtù</li>
+                        <li>Scenari</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">1. CARATTERISTICHE</h3>
+                <p>
+                    In Stormbringer, le caratteristiche umane venivano tirate con 3D6: Elric! usa 2D6+6. Questo cambia la caratteristica minima ottenibile da 3-4 a 8.
+                </p>
+                <div class="overflow-x-auto mt-4">
+                    <table class="w-full">
+                        <caption class="text-xl font-bold text-red-200 my-2 text-center">TABELLA DI CONVERSIONE DELLE CARATTERISTICHE</caption>
+                        <thead class="table-header">
+                            <tr>
+                                <th>Vecchio Punteggio</th>
+                                <th>Nuovo Punteggio</th>
+                                <th>Vecchio Punteggio</th>
+                                <th>Nuovo Punteggio</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3-4</td>
+                                <td>8</td>
+                                <td>13</td>
+                                <td>15</td>
+                            </tr>
+                            <tr class="bg-gray-800/50">
+                                <td>5-6</td>
+                                <td>9</td>
+                                <td>14</td>
+                                <td>16</td>
+                            </tr>
+                             <tr>
+                                <td>7</td>
+                                <td>10</td>
+                                <td>15-16</td>
+                                <td>17</td>
+                            </tr>
+                            <tr class="bg-gray-800/50">
+                                <td>8</td>
+                                <td>11</td>
+                                <td>17-18</td>
+                                <td>18</td>
+                            </tr>
+                             <tr>
+                                <td>9</td>
+                                <td>12</td>
+                                <td>19</td>
+                                <td>19</td>
+                            </tr>
+                            <tr class="bg-gray-800/50">
+                                <td>10-11</td>
+                                <td>13</td>
+                                <td>20</td>
+                                <td>20</td>
+                            </tr>
+                             <tr>
+                                <td>12</td>
+                                <td>14</td>
+                                <td>21</td>
+                                <td>21</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="mt-4">
+                    Ventuno è il massimo normale per le caratteristiche in Elric!, ma Potere e Intelligenza possono aumentare indefinitamente. Certe magie possono aumentare temporaneamente le caratteristiche.
+                </p>
+                <div class="flex justify-around mt-6">
+                    <img src="https://placehold.co/200x200/1f2937/d1d5db?text=Segnaposto" alt="Segnaposto per immagine decorativa" class="rounded">
+                    <img src="https://placehold.co/200x200/1f2937/d1d5db?text=Segnaposto" alt="Segnaposto per immagine decorativa" class="rounded">
+                </div>
+            </div>
+
+             <div class="info-box">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">2. BONUS AL DANNO (STR+TAG)</h3>
+                 <p>Ricalcola il bonus al danno:</p>
+                 <div class="grid grid-cols-2 md:grid-cols-4 gap-x-4 text-center mt-2">
+                     <p><strong>02-16 = -1D6</strong></p>
+                     <p><strong>13-16 = -1D4</strong></p>
+                     <p><strong>17-24 = zero</strong></p>
+                     <p><strong>25-32 = +1D4</strong></p>
+                     <p><strong>33-40 = +1D6</strong></p>
+                     <p><strong>41-56 = +2D6</strong></p>
+                 </div>
+            </div>
+
+            <div class="info-box">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">3. PUNTI FERITA, PUNTI MAGIA</h3>
+                <p>
+                    Per i punti ferita, somma COS + TAG e dividi il totale per due; arrotonda per eccesso qualsiasi frazione al numero intero successivo. Il tuo avventuriero potrebbe avere meno punti ferita di prima. Per i punti magia, cerchia il numero uguale al POT.
+                </p>
+            </div>
+
+            <div class="info-box">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">4. ABILITÀ</h3>
+                <p>
+                    I bonus di abilità non vengono utilizzati, ma sei libero di trasferirli. Sono stati sostituiti da probabilità iniziali per la maggior parte delle abilità e da altri aggiustamenti.
+                </p>
+                <p class="mt-2">
+                    Inserisci i tuoi valori di abilità. Qualsiasi abilità inferiore al valore stampato (Scalare, ad esempio, è 40%) aumenta automaticamente a tale importo.
+                </p>
+                <p class="mt-2">
+                    Le abilità di Elric!, Mascherarsi, Intuito, Navigazione, Scrivere, Lanciare, Regni Giovani e Regni Sconosciuti hanno pochi paralleli in Stormbringer. Per iniziare, assegna 100 punti tra di esse come preferisci.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 mt-4">
+                    <div>
+                        <p class="font-bold text-red-200">Stormbringer</p>
+                        <ul class="list-none space-y-1 text-sm">
+                            <li>Imboscata</li>
+                            <li>Equilibrio</li>
+                            <li>Occultare</li>
+                            <li>Credito</li>
+                            <li>Tagliare Borsa</li>
+                            <li>Valutare Tesoro</li>
+                            <li>Primo Soccorso</li>
+                            <li>Rissa**</li>
+                            <li>Presa</li>
+                            <li>Calciare</li>
+                            <li>Creare Mappa</li>
+                            <li>Memorizzare</li>
+                            <li>Conoscenza Musicale**</li>
+                            <li>Oratoria</li>
+                            <li>Persuadere</li>
+                            <li>Conoscenza Vegetale***</li>
+                            <li>Conoscenza Veleni</li>
+                            <li>Lettura/Scrittura Comune</li>
+                            <li>Lettura/Scrittura Altra</li>
+                            <li>Olfatto**</li>
+                            <li>Cercare**</li>
+                            <li>Vedere**</li>
+                            <li>Piazzare Trappola</li>
+                            <li>Cantare</li>
+                            <li>Gioco di Prestigio</li>
+                            <li>Evocazione</li>
+                            <li>Gusto**</li>
+                            <li>Legare Nodi</li>
+                            <li>Acrobazia</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p class="font-bold text-red-200">Elric!</p>
+                         <ul class="list-none space-y-1 text-sm">
+                            <li>nessuna*</li>
+                            <li>Mestiere (Funambolismo)</li>
+                            <li>Occultare Oggetto</li>
+                            <li>Contrattare</li>
+                            <li>Mestiere (Gioco di Prestigio)</li>
+                            <li>Valutare</li>
+                            <li>Fisica</li>
+                            <li>Rissa**</li>
+                            <li>Lotta</li>
+                            <li>Mestiere (Giocoleria)</li>
+                            <li>Scrivere, Navigare</li>
+                            <li>nessuna*</li>
+                            <li>Arte (Liuto, Canto, ecc.) e Regni Giovani**</li>
+                            <li>Oratoria</li>
+                            <li>Parlantina o Contrattare</li>
+                            <li>Mondo Naturale e Pozioni***</li>
+                            <li>Pozioni</li>
+                            <li>Lingua Madre</li>
+                            <li>Altra Lingua</li>
+                            <li>Olfatto/Gusto**</li>
+                            <li>Cercare**</li>
+                            <li>Vedere**</li>
+                            <li>Trappola</li>
+                            <li>Arte (Canto)</li>
+                            <li>Mestiere (Gioco di Prestigio)</li>
+                            <li>nessuna*</li>
+                            <li>Olfatto/Gusto**</li>
+                            <li>nessuna*</li>
+                            <li>Mestiere (Acrobazia)</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="text-xs text-gray-400 mt-4 space-y-2">
+                    <p>
+                        * Questa abilità non esiste più, e i tuoi punti sono persi, a meno che il tuo gamemaster non ti permetta di mantenerla come specialità personale (se appropriato, quindi, scrivila in uno degli spazi vuoti sul tuo foglio). Imboscata non c'è più, sussunta da Nascondersi, Ascoltare, Muoversi Silenziosamente e Cercare. Memorizzare non c'è più, la funzione è sussunta dal tiro Idea. L'abilità Evocazione di per sé non esiste più, ma note sulla conversione compaiono più avanti. Legare Nodi non c'è più, sebbene un Tiro Destrezza o un Mestiere (Macramè e Legare Nodi) garantiscano la funzione equivalente.
+                    </p>
+                    <p>
+                        ** Due vecchie abilità sono diventate una singola nuova abilità. Prendi il valore più alto delle due precedenti e, con il permesso del tuo gamemaster, aggiungi la metà dei punti percentuali del valore più basso.
+                    </p>
+                    <p>
+                        *** Una vecchia abilità è diventata due nuove abilità. Assegna i tuoi punti percentuali tra le due come desideri o ignora un'abilità, se vuoi, e dai tutti i punti all'altra.
+                    </p>
+                 </div>
+            </div>
+
+            <div class="info-box">
+                 <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">5. ARMI E ARMATURE</h3>
+                 <p>
+                    Le abilità con le armi sono diverse. La parata iniziale di un'arma in Stormbringer è uguale alle sue o sue abilità di attacco. La nuova parata iniziale di un'arma è uguale alle sue o sue abilità di attacco, ma ci sono regole diverse per le parate multiple. Le classi di armi sono cambiate. Se un avventuriero aveva il 75% in Spada Larga e il 30% in Spadone, trasferisci il 75% a tutta la classe 2, e il 30% alla classe 3. Con il permesso del gamemaster, aggiungi la metà del valore più basso alla nuova abilità. Nel nostro esempio: Spada Larga 75% e Spadone 30% diventa Spada Larga 90% (75+15) e Spadone 45% (30+37.5 arrotondato per difetto). Un avventuriero con Spada Larga 80% e Spadone 90% in Stormbringer, in Elric! avrebbe Spada Larga 120% (80+40) e Spadone 130% (90+40). Se hai due armi nella stessa classe di armi, prendi la percentuale più alta in quel caso. Le statistiche delle armi sono diverse. Consulta le tabelle delle armi e nota i maggiori scopi delle informazioni.
+                 </p>
+            </div>
+
+            <div class="info-box">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">6. CAOS, EQUILIBRIO, LEGGE</h3>
+                <p>
+                    Questa nozione di affiliazione è nuova in Elric!. Discuti con il gamemaster i valori iniziali appropriati per i tre riquadri, e concorda con lui o lei un valore per ciascuno. Ogni avventuriero dovrebbe avere almeno 2D6 in uno dei suoi riquadri dell'alleanza, e nessuno può iniziare con più di 30 in nessuno dei tre riquadri.
+                </p>
+                <p class="mt-2">
+                    Un avventuriero precedentemente allineato al Caos non è automaticamente un alleato del Caos. Il suo precedente servizio al suo o suo signore cosmico conta, ma in Elric! un avventuriero potrebbe mantenere un allineamento elano fino al suo esaurimento.
+                </p>
+            </div>
+
+            <div class="info-box">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">7. MAGIA</h3>
+                <p>
+                    Gli stregoni ricevono automaticamente il nuovo incantesimo Evocare Demone e l'incantesimo Evocare Elementale se conoscevano i simboli di Stormbringer, e ricevono anche tutti gli incantesimi di passaggio corrispondenti per questo.
+                </p>
+
+                <div class="flex justify-around items-center mt-6">
+                    <img src="https://placehold.co/200x250/1f2937/d1d5db?text=Segnaposto+Grimorio" alt="Segnaposto per grimorio" class="rounded">
+                    <p class="text-center italic text-gray-400 px-4">
+                        Ad esempio, se il tuo avventuriero conosceva i simboli Demone della Terra e Demone del Fuoco, ora conosce i nuovi incantesimi Dono di Grome e Fiamme di Kakatal. L'abilità Evocazione stessa diventa punti percentuali nella nuova abilità Sfere Infinite.
+                    </p>
+                    <img src="https://placehold.co/150x200/1f2937/d1d5db?text=Segnaposto+Cristallo" alt="Segnaposto per cristallo magico" class="rounded">
+                </div>
+                 <p class="mt-4">
+                    Dai al tuo avventuriero un incantesimo aggiuntivo per ogni dieci punti percentuali o frazione in una delle sue vecchie abilità Conoscenza della Magia.
+                 </p>
+                 <p class="mt-2">
+                    Scegli tra gli incantesimi di Elric!, e non selezionare incantesimi della Legge, evocazioni, o invocazioni, anche se le procedure per loro assomigliano a quelle che conosceva. La conoscenza di un incantesimo di Stormbringer equivale alla conoscenza dell'incantesimo di Elric!. Per tutto questo, aggiungi un punto al riquadro Alleanza del Caos per incantesimo.
+                 </p>
+            </div>
+
+            <div class="info-box">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">8. OGGETTI MAGICI</h3>
+                 <p>
+                    Se il tuo avventuriero possedeva magia demoniaca dello stesso gioco, continua a eseguire le stesse funzioni. Ad esempio, un'armatura demoniaca di Stormbringer con +50% di armatura ora importa un tiro aggiuntivo di 1D10 per l'armatura. Un'arma che in precedenza aveva +50% di attacco aggiunge ora un tiro di 1D10 ai suoi danni. I parametri magici devono essere riconsiderati più attentamente, come discusso di seguito.
+                 </p>
+            </div>
+
+            <div class="info-box">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">9. DEMONI</h3>
+                 <p>
+                    Le regole sono cambiate profondamente. Molti demoni di Stormbringer corrispondono ai demoni di Elric!, ma non perfettamente. Un demone servo di Stormbringer è un demone servitore di Elric!, un demone combattente è un bal'boost, e così via. Con la manifestazione di un demone da un altro piano, le statistiche di un demone si traducono a valori uguali per l'uso dei dadi. Un demone di Stormbringer con 3D6 FOR diventa 3D8 FOR in Elric!. I punti magia equivalenti sono 16 (per i 3D6 iniziali) o 18 (per 3D8), un valore di 2D8 è uguale a 10. Un demone con POT 3D6 = 20 metri di raggio diventa INT x1 in Elric!. La potenza del demone di 3D6 = 20 metri di raggio diventa semplicemente Punti Magia x1 in Elric!.
+                 </p>
+                 <p class="mt-2">
+                    Consulta il tuo gamemaster sulla conversione dei tuoi demoni specifici. La maggior parte dei gamemaster ti aiuterà volentieri.
+                 </p>
+            </div>
+
+            <div class="info-box">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">10. ELEMENTALI</h3>
+                 <p>
+                    Le regole sono cambiate profondamente. Assegna valori di caratteristica medi dati il D8 del capitolo della magia, poi assegna loro le abilità di Stormbringer.
+                 </p>
+            </div>
+
+            <div class="info-box">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">11. VIRTÙ</h3>
+                 <p>
+                    Le virtù non sono mai apparse nella saga, e non hanno posto in Elric!. Trasferisci i punti nell'abilità o nelle abilità esistenti. I futuri supplementi per Elric! potrebbero esplorare ulteriormente questa possibilità, ma per ora il concetto di virtù contraddice ciò che la Legge persegue. L'uso della magia è di competenza dei Signori del Caos. Se c'è un suggerimento per il gioco futuro, questo è l'uso di oggetti incantati. Per il senso della saga, le suggestioni alla Chaosium includono l'abbandono delle virtù.
+                 </p>
+            </div>
+
+            <div class="info-box">
+                <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">12. SCENARI</h3>
+                 <p>
+                    I gamemaster che convertono scenari dovrebbero concentrarsi sulle personalità e motivazioni dei personaggi principali. Un buon senso dei loro caratteri è il miglior aiuto per la conversione. Per aspetti specifici della conversione, alcune note si trovano nel capitolo del gamemaster.
+                 </p>
+            </div>
+
+            <section id="avventurieri-pregenerati">
+                 <h2 class="text-4xl font-bold text-red-400 section-title mb-6">6 AVVENTURIERI PREGENERATI</h2>
+                 <p>
+                    LE ABILITÀ NON ELENCATE sono alla probabilità di base. Notare che la Lingua Comune non è la lingua madre di Carkan. Ognuno ha finimenti e un cavallo da sella, ed equipaggiamento personale. Le storie per ciascuno non hanno significato, né i nomi — cambiateli come desiderate.
+                 </p>
+                 <div class="info-box">
+                    <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">CARKAN</h3>
+                    <p>
+                        È STATO RACCOLTO da una nave lungo le coste della Landa Piangente. È fuggito dagli assassini della sua famiglia. Quando sarà pronto, tornerà alla Landa per vendicarsi. Il suo clan e i tatuaggi tribali lo identificano a chiunque sappia leggere i segni. È alto, magro, silenzioso, a volte un po' scontroso; i suoi zigomi sono prominenti e i suoi occhi scuri e infossati.
+                    </p>
+                    <p class="mt-4 font-semibold">CARKAN IL GIOVANE, maschio, 24 anni</p>
+                    <p class="mt-2 text-sm">Caos 0, Equilibrio 0, Legge 3</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-1 text-center my-4 border-t border-b border-gray-700 py-2">
+                        <p><strong>FOR</strong> 15</p>
+                        <p><strong>COS</strong> 12</p>
+                        <p><strong>TAG</strong> 14</p>
+                        <p><strong>INT</strong> 17</p>
+                        <p><strong>POT</strong> 16</p>
+                        <p><strong>DES</strong> 12</p>
+                        <p><strong>APP</strong> 11</p>
+                        <p><strong>PF</strong> 13</p>
+                    </div>
+                    <p><strong>Bonus al Danno:</strong> +1D4.</p>
+                    <p><strong>Armi:</strong> Spada Larga 106%, danno 1D8+1+1D4. Scudo Completo 65%, 22 PF, danno kb+1D4+1D4.</p>
+                    <p><strong>Armatura:</strong> 1D8+2 (elmo indossato), Mezza Piastra e Maglia.</p>
+                    <p><strong>Incantesimi:</strong> nessuno.</p>
+                    <p><strong>Abilità:</strong> Mestiere (Gioco di Prestigio) 45%, Mascherarsi 35%, Schivare 24%, Valutare 35%, Ascoltare 50%, Mondo Naturale 45%, Navigare 30%, Altra Lingua (Lingua Comune) 10%, Lingua Madre (Mong) 85%, Fisica 50%, Scassinare 15%, Riparare/Congegnare 48%, Cavalcare 75%, Navigazione 35%, Scrivere 20%, Seguire Tracce 74%, Trappole 25%.</p>
+                    <p class="mt-4"><strong>Bronzi sulla Persona:</strong> 80.</p>
+                 </div>
+            </section>
+        </section>
+    </main>
+</div>
+
+</body>
+</html>
+
