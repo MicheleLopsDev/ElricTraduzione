@@ -44,6 +44,12 @@
          border-bottom: 2px solid #ef4444;
          padding-bottom: 0.5rem;
      }
+     .spell-title {
+         border-left: 3px solid #f87171;
+         padding-left: 1rem;
+         color: #f87171;
+         font-size: 1.2rem;
+     }
      .sub-section-title {
          border-left: 3px solid #f87171;
          padding-left: 1rem;
@@ -91,6 +97,14 @@
          margin-top: 1.5rem;
          margin-bottom: 1.5rem;
          border-radius: 0.25rem;
+     }
+     .spell-block {
+         background-color: #1f2937;
+         border: 1px solid #4b5563; /* gray-600 */
+         padding: 1.5rem;
+         margin-top: 1.5rem;
+         margin-bottom: 1.5rem;
+         border-radius: 0.5rem;
      }
      .info-box {
          background-color: #1f2937;
@@ -3133,6 +3147,71 @@
             </p>
         </header>
 
+
+        <section id="generatore-png" class="mt-12">
+            <h2 class="text-3xl font-bold text-red-400 section-title mb-8 flex items-center">
+                <span class="mr-2">✨</span> Oracolo del Fato
+            </h2>
+            <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
+                <p class="mb-6 text-gray-400">
+                    Utilizza i campi sottostanti per delineare il tuo avventuriero. L'Oracolo del Fato forgerà un prompt dettagliato per Gemini, creando due versioni complete del personaggio, immerse nel mondo oscuro di Elric e fedeli alle regole della Quinta Edizione.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="npc-sesso" class="block mb-2 text-sm font-medium text-red-300">Sesso</label>
+                        <select id="npc-sesso" class="w-full bg-gray-900 border border-gray-600 rounded-md p-3 text-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500">
+                            <option value="Casuale">Casuale</option>
+                            <option value="Maschio">Maschio</option>
+                            <option value="Femmina">Femmina</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="npc-patria" class="block mb-2 text-sm font-medium text-red-300">Patria (Regno)</label>
+                        <select id="npc-patria" class="w-full bg-gray-900 border border-gray-600 rounded-md p-3 text-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500">
+                            <option value="Casuale">Casuale</option>
+                            <option value="Argimiliar">Argimiliar</option>
+                            <option value="Dharijor">Dharijor</option>
+                            <option value="Dorel">Dorel</option>
+                            <option value="Filkhar">Filkhar</option>
+                            <option value="Ilmiora">Ilmiora</option>
+                            <option value="Isola delle Città Purpuree">Isola delle Città Purpuree</option>
+                            <option value="Jharkor">Jharkor</option>
+                            <option value="Landa Piangente">Landa Piangente</option>
+                            <option value="Lormyr">Lormyr</option>
+                            <option value="Melniboné">Melniboné (Umano Schiavo)</option>
+                            <option value="Nadsokor">Nadsokor</option>
+                            <option value="Oin e Yu">Oin e Yu</option>
+                            <option value="Org">Org</option>
+                            <option value="Pan Tang">Pan Tang</option>
+                            <option value="Pikarayd">Pikarayd</option>
+                            <option value="Deserto dei Sospiri">Deserto dei Sospiri (Nomade)</option>
+                            <option value="Shazar">Shazar</option>
+                            <option value="Tarkesh">Tarkesh</option>
+                            <option value="Vilmir">Vilmir</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mt-6">
+                    <label for="npc-concetto" class="block mb-2 text-sm font-medium text-red-300">Concetto o Descrizione Breve</label>
+                    <input type="text" id="npc-concetto" class="w-full bg-gray-900 border border-gray-600 rounded-md p-3 text-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500" placeholder="Es: un mercenario cinico, un nobile decaduto, un ladro tormentato dal passato...">
+                </div>
+
+                <div class="mt-6 space-y-4">
+                    <button id="generate-npc-btn" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out flex items-center justify-center">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <span>Forgia il Prompt per l'Oracolo</span>
+                    </button>
+                </div>
+
+                <div id="npc-result-container" class="mt-6 p-4 bg-gray-900 rounded-md border border-gray-700 min-h-[100px]">
+                    <p class="text-gray-500 italic">Il fato attende le tue parole...</p>
+                </div>
+            </div>
+        </section>
+
         <section id="creazione-avventuriero" class="my-12">
             <h1 class="text-6xl md:text-8xl font-bold text-gray-100 my-4"
                 style="text-shadow: 3px 3px 6px rgba(239, 68, 68, 0.4);">CREARE UN AVVENTURIERO</h1>
@@ -5961,6 +6040,7 @@
         </main>
     </div>
 </div>
+
 <div id="abilita" class="manual-section">
     <div class="container mx-auto p-8 max-w-4xl">
         <header class="text-center mb-8">
@@ -6889,8 +6969,6 @@
         </main>
     </div>
 </div>
-
-
 
 <div id="sistema-gioco" class="manual-section">
     <div class="container mx-auto p-8 max-w-5xl">
@@ -8138,40 +8216,6 @@
                 <p class="text-xs text-center mt-2 text-gray-500">I valori vuoti in alto a
                     destra indicano un Successo Automatico, quelli in basso a sinistra un
                     Fallimento Automatico.</p>
-            </section>
-
-            <section id="generatore-png" class="mt-12">
-                <h2 class="text-3xl font-bold text-red-400 section-title mb-8 flex items-center">
-                    <span class="mr-2">✨</span> Generatore di PNG con Gemini
-                </h2>
-                <div class="bg-gray-800 p-6 rounded-lg border border-gray-700">
-                    <p class="mb-4">Sei a corto di idee per un personaggio non giocante? Inserisci
-                        alcuni spunti (es. "guerriero di Lormyr, cinico e con un occhio solo") e
-                        lascia che l'Oracolo del Fato generi un PNG completo per la tua
-                        avventura.</p>
-
-                    <div class="space-y-4">
-                        <input type="text" id="npc-prompt"
-                               class="w-full bg-gray-900 border border-gray-600 rounded-md p-3 text-gray-300 focus:ring-2 focus:ring-red-500 focus:border-red-500"
-                               placeholder="Inserisci i tuoi spunti qui...">
-
-                        <button id="generate-npc-btn"
-                                class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-4 rounded-md transition duration-300 ease-in-out flex items-center justify-center">
-                            <svg id="button-icon" class="w-5 h-5 mr-2" fill="none"
-                                 stroke="currentColor" viewBox="0 0 24 24"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                      stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                            <span id="button-text">Interroga l'Oracolo del Fato</span>
-                        </button>
-                    </div>
-
-                    <div id="npc-result-container"
-                         class="mt-6 p-4 bg-gray-900 rounded-md border border-gray-700 min-h-[100px]">
-                        <p class="text-gray-500 italic">Il fato attende le tue parole...</p>
-                    </div>
-                </div>
             </section>
 
             <section id="esperienza" class="mt-8">
@@ -11040,9 +11084,9 @@
 
         <header class="text-center mb-12">
             <h1 class="text-6xl md:text-8xl font-bold text-gray-100 my-4"
-                style="text-shadow: 3px 3px 6px rgba(239, 68, 68, 0.4);">Magia</h1>
+                style="text-shadow: 3px 3px 6px rgba(239, 68, 68, 0.4);">Magia & Religione</h1>
             <h2 class="text-2xl text-gray-400 mt-2">Incantesimi, Evocazioni di Demoni ed Elementali,
-                Razze Demoniache, Abilità, Invocazioni, Incantamenti, Voci su Oggetti Magici.</h2>
+                Razze Demoniache, Abilità, Invocazioni, Incantamenti, Voci su Oggetti Magici,Religioni e culti</h2>
         </header>
 
         <main class="text-lg leading-relaxed space-y-8">
@@ -11825,24 +11869,6 @@
                         permanente.
                     </div>
 
-                </div>
-            </section>
-
-        </main>
-    </div>
-
-    <div id="magia-incantesimi-2" class="manual-section container mx-auto p-8 max-w-4xl">
-
-        <header class="text-center mb-12">
-            <h1 class="text-5xl font-bold text-red-400 section-title">Lista degli Incantesimi
-                (Continuazione)</h1>
-        </header>
-
-        <main class="text-lg leading-relaxed space-y-8">
-
-            <section id="lista-incantesimi-L-W">
-                <div class="space-y-6">
-
                     <div class="spell-block"><span class="spell-title">Liken Shape (Assumere Sembianze) (4)</span>
                         - Gittata: contatto. Caotico. Permette all'incantatore di assumere l'aspetto
                         di un altro umano o animale naturale. L'incantatore assume temporaneamente
@@ -12063,18 +12089,9 @@
                         dei Campioni del Caos e della Legge.
                     </div>
 
+
                 </div>
             </section>
-
-            <div class="my-12 flex justify-center">
-                <a href="#occhio-magico-p82" class="block">
-                    <img src="https://placehold.co/400x400/111827/ef4444?text=Segnaposto"
-                         alt="Segnaposto per l'Occhio Magico del Caos"
-                         class="mx-auto rounded-lg shadow-lg my-6">
-                    <p class="text-sm text-center text-gray-500 mt-2">Occhio Magico del Caos (Pag.
-                        82)</p>
-                </a>
-            </div>
 
             <div class="rule-box my-8 text-base">
                 <h4 class="text-xl font-bold text-red-300 mb-4 text-center">Caotico o Legale?</h4>
@@ -12437,6 +12454,7 @@
         </main>
     </div>
 
+
     <div id="magia-evocazioni" class="manual-section container mx-auto p-8 max-w-4xl">
 
         <header class="text-center mb-12">
@@ -12601,6 +12619,56 @@
                 </div>
             </section>
 
+            <section id="regole-specifiche-demoni" class="info-box my-8">
+                <h3 class="text-2xl font-bold text-red-300 mb-4 text-center">Regole Specifiche per i Demoni</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-4 text-sm">
+                    <div>
+                        <h4 class="font-bold text-red-200">DEMONI MINORI E MAGGIORI</h4>
+                        <p>Un demone minore possiede abilità e capacità, ma nessuna supera il 100%. Solo un demone maggiore può superare questo limite.</p>
+                        <h4 class="font-bold text-red-200 mt-2">ATTACCHI AGGIUNTIVI</h4>
+                        <p>Nella sua forma propria, un demone può avere più di un'abilità o capacità demoniaca, ma può usarne solo una per ogni cinque ranghi DEX in un round. Ad esempio, un demone più veloce brandisce la sua arma due volte mentre un demone più lento la brandisce una volta. Per chiunque altro, il demone. Vincolato a un oggetto e se la probabilità è maggiore, la volontà del vincolatore o il suo o suo istinto determina il beneficio magico del demone.</p>
+                        <h4 class="font-bold text-red-200 mt-2">ASPETTO</h4>
+                        <p>Vincolato a un oggetto, l'aspetto del demone suggerisce in qualche modo le abilità che possiede. Un'arma da affondo per Aggrapparsi, per esempio. Per Assorbire Proiettile, la pelle del demone potrebbe essere criptica e simile a un indovinello.</p>
+                        <h4 class="font-bold text-red-200 mt-2">GITTATA BASE</h4>
+                        <p>Un'abilità o capacità ha una gittata in iarde uguale al POT del demone moltiplicato per i Punti Magia investiti. Si applica solo ai missili, e per estensione, ad altre armi da lancio.</p>
+                        <h4 class="font-bold text-red-200 mt-2">ENERGIA AL 110% E OLTRE</h4>
+                        <p>Si verifica solo con lo 00.</p>
+                        <h4 class="font-bold text-red-200 mt-2">FORMA DEMONIACA</h4>
+                        <p>Nella sua forma propria un demone non possiede punti ferita, ma si affida invece al suo POT per rimanere in questo universo (agiscono sui loro). Ai demoni serve ancora la COS per resistere alla magia. Un'arma generata da demone genera abilità aggiuntive. Un demone vincolato non ha punti ferita; ha i punti ferita dell'oggetto a cui è vincolato.</p>
+                        <h4 class="font-bold text-red-200 mt-2">IMPALAMENTI</h4>
+                        <p>Gli attacchi dei demoni hanno successo come gli attacchi normali (lo fanno sui loro). Per i demoni vincolati, vedi le normali regole di combattimento.</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-200">STATO DI VINCOLO</h4>
+                        <p>Un demone deve essere vincolato a un oggetto fisico per non essere ferito. Un demone vincolato è uno scudo, un'arma, un'armatura, un anello, ecc., a cui un demone è stato vincolato. Il demone ha i punti ferita dell'oggetto. Se l'oggetto si rompe, il demone muore. Ovunque l'oggetto, e il suo padrone, si trovino, il demone può parare, se ha l'abilità. Per le regole sul combattimento ordinario. Un demone vincolato aumenta la potenza dell'oggetto in cui diventa parte integrante.</p>
+                        <h4 class="font-bold text-red-200 mt-2">PROBABILITÀ DI COLPIRE O DI OTTENERE L'ABILITÀ</h4>
+                        <p>La percentuale di Punti Magia investiti nell'attacco, più alcuni bonus. A volte il POT, la DES, ecc. dell'avventuriero sono necessari. Ogni demone deve avere INT e COS, e almeno un'abilità per cui ha bisogno solo di esperienza per migliorare. I demoni nella loro forma propria, o nel caso di demoni che usano armi, aggiungono sempre il loro POT, DES e (in caso di abilità di combattimento) FOR al tiro riuscito. Abilità e capacità disponibili solo agli incantatori costano un sacrificio di uno o più punti POT.</p>
+                        <h4 class="font-bold text-red-200 mt-2">COSTO DI ABILITÀ E CAPACITÀ</h4>
+                        <p>Se un critico fallisce o ha successo usando un oggetto vincolato, tirare contro le probabilità di base dei demoni.</p>
+                        <h4 class="font-bold text-red-200 mt-2">NUMERO DI ATTACCHI</h4>
+                        <p>Se un demone usa qualche tipo di arma (un'ascia, ecc.), il numero di attacchi possibili dipende dalla DES. Il numero di attacchi possibili in un round è diviso per il POT investito nell'abilità. Un demone può tentare ulteriormente la capacità fino a quando un attacco non fallisce. Vedi anche "Abilità e Attacchi in un Round".</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-red-200">DANNO INFLITTO DA ATTACCO</h4>
+                        <p>Un demone non vincolato non infligge danno. Per calcolare l'esperienza, investi i Punti Magia e tira sulla Tabella dei Risultati del Sacrificio. Le armi demoniache aggiungono sempre 1D10+1D4 punti di danno ai tiri sulla Tabella dei Risultati del Sacrificio.</p>
+                        <h4 class="font-bold text-red-200 mt-2">DURATA DEGLI EFFETTI</h4>
+                        <p>A meno che non sia specificato diversamente, gli attacchi dei demoni e le gittate aumentate durano per la durata descritta per altre forme di durata.</p>
+                        <h4 class="font-bold text-red-200 mt-2">EFFETTO DELL'ARMATURA ORDINARIA</h4>
+                        <p>L'armatura fisica non ha potere d'arresto contro gli attacchi demoniaci.</p>
+                        <h4 class="font-bold text-red-200 mt-2">EFFETTO DELL'ESSERE</h4>
+                        <p>Vincolato a un oggetto, l'oggetto deve rappresentare l'attacco o la capacità. Ad esempio, una gorgone ringhiante potrebbe adornare un medaglione. L'avventuriero dovrebbe possedere anche certe abilità fisiche. Con la capacità L balzare, un avventuriero necessita di un tiro di salto o DES compensativo per atterrare illeso dopo il balzo.</p>
+                        <h4 class="font-bold text-red-200 mt-2">ESPERIENZA</h4>
+                        <p>Abilità, capacità e abilità dei demoni hanno INT e POT iniziali, ma mentre acquisiscono esperienza nei loro piani natali potrebbero ottenere, ma il loro sviluppo personale è bloccato.</p>
+                        <h4 class="font-bold text-red-200 mt-2">CATASTROFI, MANCATI</h4>
+                        <p>Le catastrofi accadono, come per gli avventurieri. Se il 100% o meno, le catastrofi si verificano con 99, 00.</p>
+                        <h4 class="font-bold text-red-200 mt-2">ALTRI PIANI</h4>
+                        <p>Un demone vincolato a un oggetto, o può essere inviato su un altro piano; è vincolato qui, e può accompagnare il suo padrone ovunque, o un demone non vincolato, a seguito di negoziati, può essere inviato in missione.</p>
+                        <h4 class="font-bold text-red-200 mt-2">PARATE</h4>
+                        <p>Come per gli umani, i demoni devono dichiarare le loro intenzioni. Un demone vincolato a un'arma è una spada o uno scudo. Se no, non può parare; se è così, il demone potrebbe aver indossato una spada incrociata con la mano nuda.</p>
+                    </div>
+                </div>
+            </section>
+
             <section id="tabella-catastrofe-evocazioni">
                 <div class="info-box my-8">
                     <h3 class="text-xl font-bold text-red-300 mb-4 text-center">Tabella delle
@@ -12728,6 +12796,43 @@
         </header>
 
         <main class="text-lg leading-relaxed space-y-8">
+
+            <div class="info-box my-8">
+                <h3 class="text-2xl font-bold text-red-300 mb-4 text-center">Parlare con i Demoni</h3>
+                <p class="text-sm">OGNI DEMONE arriva in grado di parlare con il suo evocatore; vedi "Abilità Demoniache" alle pagine 164-165. Anche quelli vincolati a oggetti sono consapevoli di ciò che li circonda e sono in grado di parlare. Di solito un demone sussurra al suo padrone o padrona, ma un demone sorpreso o spaventato potrebbe urlare o gridare forte come qualsiasi umano. Spaventare tre o quattro stregoni e tutti i loro demoni attendenti causa pandemonio.</p>
+
+                <h4 class="font-bold text-red-200 mt-4 text-center">Tabella dei Risultati del Sacrificio per Demoni ed Elementali</h4>
+                <p class="text-sm text-center">Questa tabella correla i danni degli attacchi e le probabilità di base con il numero di punti magia sacrificati.</p>
+                <div class="overflow-x-auto mt-2">
+                    <table class="w-full text-sm">
+                        <thead class="table-header">
+                        <tr>
+                            <th>punti magia spesi</th>
+                            <th>tiro danno</th>
+                            <th>probabilità base</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr><td>1</td><td>1D2</td><td>10%</td></tr>
+                        <tr class="bg-gray-800/50"><td>2</td><td>1D4</td><td>20%</td></tr>
+                        <tr><td>3</td><td>1D6</td><td>30%</td></tr>
+                        <tr class="bg-gray-800/50"><td>4</td><td>1D8</td><td>40%</td></tr>
+                        <tr><td>5</td><td>1D10</td><td>50%</td></tr>
+                        <tr class="bg-gray-800/50"><td>6</td><td>1D10+1D2</td><td>60%</td></tr>
+                        <tr><td>7</td><td>1D10+1D4</td><td>70%</td></tr>
+                        <tr class="bg-gray-800/50"><td>8</td><td>1D10+1D6</td><td>80%</td></tr>
+                        <tr><td>9</td><td>1D10+1D8</td><td>90%</td></tr>
+                        <tr class="bg-gray-800/50"><td>10</td><td>2D10</td><td>100%</td></tr>
+                        <tr><td>11</td><td>2D10+1D2</td><td>110%</td></tr>
+                        <tr class="bg-gray-800/50"><td>12</td><td>2D10+1D4</td><td>120%</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="text-xs text-gray-400 mt-2">Per calcolare i danni per abilità del 110% e oltre, aggiungere l'incremento di 2D10 per ogni 100 punti percentuali completi nell'abilità, e cercare il resto sulla Tabella dei Risultati del Sacrificio. Così un demone del 140% potrebbe fare 2D10+1D8 in un singolo attacco, e un demone del 240% farebbe 4D10+1D8.</p>
+
+                <h4 class="font-bold text-red-200 mt-4 text-center">Bonus al Danno per Demoni & Elementali</h4>
+                <p class="text-sm">USARE IL BONUS AL DANNO UMANO per demoni ed elementali. Calcolare i bonus al danno elementali allo stesso modo degli umani; quindi il totale per un elementale di FOR 26 e TAG 26 è 52, corrispondente a +2D6. Calcolare i bonus al danno dei demoni anche come STR+SIZ, ma leggere D8 invece di D6 come risultato. Un demone con un totale di 57 STR+SIZ ha un bonus al danno di +3D8, non di 3D6.</p>
+            </div>
 
             <section id="negoziare-demoni">
                 <h3 class="text-2xl font-bold text-red-300 sub-section-title my-4">Negoziare</h3>
@@ -14088,11 +14193,6 @@
     </div>
 
     <div id="magia-abilita-demoni-2" class="manual-section container mx-auto p-8 max-w-4xl">
-
-        <header class="text-center mb-12">
-            <h1 class="text-5xl font-bold text-red-400 section-title">Abilità Demoniache
-                (Continuazione)</h1>
-        </header>
 
         <main class="text-lg leading-relaxed space-y-8">
 
@@ -26032,5 +26132,71 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5"/>
     </svg>
 </a>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Riferimenti agli elementi HTML
+        const sessoSelect = document.getElementById('npc-sesso');
+        const patriaSelect = document.getElementById('npc-patria');
+        const concettoInput = document.getElementById('npc-concetto');
+        const generateBtn = document.getElementById('generate-npc-btn');
+        const resultContainer = document.getElementById('npc-result-container');
+
+        // Event listener per il click sul pulsante
+        generateBtn.addEventListener('click', () => {
+            // Raccoglie i valori selezionati dall'utente
+            const sesso = sessoSelect.value;
+            const patria = patriaSelect.value;
+            const concetto = concettoInput.value.trim();
+
+            if (!concetto) {
+                resultContainer.innerHTML = '<p class="text-yellow-400 italic">Il Fato richiede almeno un concetto di base per tessere la sua tela.</p>';
+                return;
+            }
+
+            // Costruisce il prompt dettagliato per Gemini
+            const fullPrompt = `
+Ciao Gemini, per favore agisci come un Gamemaster esperto del mondo di Elric di Michael Moorcock.
+Il mio nome è Capione Eterno, ti chiedo di creare un personaggio per il gioco di ruolo "Stormbringer 5a Edizione" (le cui regole sono contenute nel manuale "Elric!").
+
+**Istruzioni Fondamentali:**
+1.  **Stile Narrativo:** Scrivi il background e le descrizioni nello stile letterario, barocco e cupo di Michael Moorcock.
+2.  **Due Alternative:** Genera DUE versioni complete e giocabili del personaggio, basando ciascuna su un set di tiri di dado differente per le caratteristiche.
+3.  **Coerenza:** Se alcune delle mie richieste mancano, integrarle in modo coerente con il mondo di gioco e le regole.
+4.  **Regole Obbligatorie:** Segui scrupolosamente i seguenti 11 passi di creazione del personaggio come descritti nel manuale:
+    - **1. Caratteristiche:** Tira 2D6+6 per FOR, COS, TAG, INT, POT, DES, APP.
+    - **2. Tiri Importanti:** Calcola Idea (INTx5), Fortuna (POTx5), Destrezza (DESx5), Carisma (APPx5).
+    - **3. Magia:** Considera la soglia di POT 16 per la magia.
+    - **4. Statistiche Derivate:** Calcola Punti Ferita ((COS+TAG)/2) e Bonus Danno (da tabella FOR+TAG).
+    - **5. Abilità di Base:** Scegli uno dei 4 pacchetti o quello personalizzato.
+    - **6. Professione:** Scegli un'occupazione adatta e assegna i 250 punti abilità.
+    - **7. Tratti Distintivi:** Scegli o tira dalla tabella appropriata.
+    - **8. Età e Denaro:** Tira 1D6 per calcolare età (17+risultato) e denaro (risultato x 30).
+    - **9. Affiliazione:** Determina l'affiliazione iniziale.
+    - **10. Equipaggiamento:** Assegna armatura (con i 600 bronzi extra), armi, cavallo e un oggetto di famiglia.
+    - **11. Background:** Scrivi un background approfondito basato su tutto ciò che precede.
+
+---
+
+**Dettagli per la Generazione di Oggi:**
+
+* **Sesso:** ${sesso}
+* **Patria:** ${patria}
+* **Concetto Base:** "${concetto}"
+
+Per favore, presenta le due alternative in modo chiaro e distinto, così che io possa scegliere quella che preferisco. Grazie!
+`;
+
+            // Copia il prompt negli appunti e apre Gemini
+            navigator.clipboard.writeText(fullPrompt.trim()).then(() => {
+                window.open('https://gemini.google.com/app', '_blank');
+                resultContainer.innerHTML = '<p class="text-green-400 font-semibold">Prompt forgiato e copiato! Incolla con Ctrl+V nella nuova finestra dell\'Oracolo (Gemini) che si è aperta.</p>';
+            }).catch(err => {
+                console.error('Errore nel copiare il prompt: ', err);
+                resultContainer.innerHTML = `<p class="text-red-400">Errore: non è stato possibile copiare il prompt. Copialo manualmente qui sotto.</p><textarea readonly class="w-full h-48 bg-gray-900 text-gray-300 mt-2 p-2 rounded">${fullPrompt.trim()}</textarea>`;
+            });
+        });
+    });
+</script>
 </body>
 </html>
